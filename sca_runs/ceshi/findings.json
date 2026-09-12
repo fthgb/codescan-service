@@ -1,0 +1,3517 @@
+[
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.alibaba:fastjson",
+    "version": "1.2.83",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-16723",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-16723",
+      "cvss_score": "9.0",
+      "osv_id": "GHSA-crf3-v9rr-v7hj",
+      "summary": "fastjson has a remote code execution (RCE) vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "mysql:mysql-connector-java",
+    "version": "5.1.30",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2017-3523",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2017-3523",
+      "cvss_score": "8.5",
+      "osv_id": "GHSA-2xxh-f8r3-hvvr",
+      "summary": "Improper Access Control in MySQL Connectors Java"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "mysql:mysql-connector-java",
+    "version": "5.1.30",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-3258",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-3258",
+      "cvss_score": "8.8",
+      "osv_id": "GHSA-4vrv-ch96-6h42",
+      "summary": "Improper Privilege Management in MySQL Connectors Java"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "mysql:mysql-connector-java",
+    "version": "5.1.30",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-21363",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-21363",
+      "cvss_score": "6.6",
+      "osv_id": "GHSA-g76j-4cxx-23h9",
+      "summary": "Improper Handling of Insufficient Permissions or Privileges in MySQL Connectors Java"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "mysql:mysql-connector-java",
+    "version": "5.1.30",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-2692",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-2692",
+      "cvss_score": "6.3",
+      "osv_id": "GHSA-jcq3-cprp-m333",
+      "summary": "Privilege escalation in mysql-connector-jav"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "mysql:mysql-connector-java",
+    "version": "5.1.30",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-22102",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-22102",
+      "cvss_score": "8.9",
+      "osv_id": "GHSA-m6vm-37g8-gqvh",
+      "summary": "MySQL Connectors takeover vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "mysql:mysql-connector-java",
+    "version": "5.1.30",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2017-3586",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2017-3586",
+      "cvss_score": "6.4",
+      "osv_id": "GHSA-pwh7-92h3-mqr6",
+      "summary": "Exposure of Sensitive Information to an Unauthorized Actor in Oracle MySQL Connectors Java"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.httpcomponents:httpclient",
+    "version": "4.5.2",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-13956",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-13956",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-7r82-7xv7-xcpj",
+      "summary": "Cross-site scripting in Apache HttpClient"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "ch.qos.logback:logback-classic",
+    "version": "1.2.3",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-6378",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-6378",
+      "cvss_score": "7.1",
+      "osv_id": "GHSA-vmq6-5m68-f53m",
+      "summary": "logback serialization vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "ch.qos.logback:logback-core",
+    "version": "1.2.3",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-11226",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-11226",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-25qh-j22f-pwp8",
+      "summary": "QOS.CH logback-core is vulnerable to Arbitrary Code Execution through file processing"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "ch.qos.logback:logback-core",
+    "version": "1.2.3",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-42550",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-42550",
+      "cvss_score": "6.6",
+      "osv_id": "GHSA-668q-qrv7-99fm",
+      "summary": "Deserialization of Untrusted Data in logback"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "ch.qos.logback:logback-core",
+    "version": "1.2.3",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-12798",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-12798",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-pr98-23f8-jwxv",
+      "summary": "QOS.CH logback-core Expression Language Injection vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "ch.qos.logback:logback-core",
+    "version": "1.2.3",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-6378",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-6378",
+      "cvss_score": "7.1",
+      "osv_id": "GHSA-vmq6-5m68-f53m",
+      "summary": "logback serialization vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.baomidou:mybatis-plus",
+    "version": "3.0.7.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-25330",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-25330",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-32qq-m9fh-f74w",
+      "summary": "MyBatis-Plus vulnerable to SQL injection via TenantPlugin"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-core",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-52999",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-52999",
+      "cvss_score": "8.7",
+      "osv_id": "GHSA-h46c-h94j-95f3",
+      "summary": "jackson-core can throw a StackoverflowError when processing deeply nested data"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-core",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "GHSA-r7wm-3cxj-wff9",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cvss_score": "8.7",
+      "osv_id": "GHSA-r7wm-3cxj-wff9",
+      "summary": "jackson-core: Async parser maxNumberLength bypass via chunked digit accumulation (incomplete fix for GHSA-72hv-8253-57qq)"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "com.fasterxml.jackson.core:jackson-core",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-49128",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-49128",
+      "cvss_score": "4.0",
+      "osv_id": "GHSA-wf8f-6423-gfxg",
+      "summary": "Jackson-core Vulnerable to Memory Disclosure via Source Snippet in JsonLocation"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-11619",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-11619",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-27xj-rqx5-2255",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-25649",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-25649",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-288c-cq4h-88gq",
+      "summary": "XML External Entity (XXE) Injection in Jackson Databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-14719",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-14719",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-4gq5-ch57-c2mg",
+      "summary": "Arbitrary Code Execution in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-8840",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-8840",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-4w82-r329-3q67",
+      "summary": "Deserialization of Untrusted Data in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36518",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36518",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-57j2-w4cx-62h2",
+      "summary": "Deeply nested json in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-11112",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-11112",
+      "cvss_score": "8.8",
+      "osv_id": "GHSA-58pp-9c76-5625",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-20190",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-20190",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-5949-rw7g-wx7w",
+      "summary": "Deserialization of untrusted data in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-54515",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-54515",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-5jmj-h7xm-6q6v",
+      "summary": "jackson-databind has case-insensitive deserialization bypasses per-property @JsonIgnoreProperties"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-9546",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-9546",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-5p34-5m6p-p58g",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-35728",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-35728",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-5r5r-6hpj-8gg9",
+      "summary": "Serialization gadget exploit in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-12086",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-12086",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-5ww9-j83m-q7qx",
+      "summary": "Information exposure in FasterXML jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-14718",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-14718",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-645p-88qh-w398",
+      "summary": "Arbitrary Code Execution in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-14379",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-14379",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-6fpp-rgj9-8rwc",
+      "summary": "Deserialization of untrusted data in FasterXML jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-12023",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-12023",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-6wqp-v4v6-c87c",
+      "summary": "Deserialization of Untrusted Data"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-10969",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-10969",
+      "cvss_score": "8.8",
+      "osv_id": "GHSA-758m-v56v-grj4",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-16335",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-16335",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-85cw-hj65-qqv9",
+      "summary": "Polymorphic Typing issue in FasterXML jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36182",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36182",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-89qr-369f-5m5x",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36180",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36180",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-8c4j-34r4-xr8g",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36185",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36185",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-8w26-6f25-cm9x",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-10672",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-10672",
+      "cvss_score": "8.8",
+      "osv_id": "GHSA-95cm-88f5-f2c7",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36179",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36179",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-9gph-22xh-8x98",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36183",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36183",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-9m6f-7xcq-8vf8",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-14721",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-14721",
+      "cvss_score": "10.0",
+      "osv_id": "GHSA-9mxf-g3x6-wv74",
+      "summary": "Server-Side Request Forgery (SSRF) in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-11113",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-11113",
+      "cvss_score": "8.8",
+      "osv_id": "GHSA-9vvp-fxw6-jcxr",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-14062",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-14062",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-c265-37vj-cwcc",
+      "summary": "Deserialization of untrusted data in Jackson Databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-14061",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-14061",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-c2q3-4qrh-fm48",
+      "summary": "Deserialization of untrusted data in Jackson Databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-19362",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-19362",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-c8hm-7hpq-7jhg",
+      "summary": "com.fasterxml.jackson.core:jackson-databind vulnerable to Deserialization of Untrusted Data"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-14892",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-14892",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-cf6r-3wgc-h863",
+      "summary": "Polymorphic deserialization of malicious object in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-7489",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-7489",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-cggj-fvv3-cqwv",
+      "summary": "FasterXML jackson-databind allows unauthenticated remote code execution "
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-12022",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-12022",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-cjjf-94ff-43w7",
+      "summary": "jackson-databind Deserialization of Untrusted Data vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-12814",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-12814",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-cmfg-87vq-g5g4",
+      "summary": "Deserialization of untrusted data in FasterXML jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36181",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36181",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-cvm9-fjm9-3572",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-17267",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-17267",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-f3j5-rmmp-3fc5",
+      "summary": "Improper Input Validation in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-19360",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-19360",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-f9hv-mg5h-xcw9",
+      "summary": "Deserialization of Untrusted Data in jackson-databind due to polymorphic deserialization"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36188",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36188",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-f9xh-2qgp-cq57",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-16943",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-16943",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-fmmc-742q-jg75",
+      "summary": "jackson-databind polymorphic typing issue"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-10673",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-10673",
+      "cvss_score": "8.8",
+      "osv_id": "GHSA-fqwf-pjwf-7vqv",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-17531",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-17531",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-gjmw-vf9h-g25v",
+      "summary": "jackson-databind polymorphic typing issue"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-14439",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-14439",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-gwp4-hfv6-p7hw",
+      "summary": "Deserialization of untrusted data in FasterXML jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-20330",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-20330",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-gww7-p5w4-wrfv",
+      "summary": "Deserialization of Untrusted Data in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-24616",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-24616",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-h3cw-g4mq-c5x2",
+      "summary": "Code Injection in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-11620",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-11620",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-h4rc-386g-6m85",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-14540",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-14540",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-h822-r4r5-v8jg",
+      "summary": "Polymorphic Typing issue in FasterXML jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-54514",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-54514",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-hgj6-7826-r7m5",
+      "summary": "jackson-databind: InetSocketAddress deserialization triggers eager DNS resolution (SSRF)"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-14060",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-14060",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-j823-4qch-3rgm",
+      "summary": "Deserialization of untrusted data in Jackson Databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-42003",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-42003",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-jjjh-jjxp-wpff",
+      "summary": "Uncontrolled Resource Consumption in Jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36184",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36184",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-m6x4-97wx-4q27",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-14195",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-14195",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-mc6h-4qgp-37qh",
+      "summary": "Deserialization of untrusted data in Jackson Databind"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-12384",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-12384",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-mph4-vhrx-mv67",
+      "summary": "Deserialization of Untrusted Data in FasterXML jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-16942",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-16942",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-mx7p-6679-8g3q",
+      "summary": "Polymorphic Typing in FasterXML jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-19361",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-19361",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-mx9v-gmh4-mgqw",
+      "summary": "Deserialization of Untrusted Data in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-9548",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-9548",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-p43x-xfjf-5jhr",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-9547",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-9547",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-q93h-jc49-78gg",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-24750",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-24750",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-qjw2-hr98-qgfh",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-11307",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-11307",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-qr7j-h6gg-jmgc",
+      "summary": "Deserialization of Untrusted Data in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-35491",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-35491",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-r3gr-cxrf-hg25",
+      "summary": "Serialization gadgets exploit in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36187",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36187",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-r695-7vr9-jgc2",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-10968",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-10968",
+      "cvss_score": "8.8",
+      "osv_id": "GHSA-rf6r-2c4q-2vwg",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-42004",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-42004",
+      "cvss_score": "8.2",
+      "osv_id": "GHSA-rgv9-q543-rqg4",
+      "summary": "Uncontrolled Resource Consumption in FasterXML jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-10650",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-10650",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-rpr3-cw39-3pxh",
+      "summary": "jackson-databind vulnerable to unsafe deserialization"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-11111",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-11111",
+      "cvss_score": "8.8",
+      "osv_id": "GHSA-v3xw-c963-f5hc",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36186",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36186",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-v585-23hc-c647",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-36189",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-36189",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-vfqx-33qm-g869",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-35490",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-35490",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-wh8g-3j2c-rqj5",
+      "summary": "Serialization gadgets exploit in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-14720",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-14720",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-x2w5-5m2g-7h5m",
+      "summary": "XML External Entity Reference (XXE) in jackson-databind"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-1000873",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-1000873",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-h4x4-5qp2-wp46",
+      "summary": "Moderate severity vulnerability that affects com.fasterxml.jackson.datatype:jackson-datatype-jsr353"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.google.code.gson:gson",
+    "version": "2.8.2",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-25647",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-25647",
+      "cvss_score": "7.7",
+      "osv_id": "GHSA-4jrv-ppp4-jm57",
+      "summary": "Deserialization of Untrusted Data in Gson"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "com.google.guava:guava",
+    "version": "18.0",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-2976",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-2976",
+      "cvss_score": "5.5",
+      "osv_id": "GHSA-7g45-4rm6-3mm3",
+      "summary": "Guava vulnerable to insecure use of temporary directory"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "com.google.guava:guava",
+    "version": "18.0",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-10237",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-10237",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-mvr2-9pj6-7w5j",
+      "summary": "Denial of Service in Google Guava"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "com.jayway.jsonpath:json-path",
+    "version": "2.4.0",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-51074",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-51074",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-pfh2-hfmq-phg5",
+      "summary": "json-path Out-of-bounds Write vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "junit:junit",
+    "version": "4.12",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-15250",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-15250",
+      "cvss_score": "4.4",
+      "osv_id": "GHSA-269g-pwp5-87pp",
+      "summary": "TemporaryFolder on unix-like systems does not limit access to created files"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "log4j:log4j",
+    "version": "1.2.14",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-17571",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-17571",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-2qrg-x229-3v8q",
+      "summary": "Deserialization of Untrusted Data in Log4j"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "log4j:log4j",
+    "version": "1.2.14",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-23305",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-23305",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-65fg-84f6-3jq3",
+      "summary": "SQL Injection in Log4j 1.2.x"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "log4j:log4j",
+    "version": "1.2.14",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-23307",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-23307",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-f7vh-qwp3-x37m",
+      "summary": "Deserialization of Untrusted Data in Apache Log4j"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "log4j:log4j",
+    "version": "1.2.14",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-4104",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-4104",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-fp5r-v3w9-4333",
+      "summary": "JMSAppender in Log4j 1.2 is vulnerable to deserialization of untrusted data"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "log4j:log4j",
+    "version": "1.2.14",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-26464",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-26464",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-vp98-w2p3-mv35",
+      "summary": "Apache Log4j 1.x (EOL) allows Denial of Service (DoS)"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "log4j:log4j",
+    "version": "1.2.14",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-23302",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-23302",
+      "cvss_score": "8.8",
+      "osv_id": "GHSA-w9p3-5cr8-m3jj",
+      "summary": "Deserialization of Untrusted Data in Log4j 1.x"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "net.minidev:json-smart",
+    "version": "2.3",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-1370",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-1370",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-493p-pfq6-5258",
+      "summary": "json-smart Uncontrolled Recursion vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "net.minidev:json-smart",
+    "version": "2.3",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-27568",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-27568",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-v528-7hrm-frqp",
+      "summary": "Improper Check for Unusual or Exceptional Conditions in json-smart"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-53506",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-53506",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-25xr-qj8w-c4vf",
+      "summary": "Apache Tomcat Coyote vulnerable to Denial of Service via excessive HTTP/2 streams"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-24122",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-24122",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-2rvv-w9r2-rg7m",
+      "summary": "Information Disclosure in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-9484",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-9484",
+      "cvss_score": "7.0",
+      "osv_id": "GHSA-344f-f5vg-2jfj",
+      "summary": "Potential remote code execution in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-31650",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-31650",
+      "cvss_score": "6.6",
+      "osv_id": "GHSA-3p2h-wqq4-wf4h",
+      "summary": "Apache Tomcat Denial of Service via invalid HTTP priority header"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-8034",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-8034",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-46j3-r4pj-4835",
+      "summary": "The host name verification missing in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-52434",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-52434",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-4j3c-42xv-3f84",
+      "summary": "Apache Tomcat is vulnerable to resource exhaustion when using the APR/Native connector"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-11996",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-11996",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-53hp-jpwq-2jgq",
+      "summary": "Uncontrolled Resource Consumption in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-24880",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-24880",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-563x-q5rq-57qp",
+      "summary": "Apache Tomcat has an HTTP Request/Response Smuggling vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-50379",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-50379",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-5j33-cvvr-w245",
+      "summary": "Apache Tomcat Time-of-check Time-of-use (TOCTOU) Race Condition vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-43515",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-43515",
+      "cvss_score": "9.1",
+      "osv_id": "GHSA-5m62-pw8w-7w9f",
+      "summary": "Apache Tomcat - Security constraints not correctly applied"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-43513",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-43513",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-5mp6-jrq3-r938",
+      "summary": "Apache Tomcat: LockOutRealm treats user names as case-sensitive"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-11784",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-11784",
+      "cvss_score": "4.3",
+      "osv_id": "GHSA-5q99-f34m-67gc",
+      "summary": "Apache Tomcat Open Redirect vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-8037",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-8037",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-6v52-mj5r-7j2m",
+      "summary": "Apache Tomcat Race Condition vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-24549",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-24549",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-7w75-32cg-r6g2",
+      "summary": "Apache Tomcat Denial of Service due to improper input validation vulnerability for HTTP/2 requests"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-24813",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-24813",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-83qj-6fr2-vhqg",
+      "summary": "Apache Tomcat: Potential RCE and/or information disclosure and/or information corruption with partial PUT"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-0232",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-0232",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-8vmx-qmch-mpqg",
+      "summary": "Apache Tomcat OS Command Injection vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-17563",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-17563",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-9xcj-c8cr-8c3c",
+      "summary": "In Apache Tomcat, when using FORM authentication there was a narrow window where an attacker could perform a session fixation attack"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-65905",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-65905",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-9xv2-5v5q-p794",
+      "summary": "Apache Tomcat's DIGEST authenticator has an Authentication Bypass by Capture-replay vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-1938",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-1938",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-c9hw-wf7x-jp9j",
+      "summary": "Improper Privilege Management in Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-21733",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-21733",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-f4qf-m5gf-8jm8",
+      "summary": "Apache Tomcat vulnerable to Generation of Error Message Containing Sensitive Information"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-46589",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-46589",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-fccv-jmmp-qg76",
+      "summary": "Apache Tomcat Improper Input Validation vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-66614",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-66614",
+      "cvss_score": "9.1",
+      "osv_id": "GHSA-fpj8-gq4v-p354",
+      "summary": "Apache Tomcat - Client certificate verification bypass"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-42498",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-42498",
+      "cvss_score": "7.3",
+      "osv_id": "GHSA-fv25-8xcx-gqjc",
+      "summary": "Apache Tomcat - WebSocket authentication header exposure"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-42795",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-42795",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-g8pj-r55q-5c2v",
+      "summary": "Apache Tomcat Incomplete Cleanup vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-65182",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-65182",
+      "cvss_score": "9.1",
+      "osv_id": "GHSA-gcx9-497g-6cp6",
+      "summary": "Apache Tomcat has an Improper Access Control, Incorrect Authorization vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41284",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41284",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-gx5v-xp9w-j4cg",
+      "summary": "Apache Tomcat: Unbounded read in WebDAV LOCK and  PROPFIND handling"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-48988",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-48988",
+      "cvss_score": "8.7",
+      "osv_id": "GHSA-h3gc-qfqq-6h8f",
+      "summary": "Apache Tomcat - DoS in multipart upload"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-68525",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-68525",
+      "cvss_score": "9.1",
+      "osv_id": "GHSA-h3x4-894j-xpx5",
+      "summary": "Apache Tomcat's FORM authentication process has an Incorrect Authorization vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-43512",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-43512",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-h6fc-48rj-7qqh",
+      "summary": "Apache Tomcat - Digest authenticator will authenticate any unknown user"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-61795",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-61795",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-hgrr-935x-pq79",
+      "summary": "Apache Tomcat Vulnerable to Improper Resource Shutdown or Release"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-12418",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-12418",
+      "cvss_score": "7.0",
+      "osv_id": "GHSA-hh3j-x4mc-g48r",
+      "summary": "Insufficiently Protected Credentials in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-25122",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-25122",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-j39c-c8hj-x4j3",
+      "summary": "Exposure of Sensitive Information to an Unauthorized Actor in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-25329",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-25329",
+      "cvss_score": "7.0",
+      "osv_id": "GHSA-jgwr-3qm3-26f3",
+      "summary": "Potential remote code execution in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-0221",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-0221",
+      "cvss_score": "6.1",
+      "osv_id": "GHSA-jjpq-gp5q-8q6w",
+      "summary": "Cross-site scripting in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-1336",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-1336",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-m59c-jpc8-m2x4",
+      "summary": "In Apache Tomcat there is an improper handing of overflow in the UTF-8 decoder "
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-42252",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-42252",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-p22x-g9px-3945",
+      "summary": "Apache Tomcat may reject request containing invalid Content-Length header"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-41080",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-41080",
+      "cvss_score": "6.1",
+      "osv_id": "GHSA-q3mw-pvr8-9ggc",
+      "summary": "Apache Tomcat Open Redirect vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-10072",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-10072",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-q4hg-rmq2-52q9",
+      "summary": "Improper Locking in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-0199",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-0199",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-qcxh-w3j9-58qr",
+      "summary": "Apache Tomcat Denial of Service vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-44487",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-44487",
+      "cvss_score": "6.9",
+      "osv_id": "GHSA-qppj-fm5r-hxr3",
+      "summary": "HTTP/2 Stream Cancellation Attack"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-1935",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-1935",
+      "cvss_score": "4.8",
+      "osv_id": "GHSA-qxf4-chvg-4r8r",
+      "summary": "Potential HTTP request smuggling in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41293",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41293",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-r29c-68gh-xp6x",
+      "summary": "Apache Tomcat - HTTP/2 request headers not validated"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-8014",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-8014",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-r4x2-3cq5-hqvp",
+      "summary": "The defaults settings for the CORS filter provided in Apache Tomcat are insecure and enable 'supportsCredentials' for all origins"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-45648",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-45648",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-r6j3-px5g-cq3x",
+      "summary": "Apache Tomcat Improper Input Validation vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-49125",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-49125",
+      "cvss_score": "6.3",
+      "osv_id": "GHSA-wc4r-xq3c-5cf3",
+      "summary": "Apache Tomcat - Security constraint bypass for pre/post-resources"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-34750",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-34750",
+      "cvss_score": "8.7",
+      "osv_id": "GHSA-wm9w-rjj3-j356",
+      "summary": "Apache Tomcat - Denial of Service"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-55752",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-55752",
+      "cvss_score": "7.7",
+      "osv_id": "GHSA-wmwf-9ccg-fff5",
+      "summary": "Apache Tomcat Vulnerable to Relative Path Traversal"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-52520",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-52520",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-wr62-c79q-cv37",
+      "summary": "Apache Tomcat Catalina is vulnerable to DoS attack through bypassing of size limits"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.tomcat.embed:tomcat-embed-websocket",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-13935",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-13935",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-m7jv-hq7h-mq7c",
+      "summary": "Infinite Loop in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.tomcat.embed:tomcat-embed-websocket",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-23672",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-23672",
+      "cvss_score": "6.3",
+      "osv_id": "GHSA-v682-8vv8-vpwr",
+      "summary": "Denial of Service via incomplete cleanup vulnerability in Apache Tomcat"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.assertj:assertj-core",
+    "version": "3.9.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-24400",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-24400",
+      "cvss_score": "8.2",
+      "osv_id": "GHSA-rqfh-9r24-8c9r",
+      "summary": "AssertJ has XML External Entity (XXE) vulnerability when parsing untrusted XML via isXmlEqualTo assertion"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.codehaus.jettison:jettison",
+    "version": "1.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-40149",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-40149",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-56h3-78gp-v83r",
+      "summary": "Jettison parser crash by stackoverflow"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.codehaus.jettison:jettison",
+    "version": "1.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-45685",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-45685",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-7rf3-mqpx-h7xg",
+      "summary": "Jettison Out-of-bounds Write vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.codehaus.jettison:jettison",
+    "version": "1.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-45693",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-45693",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-grr4-wv38-f68w",
+      "summary": "Jettison Out-of-bounds Write vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.codehaus.jettison:jettison",
+    "version": "1.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-1436",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-1436",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-q6g2-g7f3-rr83",
+      "summary": "Jettison vulnerable to infinite recursion"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.codehaus.jettison:jettison",
+    "version": "1.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-40150",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-40150",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-x27m-9w8j-5vcw",
+      "summary": "Jettison memory exhaustion"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.hibernate.validator:hibernate-validator",
+    "version": "6.0.7.Final",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-35036",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-35036",
+      "cvss_score": "7.3",
+      "osv_id": "GHSA-7v6m-28jr-rg84",
+      "summary": "Hibernate Validator may interpolate user-supplied input in a constraint violation message with Expression Language"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.hibernate.validator:hibernate-validator",
+    "version": "6.0.7.Final",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-10219",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-10219",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-m8p2-495h-ccmh",
+      "summary": "The SafeHtml annotation in Hibernate-Validator does not properly guard against XSS attacks"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.hibernate.validator:hibernate-validator",
+    "version": "6.0.7.Final",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-10693",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-10693",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-rmrm-75hp-phr2",
+      "summary": "Improper Input Validation in Hibernate Validator"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.hibernate.validator:hibernate-validator",
+    "version": "6.0.7.Final",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-1932",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-1932",
+      "cvss_score": "6.1",
+      "osv_id": "GHSA-x83m-pf6f-pf9g",
+      "summary": "hibernate-validator Cross-site Scripting vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.jdom:jdom",
+    "version": "1.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-33813",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-33813",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-2363-cqg2-863c",
+      "summary": "XML External Entity (XXE) Injection in JDOM"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.mybatis:mybatis",
+    "version": "3.4.6",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-26945",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-26945",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-qq48-m4jx-xqh8",
+      "summary": "\"Deserialization errors in MyBatis\""
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.pf4j:pf4j",
+    "version": "3.1.0",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-40826",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-40826",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-3r28-rgp9-qgv4",
+      "summary": "pf4j vulnerable to remote code execution via the zippluginPath parameter"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.pf4j:pf4j",
+    "version": "3.1.0",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-70952",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-70952",
+      "cvss_score": "8.7",
+      "osv_id": "GHSA-5458-7hh9-v7p4",
+      "summary": "pf4j is vulnerable to Path Traversal or Zip Slip attack through improper handling of zip entry names "
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.pf4j:pf4j",
+    "version": "3.1.0",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-40828",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-40828",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-cj8w-v588-p8wx",
+      "summary": "pf4j vulnerable to remote code execution via expandIfZip method in the extract function"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.pf4j:pf4j",
+    "version": "3.1.0",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-40827",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-40827",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-rvm8-j2cp-j592",
+      "summary": "pf4j vulnerable to remote code execution via loadpluginPath parameter"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework.boot:spring-boot",
+    "version": "2.0.0.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-27772",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-27772",
+      "cvss_score": "7.8",
+      "osv_id": "GHSA-cm59-pr5q-cw85",
+      "summary": "Temporary Directory Hijacking to Local Privilege Escalation Vulnerability in org.springframework.boot:spring-boot"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework.boot:spring-boot",
+    "version": "2.0.0.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-22235",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-22235",
+      "cvss_score": "7.3",
+      "osv_id": "GHSA-rc42-6c7j-7h5r",
+      "summary": "Spring Boot EndpointRequest.to() creates wrong matcher if actuator endpoint is not exposed"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework.boot:spring-boot",
+    "version": "2.0.0.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-40973",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-40973",
+      "cvss_score": "7.0",
+      "osv_id": "GHSA-wwpq-f5c3-7hvx",
+      "summary": "Spring Boot accepts predictable temp directory without ownership verification"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework.boot:spring-boot-autoconfigure",
+    "version": "2.0.0.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-20883",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-20883",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-xf96-w227-r7c4",
+      "summary": "Spring Boot Welcome Page Denial of Service"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.springframework.boot:spring-boot-starter-web",
+    "version": "2.0.0.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-22965",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-22965",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-36p3-wjmg-h94x",
+      "summary": "Remote Code Execution in Spring Framework"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.springframework.data:spring-data-commons",
+    "version": "2.0.5.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-1273",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-1273",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-4fq3-mr56-cg6r",
+      "summary": "Spring Data Commons remote code injection vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework.data:spring-data-commons",
+    "version": "2.0.5.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41721",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41721",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-5m4m-73w9-8433",
+      "summary": "Spring Data Commons: Denial of Service via excessive memory allocation in projection binding"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework.data:spring-data-commons",
+    "version": "2.0.5.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-1274",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-1274",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-5q8m-mqmx-pxp9",
+      "summary": "Spring Data Commons contain a property path parser vulnerability caused by unlimited resource allocation"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework.data:spring-data-commons",
+    "version": "2.0.5.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41711",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41711",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-5vpf-xvv7-c8vh",
+      "summary": "Spring Data Commons: StackOverflowException when parsing Sort parameters (DoS)"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework.data:spring-data-commons",
+    "version": "2.0.5.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41716",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41716",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-9fw2-h3hf-293r",
+      "summary": "Spring Data Commons: Heap exhaustion from unbounded property-lookup cache retaining crafted string keys"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework.data:spring-data-commons",
+    "version": "2.0.5.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-1259",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-1259",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-m929-7fr6-cvjg",
+      "summary": "Spring Data Commons, used in combination with XMLBeam, contains a property binder vulnerability caused by improper restriction of XML external entity references"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework.data:spring-data-keyvalue",
+    "version": "2.0.5.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41719",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41719",
+      "cvss_score": "6.4",
+      "osv_id": "GHSA-xg2j-3hj6-pc24",
+      "summary": "Spring Data KeyValue: Remote code execution via SpEL Injection in Sort-based repository queries"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.springframework:spring-beans",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-22965",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-22965",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-36p3-wjmg-h94x",
+      "summary": "Remote Code Execution in Spring Framework"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-beans",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-22970",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-22970",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-hh26-6xwr-ggv7",
+      "summary": "Denial of service in Spring Framework"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-context",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-38820",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-38820",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-4gc7-5j7h-4qph",
+      "summary": "Spring Framework DataBinder Case Sensitive Match Exception"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-context",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-22968",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-22968",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-g5mm-vmx4-3rg7",
+      "summary": "Improper handling of case sensitivity in Spring Framework"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-core",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-1272",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-1272",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-4487-x383-qpph",
+      "summary": "Possible privilege escalation in org.springframework:spring-core"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-core",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-11040",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-11040",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-f26x-pr96-vw86",
+      "summary": "Moderate severity vulnerability that affects org.springframework:spring-core"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-core",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-15756",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-15756",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-ffvq-7w96-97p7",
+      "summary": "Denial of Service in Spring Framework"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-core",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-1271",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-1271",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-g8hw-794c-4j9g",
+      "summary": "Path Traversal in org.springframework:spring-core"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-core",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-1257",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-1257",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-rcpf-vj53-7h2m",
+      "summary": "Denial of Service in org.springframework:spring-core"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-expression",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-22950",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-22950",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-558x-2xjg-6232",
+      "summary": "Allocation of Resources Without Limits or Throttling in Spring Framework"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-expression",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-20861",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-20861",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-564r-hj7v-mcr5",
+      "summary": "Spring Framework vulnerable to denial of service via specially crafted SpEL expression"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-expression",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41849",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41849",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-775g-4xr8-78h8",
+      "summary": "Spring Framework Denial of Service via Integer Overflow in SpEL Expressions"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-expression",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-38808",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-38808",
+      "cvss_score": "5.1",
+      "osv_id": "GHSA-9cmq-m9j5-mvww",
+      "summary": "Spring Framework vulnerable to Denial of Service"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-expression",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41850",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41850",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-r5w3-xv2f-j59q",
+      "summary": "Spring Framework Algorithmic Denial of Service via SpEL Expressions"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-expression",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41851",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41851",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-wxpp-56q6-5pcg",
+      "summary": "Spring Framework Denial of Service via Unbounded Cache in SpEL"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-expression",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-20863",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-20863",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-wxqc-pxw9-g2p8",
+      "summary": "Spring Framework vulnerable to denial of service"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-web",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-38809",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-38809",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-2rmj-mq67-h97g",
+      "summary": "Spring Framework DoS via conditional HTTP request"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-web",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-22262",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-22262",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-2wrp-6fg6-hmc5",
+      "summary": "Spring Framework URL Parsing with Host Validation"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-web",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-38820",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-38820",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-4gc7-5j7h-4qph",
+      "summary": "Spring Framework DataBinder Case Sensitive Match Exception"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.springframework:spring-web",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2016-1000027",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2016-1000027",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-4wrc-f8pq-fpqp",
+      "summary": "Pivotal Spring Framework contains unsafe Java deserialization methods"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-web",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-11039",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-11039",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-9gcm-f4x3-8jpw",
+      "summary": "Spring Framework Cross Site Tracing (XST)"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-web",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-22243",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-22243",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-ccgv-vj62-xf9h",
+      "summary": "Spring Web vulnerable to Open Redirect or Server Side Request Forgery"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-web",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-22259",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-22259",
+      "cvss_score": "8.1",
+      "osv_id": "GHSA-hgjh-9rj2-g67j",
+      "summary": "Spring Framework URL Parsing with Host Validation Vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-22965",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-22965",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-36p3-wjmg-h94x",
+      "summary": "Remote Code Execution in Spring Framework"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41845",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41845",
+      "cvss_score": "7.1",
+      "osv_id": "GHSA-3chg-m5w7-qfv5",
+      "summary": "Spring Framework Cross-site Scripting via JavaScriptUtils"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-22745",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-22745",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-6p4f-wcwh-5vvm",
+      "summary": "Spring MVC and WebFlux applications are vulnerable to Denial of Service attacks when resolving static resources"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41843",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41843",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-72pg-x5f8-j25j",
+      "summary": "Spring Framework Path Traversal via Versioned Static Resources in Spring MVC and WebFlux"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-5398",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-5398",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-8wx2-9q48-vm9r",
+      "summary": "RFD attack via Content-Disposition header sourced from request input by Spring MVC or Spring WebFlux Application"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41846",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41846",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-957g-f97v-vppc",
+      "summary": "Spring Framework Cross-site Scripting via JSP Form Tags"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41853",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41853",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-cjpg-rgq5-fr37",
+      "summary": "Spring Framework Multipart Request Smuggling in Spring MVC and WebFlux"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-38819",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-38819",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-g5vr-rgqm-vf78",
+      "summary": "Spring Framework Path Traversal vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41844",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41844",
+      "cvss_score": "4.2",
+      "osv_id": "GHSA-h3qp-gqrc-q736",
+      "summary": "Spring Framework Open Redirect in Spring MVC and WebFlux"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41841",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41841",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-mq64-j8f9-9gcj",
+      "summary": "Spring Framework Information Disclosure via Static Resource Cache in Spring MVC and WebFlux"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-41842",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-41842",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-x23c-287f-qqv5",
+      "summary": "Spring Framework Denial of Service via Versioned Resources in Spring MVC and WebFlux"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.yaml:snakeyaml",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-25857",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-25857",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-3mc7-4q67-w48m",
+      "summary": "Uncontrolled Resource Consumption in snakeyaml"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.yaml:snakeyaml",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-38751",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-38751",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-98wm-3w3q-mw94",
+      "summary": "snakeYAML before 1.31 vulnerable to Denial of Service due to Out-of-bounds Write"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.yaml:snakeyaml",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-38752",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-38752",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-9w3m-gqgf-c4p9",
+      "summary": "snakeYAML before 1.32 vulnerable to Denial of Service due to Out-of-bounds Write"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.yaml:snakeyaml",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-38749",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-38749",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-c4r9-r8fh-9vj2",
+      "summary": "snakeYAML before 1.31 vulnerable to Denial of Service due to Out-of-bounds Write"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.yaml:snakeyaml",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-38750",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-38750",
+      "cvss_score": "5.5",
+      "osv_id": "GHSA-hhhw-99gj-p3c3",
+      "summary": "snakeYAML before 1.31 vulnerable to Denial of Service due to Out-of-bounds Write"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.yaml:snakeyaml",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-1471",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-1471",
+      "cvss_score": "8.3",
+      "osv_id": "GHSA-mjmj-j48q-9wg2",
+      "summary": "SnakeYaml Constructor Deserialization Remote Code Execution"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.yaml:snakeyaml",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2017-18640",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2017-18640",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-rvwf-54qp-4r6v",
+      "summary": "SnakeYAML Entity Expansion during load operation"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.yaml:snakeyaml",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-41854",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-41854",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-w37g-rhq8-7m4j",
+      "summary": "Snakeyaml vulnerable to Stack overflow leading to denial of service"
+    }
+  },
+  {
+    "rule_id": "license-non-standard",
+    "category": "license",
+    "severity": "high",
+    "component": "mysql:mysql-connector-java",
+    "version": "5.1.30",
+    "ecosystem": "Maven",
+    "evidence": "non-standard",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "rule_id": "license-non-standard",
+    "category": "license",
+    "severity": "high",
+    "component": "ch.qos.logback:logback-classic",
+    "version": "1.2.3",
+    "ecosystem": "Maven",
+    "evidence": "non-standard",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "rule_id": "license-non-standard",
+    "category": "license",
+    "severity": "high",
+    "component": "ch.qos.logback:logback-core",
+    "version": "1.2.3",
+    "ecosystem": "Maven",
+    "evidence": "non-standard",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "rule_id": "license-non-standard",
+    "category": "license",
+    "severity": "high",
+    "component": "junit:junit",
+    "version": "4.12",
+    "ecosystem": "Maven",
+    "evidence": "non-standard",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "rule_id": "license-unknown",
+    "category": "license",
+    "severity": "high",
+    "component": "org.codehaus.jettison:jettison",
+    "version": "1.1",
+    "ecosystem": "Maven",
+    "evidence": "UNKNOWN",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "rule_id": "license-unknown",
+    "category": "license",
+    "severity": "high",
+    "component": "org.jdom:jdom",
+    "version": "1.1",
+    "ecosystem": "Maven",
+    "evidence": "UNKNOWN",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  }
+]

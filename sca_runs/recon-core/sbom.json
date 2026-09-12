@@ -1,0 +1,130 @@
+[
+  {
+    "name": "cn.hutool:hutool-extra",
+    "version": "5.0.6",
+    "ecosystem": "Maven",
+    "license": "non-standard",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "name": "cn.hutool:hutool-http",
+    "version": "5.1.1",
+    "ecosystem": "Maven",
+    "license": "non-standard",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "name": "com.alibaba:fastjson",
+    "version": "1.2.83",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "name": "com.squareup.okhttp3:okhttp",
+    "version": "3.10.0",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "name": "commons-net:commons-net",
+    "version": "3.6",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "name": "dom4j:dom4j",
+    "version": "1.6.1",
+    "ecosystem": "Maven",
+    "license": "UNKNOWN",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "name": "log4j:log4j",
+    "version": "1.2.16",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "name": "org.apache.commons:commons-compress",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "name": "org.bouncycastle:bcpg-jdk18on",
+    "version": "1.78.1",
+    "ecosystem": "Maven",
+    "license": "non-standard AND Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "name": "org.bouncycastle:bcprov-jdk18on",
+    "version": "1.78.1",
+    "ecosystem": "Maven",
+    "license": "non-standard",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "name": "com.alibaba:fastjson",
+    "version": "1.2.83",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-facade/pom.xml"
+  },
+  {
+    "name": "org.apache.commons:commons-lang3",
+    "version": "3.6",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-facade/pom.xml"
+  },
+  {
+    "name": "com.alibaba:fastjson",
+    "version": "1.2.83",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-service/pom.xml"
+  },
+  {
+    "name": "com.alibaba:fastjson",
+    "version": "1.2.83",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-web/pom.xml"
+  },
+  {
+    "name": "io.springfox:springfox-swagger-ui",
+    "version": "2.8.0",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-web/pom.xml"
+  },
+  {
+    "name": "org.apache.httpcomponents:httpclient",
+    "version": "4.5.5",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-web/pom.xml"
+  }
+]

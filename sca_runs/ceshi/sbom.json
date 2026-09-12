@@ -1,0 +1,290 @@
+[
+  {
+    "name": "com.alibaba:fastjson",
+    "version": "1.2.83",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "mysql:mysql-connector-java",
+    "version": "5.1.30",
+    "ecosystem": "Maven",
+    "license": "non-standard",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.apache.httpcomponents:httpclient",
+    "version": "4.5.2",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "ch.qos.logback:logback-classic",
+    "version": "1.2.3",
+    "ecosystem": "Maven",
+    "license": "non-standard",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "ch.qos.logback:logback-core",
+    "version": "1.2.3",
+    "ecosystem": "Maven",
+    "license": "non-standard",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "com.baomidou:mybatis-plus",
+    "version": "3.0.7.1",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "com.fasterxml.jackson.core:jackson-core",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "com.fasterxml.jackson.core:jackson-databind",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310",
+    "version": "2.9.4",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "com.google.code.gson:gson",
+    "version": "2.8.2",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "com.google.guava:guava",
+    "version": "18.0",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "com.jayway.jsonpath:json-path",
+    "version": "2.4.0",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "junit:junit",
+    "version": "4.12",
+    "ecosystem": "Maven",
+    "license": "non-standard",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "log4j:log4j",
+    "version": "1.2.14",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "net.minidev:json-smart",
+    "version": "2.3",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.apache.tomcat.embed:tomcat-embed-core",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.apache.tomcat.embed:tomcat-embed-websocket",
+    "version": "8.5.28",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.assertj:assertj-core",
+    "version": "3.9.1",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.codehaus.jettison:jettison",
+    "version": "1.1",
+    "ecosystem": "Maven",
+    "license": "UNKNOWN",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.hibernate.validator:hibernate-validator",
+    "version": "6.0.7.Final",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.jdom:jdom",
+    "version": "1.1",
+    "ecosystem": "Maven",
+    "license": "UNKNOWN",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.mybatis:mybatis",
+    "version": "3.4.6",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.pf4j:pf4j",
+    "version": "3.1.0",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.springframework.boot:spring-boot",
+    "version": "2.0.0.RELEASE",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.springframework.boot:spring-boot-autoconfigure",
+    "version": "2.0.0.RELEASE",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.springframework.boot:spring-boot-starter-web",
+    "version": "2.0.0.RELEASE",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.springframework.data:spring-data-commons",
+    "version": "2.0.5.RELEASE",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.springframework.data:spring-data-keyvalue",
+    "version": "2.0.5.RELEASE",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.springframework:spring-beans",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.springframework:spring-context",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.springframework:spring-core",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.springframework:spring-expression",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.springframework:spring-web",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.springframework:spring-webmvc",
+    "version": "5.0.4.RELEASE",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.xmlunit:xmlunit-core",
+    "version": "2.5.1",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  },
+  {
+    "name": "org.yaml:snakeyaml",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "license": "Apache-2.0",
+    "direct_or_transitive": "direct",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/ceshi-13cce4d4/jshERP-boot/pom.xml"
+  }
+]

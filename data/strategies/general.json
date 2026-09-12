@@ -1,0 +1,12 @@
+{
+  "name": "general",
+  "always_on": true,
+  "trigger_signals": [],
+  "key_questions": [
+    "这函数信任了什么输入？来源是用户、外部系统还是内部调用？",
+    "谁检查不变量？检查者是否有资格？假设被违反会发生什么？",
+    "错误路径上资源是否释放？异常是否被吞掉掩盖？"
+  ],
+  "prompt_addendum": "通用兜底视角：对每个 sink 追问信任边界与不变量守护，不预设漏洞类。filed CWE 不可靠时此视角始终在桌。",
+  "exemplars": []
+}

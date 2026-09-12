@@ -1,0 +1,484 @@
+[
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "cn.hutool:hutool-extra",
+    "version": "5.0.6",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-56769",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-56769",
+      "cvss_score": "8.9",
+      "osv_id": "GHSA-gcfh-36x4-mgj6",
+      "summary": "Hutool allows remote code execution (RCE) via the QLExpressEngine class"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "cn.hutool:hutool-http",
+    "version": "5.1.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-22885",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-22885",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-p7w9-8mxw-p3g7",
+      "summary": "Improper Certificate Validation in Hutool"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.alibaba:fastjson",
+    "version": "1.2.83",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-16723",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-16723",
+      "cvss_score": "9.0",
+      "osv_id": "GHSA-crf3-v9rr-v7hj",
+      "summary": "fastjson has a remote code execution (RCE) vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.squareup.okhttp3:okhttp",
+    "version": "3.10.0",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-0341",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-0341",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-3cqm-mf7h-prrj",
+      "summary": "Square OkHttp can accept the wrong certificate"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "commons-net:commons-net",
+    "version": "3.6",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-37533",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-37533",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-cgp8-4m63-fhh5",
+      "summary": "Apache Commons Net vulnerable to information leakage via malicious server"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "dom4j:dom4j",
+    "version": "1.6.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2018-1000632",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2018-1000632",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-6pcc-3rfx-4gpm",
+      "summary": "Dom4j contains a XML Injection vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "dom4j:dom4j",
+    "version": "1.6.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-10683",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-10683",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-hwj3-m3p6-hj38",
+      "summary": "dom4j allows External Entities by default which might enable XXE attacks"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "log4j:log4j",
+    "version": "1.2.16",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-17571",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-17571",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-2qrg-x229-3v8q",
+      "summary": "Deserialization of Untrusted Data in Log4j"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "log4j:log4j",
+    "version": "1.2.16",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-23305",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-23305",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-65fg-84f6-3jq3",
+      "summary": "SQL Injection in Log4j 1.2.x"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "log4j:log4j",
+    "version": "1.2.16",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-23307",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-23307",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-f7vh-qwp3-x37m",
+      "summary": "Deserialization of Untrusted Data in Apache Log4j"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "log4j:log4j",
+    "version": "1.2.16",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-4104",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-4104",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-fp5r-v3w9-4333",
+      "summary": "JMSAppender in Log4j 1.2 is vulnerable to deserialization of untrusted data"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "log4j:log4j",
+    "version": "1.2.16",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2023-26464",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2023-26464",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-vp98-w2p3-mv35",
+      "summary": "Apache Log4j 1.x (EOL) allows Denial of Service (DoS)"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "log4j:log4j",
+    "version": "1.2.16",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2022-23302",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2022-23302",
+      "cvss_score": "8.8",
+      "osv_id": "GHSA-w9p3-5cr8-m3jj",
+      "summary": "Deserialization of Untrusted Data in Log4j 1.x"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.commons:commons-compress",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2024-25710",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2024-25710",
+      "cvss_score": "5.9",
+      "osv_id": "GHSA-4g9r-vxhx-9pgx",
+      "summary": "Apache Commons Compress: Denial of service caused by an infinite loop for a corrupted DUMP file"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.commons:commons-compress",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-35515",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-35515",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-7hfm-57qf-j43q",
+      "summary": "Excessive Iteration in Compress"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.commons:commons-compress",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-35516",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-35516",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-crv7-7245-f45f",
+      "summary": "Improper Handling of Length Parameter Inconsistency in Compress"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.commons:commons-compress",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-36090",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-36090",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-mc84-pj99-q6hh",
+      "summary": "Improper Handling of Length Parameter Inconsistency in Compress"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.apache.commons:commons-compress",
+    "version": "1.19",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2021-35517",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2021-35517",
+      "cvss_score": "7.5",
+      "osv_id": "GHSA-xqfj-vm6h-2x34",
+      "summary": "Improper Handling of Length Parameter Inconsistency in Compress"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "org.bouncycastle:bcpg-jdk18on",
+    "version": "1.78.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-3505",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-3505",
+      "cvss_score": "8.7",
+      "osv_id": "GHSA-cj8j-37rh-8475",
+      "summary": "Bouncy Castle Uncontrolled Resource Consumption vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "org.bouncycastle:bcprov-jdk18on",
+    "version": "1.78.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-14813",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-14813",
+      "cvss_score": "9.3",
+      "osv_id": "GHSA-574f-3g2m-x479",
+      "summary": "Bouncy Castle for Java GOST 28147 CTR mode reuses keystream after 255 blocks"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.bouncycastle:bcprov-jdk18on",
+    "version": "1.78.1",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-0636",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-0636",
+      "cvss_score": "5.5",
+      "osv_id": "GHSA-c3fc-8qff-9hwx",
+      "summary": "Bouncy Castle has an LDAP injection"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.alibaba:fastjson",
+    "version": "1.2.83",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-16723",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-16723",
+      "cvss_score": "9.0",
+      "osv_id": "GHSA-crf3-v9rr-v7hj",
+      "summary": "fastjson has a remote code execution (RCE) vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.commons:commons-lang3",
+    "version": "3.6",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2025-48924",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-facade/pom.xml",
+    "detail": {
+      "cve": "CVE-2025-48924",
+      "cvss_score": "6.5",
+      "osv_id": "GHSA-j288-q9x7-2f5v",
+      "summary": "Apache Commons Lang is vulnerable to Uncontrolled Recursion when processing long inputs"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.alibaba:fastjson",
+    "version": "1.2.83",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-16723",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-16723",
+      "cvss_score": "9.0",
+      "osv_id": "GHSA-crf3-v9rr-v7hj",
+      "summary": "fastjson has a remote code execution (RCE) vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-high",
+    "category": "vulnerability",
+    "severity": "high",
+    "component": "com.alibaba:fastjson",
+    "version": "1.2.83",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2026-16723",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml",
+    "detail": {
+      "cve": "CVE-2026-16723",
+      "cvss_score": "9.0",
+      "osv_id": "GHSA-crf3-v9rr-v7hj",
+      "summary": "fastjson has a remote code execution (RCE) vulnerability"
+    }
+  },
+  {
+    "rule_id": "vuln-critical",
+    "category": "vulnerability",
+    "severity": "critical",
+    "component": "io.springfox:springfox-swagger-ui",
+    "version": "2.8.0",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2019-17495",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-web/pom.xml",
+    "detail": {
+      "cve": "CVE-2019-17495",
+      "cvss_score": "9.8",
+      "osv_id": "GHSA-c427-hjc3-wrfw",
+      "summary": "Cross-site scripting in Swagger-UI"
+    }
+  },
+  {
+    "rule_id": "vuln-medium",
+    "category": "vulnerability",
+    "severity": "medium",
+    "component": "org.apache.httpcomponents:httpclient",
+    "version": "4.5.5",
+    "ecosystem": "Maven",
+    "evidence": "CVE-2020-13956",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-web/pom.xml",
+    "detail": {
+      "cve": "CVE-2020-13956",
+      "cvss_score": "5.3",
+      "osv_id": "GHSA-7r82-7xv7-xcpj",
+      "summary": "Cross-site scripting in Apache HttpClient"
+    }
+  },
+  {
+    "rule_id": "license-non-standard",
+    "category": "license",
+    "severity": "high",
+    "component": "cn.hutool:hutool-extra",
+    "version": "5.0.6",
+    "ecosystem": "Maven",
+    "evidence": "non-standard",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "rule_id": "license-non-standard",
+    "category": "license",
+    "severity": "high",
+    "component": "cn.hutool:hutool-http",
+    "version": "5.1.1",
+    "ecosystem": "Maven",
+    "evidence": "non-standard",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "rule_id": "license-unknown",
+    "category": "license",
+    "severity": "high",
+    "component": "dom4j:dom4j",
+    "version": "1.6.1",
+    "ecosystem": "Maven",
+    "evidence": "UNKNOWN",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "rule_id": "license-non-standard",
+    "category": "license",
+    "severity": "high",
+    "component": "org.bouncycastle:bcpg-jdk18on",
+    "version": "1.78.1",
+    "ecosystem": "Maven",
+    "evidence": "non-standard",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  },
+  {
+    "rule_id": "license-non-standard",
+    "category": "license",
+    "severity": "high",
+    "component": "org.bouncycastle:bcprov-jdk18on",
+    "version": "1.78.1",
+    "ecosystem": "Maven",
+    "evidence": "non-standard",
+    "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+  }
+]

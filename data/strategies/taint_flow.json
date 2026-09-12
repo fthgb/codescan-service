@@ -1,0 +1,14 @@
+{
+  "name": "taint_flow",
+  "trigger_signals": [
+    {"kind": "function_keywords", "pattern": "executeQuery"},
+    {"kind": "function_keywords", "pattern": "createNativeQuery"},
+    {"kind": "function_keywords", "pattern": "Statement\\.execute"},
+    {"kind": "function_keywords", "pattern": "\\$\\{"},
+    {"kind": "function_keywords", "pattern": "#\\{"},
+    {"kind": "paths", "pattern": ".xml"}
+  ],
+  "key_questions": [],
+  "prompt_addendum": "污点流视角：source→净化→sink。其评估步骤本就在 systemPromptBody 的强制步骤里，本 strategy 不重复加 key_questions 槽位（parity 守卫：4 个 SQLi fixture 路由到此必须字节不变）。",
+  "exemplars": []
+}

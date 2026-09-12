@@ -1,0 +1,43 @@
+{
+  "name": "missing_auth",
+  "trigger_signals": [
+    {"kind": "authz_none"}
+  ],
+  "key_questions": [
+    "该端点是否面向公网/未认证可达？方法级、类级、全局拦截器三道守卫是否全无（authz_coverage 已预计算）？",
+    "端点操作是否修改或读取他人资源（任务/订单/用户数据）？无鉴权即越权面。",
+    "是否存在 per-object 所有权校验（非仅身份认证）？无则 CWE-862 missing authorization。",
+    "SAST 标的注入类（SQLi 等）是否为次要发现？有可达危险 sink 时缺失授权构成独立漏洞（CWE-862），不因参数化防注入而消失（参数化只否 filed 注入，不否 missing-auth 本身——但须 sink 可达，见下一问）。",
+    "切片是否含可达的危险 sink（写库 insert/update/delete、改数据、越权读写他人数据、命令执行、反序列化落地、SSRF 落地）？看 hops 数据流 / forward_reachable 层 / reachable_sinks 工具回执——三者任一确认无可达 sink → 判 NOT_REAL：CWE-862 要求可利用危害，无鉴权但无可达 sink 的端点不构成 missing-auth（至多 CWE-200 信息泄露，单独判定，不因无鉴权直接 TP）。但可达 sink 若是发往仓外下游的写（DMS/MQ/RPC：本仓仅 assemble + publish/发送，消费方不在本仓，无仓内 DB persist/mapper/tunnel 落地）→ harm（真写库）不可仓内核实 → 判 GENUINELY_UNCERTAIN，不得判 TP/likely_tp：仓外 consumer 是否真落库属部署事实，切片外不可证（GR-8 无真相不下判断）。区别于仓内 persist（mapper.insert/tunnel/transactionTemplate 内 persist）→ 仍 REAL。"
+  ],
+  "prompt_addendum": "缺失鉴权（CWE-862）攻击者视角：全无守卫的公开端点，在切片含可达危险 sink 时，缺失授权构成独立 CWE-862 漏洞——攻击者可经可达 sink 伪造/篡改业务记录、影响业务完整性。即使数据流无注入风险（如 MyBatis #{} 参数化），有可达写/越权 sink 即仍成立（参数化只否 filed 注入，不否 missing-auth 本身）。切片无可达危险 sink（写库/改数据/越权读写/命令/反序列化/SSRF 落地均无）时，无鉴权端点无可利用危害 → 非 CWE-862，至多 CWE-200 信息泄露单独判，不得判 TP/likely_tp。可达 sink 落仓外下游（DMS/MQ/RPC→仓外 consumer，本仓无 DB persist）时，harm 不可仓内核实 → 判 GENUINELY_UNCERTAIN，不得判 TP/likely_tp——underwrite 232 createSubPolicy 仅 DMS publish（sendSubPolicyMsg/sendSubjectMsg→仓外）即此形，非 REAL（无仓内 persist）非 NOT_REAL（有可达 sink 只是落仓外）。事实已预计算（authz_coverage）：方法级/类级守卫 + 全局拦截器三态，无需重复搜索。codeup-probe-core b60300ea 即此形：SAST 标 cwe_id=CWE-915，真 bug 是无鉴权的公开 createTask 端点（有写 sink taskService.create）。",
+  "addendum_overrides": {
+    "rpc_internal_facade": "**RPC-internal facade 缺失鉴权（CWE-862）可达性视角**：该入口方法所属类经 SOFA `<sofa:binding.bolt/>` 发布为内部 RPC facade（entry_nature=rpc_internal_facade，事实已预计算于 authz_coverage）。内部 RPC 方法无鉴权注解是常态（RPC 为服务间调用，非面向公网），单此一点不构成 CWE-862 缺失鉴权——回答必答步骤 1 时：该端点面向公网 = 否，除非另有公网 HTTP 调用者。但你须先核可达性：该 ServiceImpl 方法是否被公网 HTTP 端点（@Controller/@RestController + @RequestMapping/@PostMapping/@GetMapping 等公开映射）调用?用 who_calls 工具溯该 ServiceImpl 方法的调用者，追至 HTTP 入口。若存在公网 HTTP 调用路径：该 HTTP 路径的缺失鉴权构成真实 CWE-862（公网入口，非 RPC 本身）→ 判 TP/likely_tp。若无公网 HTTP 调用者（仅 RPC/内部调用可达）：不判 CWE-862 缺失鉴权 → 判 NOT_REAL/likely_fp（无可利用公网入口;RPC 鉴权属部署事实,非本仓可证）。可达性不可仓内核实（调用链断在仓外下游）→ 判 GENUINELY_UNCERTAIN，不得判 TP。注意：authz_coverage「无守卫」三轴事实仍成立，但「无守卫」对内部 RPC 非公网入口 = 常态，不直接推出 CWE-862;须以可达性定夺。"
+  },
+  "exemplars": [
+    {
+      "label": "正例·missing-auth（codeup-probe-core b60300ea 形）：公开端点 + 无任何鉴权守卫 + 业务写操作 → CWE-862",
+      "code": "@PostMapping(\"/probe/createTask\")\npublic Result createTask(@RequestBody TaskRequest req) {\n  // 无 @PreAuthorize，无全局拦截器，无身份校验\n  taskService.create(req); // 任意调用者可创建任意任务记录\n  return Result.ok();\n}"
+    },
+    {
+      "label": "反例·有鉴权守卫：方法级 @PreAuthorize 或全局 SecurityFilterChain 覆盖 → 非 missing-auth",
+      "code": "@PreAuthorize(\"hasRole('ADMIN')\")\n@PostMapping(\"/probe/createTask\")\npublic Result createTask(@RequestBody TaskRequest req) {\n  taskService.create(req); // 鉴权已校验\n  return Result.ok();\n}"
+    },
+    {
+      "label": "反例·无鉴权但无可达 sink（只读端点，codeup 081E1149 形）：公开端点 + 无鉴权 + reachable_sinks 空 → NOT_REAL（非 CWE-862，无可利用危害）",
+      "code": "@GetMapping(\"/task/autoAssign\")\npublic Result autoAssignTask(@PathVariable String taskId) {\n  // 无 @PreAuthorize，无全局拦截器\n  Task t = taskDao.selectById(taskId); // 只读，无写库/SQL拼接/命令/SSRF落地\n  return Result.ok(suggestAssign(t)); // 返回派工建议，不落库不改数据\n}"
+    },
+    {
+      "label": "反例·无鉴权但 sink 落仓外下游（underwrite 232/createSubPolicy 形）：公开端点 + 无鉴权 + 仅 DMS/MQ publish 到仓外 consumer（本仓无 DB persist/mapper/tunnel）→ GENUINELY_UNCERTAIN（harm 不可仓内核实，非 REAL 非 NOT_REAL）",
+      "code": "@PostMapping(\"/msg/retry\")\npublic Result retry(@RequestBody SubPolicyReq req) {\n  // 无 @PreAuthorize\n  subPolicyComponent.createSubPolicy(req); // 仅 sendSubPolicyMsg/sendSubjectMsg → DMS（仓外 consumer），本仓无 proposalRespository.persist\n  return Result.ok();\n}"
+    },
+    {
+      "label": "正例·RPC facade 经公网 HTTP 可达:ServiceImpl SOFA-bolt-发布 + @Controller 无鉴权公网调用 → CWE-862(公网入口,非 RPC)",
+      "code": "// zeus-facade-service.xml: <sofa:service interface=\"FooService\" ref=\"fooServiceImpl\"><sofa:binding.bolt/></sofa:service>\n@GetMapping(\"/foo/change\")\npublic Result change(@PathVariable String id) { // 公网 HTTP 端点,无 @PreAuthorize\n  fooServiceImpl.change(id); // 经公网可达该 RPC facade → 缺失鉴权构成 CWE-862\n  return Result.ok();\n}"
+    },
+    {
+      "label": "反例·RPC facade 仅内部可达:ServiceImpl SOFA-bolt-发布 + 无公网 HTTP 调用者(仅 RPC/内部调用) → NOT_REAL(RPC 非公网入口,无鉴权是常态)",
+      "code": "// zeus-facade-service.xml: <sofa:service interface=\"FooService\" ref=\"fooServiceImpl\"><sofa:binding.bolt/></sofa:service>\n// FooServiceImpl::change 仅被其他 ServiceImpl 经 RPC 调,无 @Controller 调者\npublic void change(String id) { fooDao.update(id); } // 无公网入口 → 非 CWE-862"
+    }
+  ]
+}

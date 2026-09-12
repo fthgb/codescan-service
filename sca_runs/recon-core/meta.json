@@ -1,0 +1,16 @@
+{
+  "scan_id": "recon-core",
+  "repo_key": "recon-core",
+  "status": "done",
+  "scanner_version": "v2.5.1",
+  "policy_version": 1,
+  "started_at": "2026-09-11T10:32:55Z",
+  "finished_at": "2026-09-11T10:32:58Z",
+  "duration_seconds": 3.499483,
+  "findings_count": 32,
+  "findings_by_severity": {
+    "critical": 7,
+    "high": 20,
+    "medium": 5
+  }
+}

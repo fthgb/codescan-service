@@ -1,0 +1,32 @@
+{
+  "name": "auth_privilege",
+  "trigger_signals": [
+    {"kind": "function_keywords", "pattern": "operatorId"},
+    {"kind": "function_keywords", "pattern": "getUserId"},
+    {"kind": "function_keywords", "pattern": "SecurityContextHolder"},
+    {"kind": "function_keywords", "pattern": "@PathVariable"},
+    {"kind": "function_keywords", "pattern": "getLoginUser"},
+    {"kind": "function_keywords", "pattern": "currentUser"},
+    {"kind": "paths", "pattern": "userId"},
+    {"kind": "paths", "pattern": "orderId"},
+    {"kind": "paths", "pattern": "taskCode"},
+    {"kind": "paths", "pattern": "lawsuitId"}
+  ],
+  "key_questions": [
+    "该端点是否校验调用者对资源 id 的所有权（不仅是身份认证）？",
+    "operatorId/userId 是请求方自报还是服务端从鉴权上下文取？自报即越权面。",
+    "资源 id 参数能否被攻击者改写指向他人资源？改写后是否经归属校验？",
+    "是否存在 @PreAuthorize/@Secured/hasAuthority 在方法或类级覆盖此操作？"
+  ],
+  "prompt_addendum": "越权/IDOR 攻击者视角：垂直越权（低权调用高权操作）、水平越权/IDOR（自报资源 id 访问他人资源）。filed CWE 贴错时此视角仍能凭 token 上桌——认识论组织，不绑 filed CWE。codeup-probe-core B2 即此形：SAST 因 #{taskCode} SQL 贴 sql_injection，真 bug 是无归属校验的 IDOR。",
+  "exemplars": [
+    {
+      "label": "正例·IDOR（codeup-probe-core B2 lawsuitRevoke 形）：@PathVariable 资源 id + 自报 operatorId + 无 @PreAuthorize → 水平越权",
+      "code": "@PostMapping(\"/lawsuit/{lawsuitId}/revoke\")\npublic Result revoke(@PathVariable String lawsuitId, @RequestBody RevokeRequest req) {\n  String operatorId = req.getOperatorId(); // 自报，非鉴权上下文\n  lawsuitService.revoke(lawsuitId, operatorId); // 未校验 operatorId 对 lawsuitId 的归属\n  return Result.ok();\n}"
+    },
+    {
+      "label": "反例·有归属守卫：方法级 @PreAuthorize 覆盖此操作 → 非越权（判 false_positive 须引用此守卫）",
+      "code": "@PreAuthorize(\"@authz.ownsLawsuit(#lawsuitId, authentication)\")\n@PostMapping(\"/lawsuit/{lawsuitId}/revoke\")\npublic Result revoke(@PathVariable String lawsuitId, @RequestBody RevokeRequest req) {\n  lawsuitService.revoke(lawsuitId); // 归属已校验\n  return Result.ok();\n}"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "license_allowlist": ["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC"],
+  "vuln_min_severity": "medium",
+  "blacklist": [],
+  "copyright_rules": [
+    {"match": "GPL-*", "type": "license-family", "reason": "传染性协议，涉版权出合规风险", "severity": "high"},
+    {"match": "AGPL-*", "type": "license-family", "reason": "传染性协议，涉版权出合规风险", "severity": "high"}
+  ]
+}

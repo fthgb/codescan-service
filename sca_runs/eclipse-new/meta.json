@@ -1,0 +1,16 @@
+{
+  "scan_id": "eclipse-new",
+  "repo_key": "eclipse-new",
+  "status": "done",
+  "scanner_version": "v2.5.1",
+  "policy_version": 1,
+  "started_at": "2026-09-11T11:48:48Z",
+  "finished_at": "2026-09-11T11:49:02Z",
+  "duration_seconds": 13.5131254,
+  "findings_count": 146,
+  "findings_by_severity": {
+    "critical": 27,
+    "high": 68,
+    "medium": 51
+  }
+}

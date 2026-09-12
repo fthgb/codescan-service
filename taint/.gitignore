@@ -1,0 +1,25 @@
+# 构建/临时产物
+*.exe~
+*.test.exe
+*.out
+*.log
+sim/_*.log
+_probe_out.log
+
+# 操作系统/编辑器
+.DS_Store
+Thumbs.db
+
+# sim 运行产物（缓存与扫描结果）
+sim/.cache/
+sim/results/
+sim/_probe_out.log
+
+# 构建产物
+sim.exe
+taint.exe
+code/
+docs/superpowers/
+
+# 代理临时导出文件（git 状态导出用，非仓库内容）
+_*.txt

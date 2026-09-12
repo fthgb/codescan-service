@@ -1,0 +1,2138 @@
+[
+  {
+    "alert_id": "codesafe-E585DB727F9D7AC6F69F23A4A5114198-jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java:1282",
+    "bughash": "2f2b371c97be6bdae9300fe3d8b19b9f49f35ebdf29e9fa675a3a86076909e5b",
+    "cwe_id": "CWE-89",
+    "is_generated": false,
+    "raw_output": {
+      "adv": "",
+      "auditMemo": "",
+      "auditResult": 0,
+      "auditResultOld": 0,
+      "auditState": 0,
+      "authorName": "季圣华",
+      "bug": 0,
+      "bugAudits": [],
+      "bugBegincol": 131,
+      "bugBeginline": 1282,
+      "bugContexts": [],
+      "bugEndcol": 136,
+      "bugEndline": 1282,
+      "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java",
+      "bugFilemd5": "09ebb349415c6ca414cfec5882222a0e",
+      "bugFunc": "getListWithStock",
+      "bugId": "E585DB727F9D7AC6F69F23A4A5114198",
+      "bugLevel": 5,
+      "bugLocations": [],
+      "bugTraces": [
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+          "bugId": "E585DB727F9D7AC6F69F23A4A5114198",
+          "codeBegincol": 77,
+          "codeBeginline": 583,
+          "codeEndcol": 82,
+          "codeEndline": 583,
+          "codePart": "来自于http请求的数据从getListWithStock()方法第9个参数进入",
+          "codeParttype": "getListWithStock",
+          "fatherTraceid": "0",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/18",
+          "fileType": "java",
+          "kind": 2,
+          "levelOrder": 1,
+          "pkResbugtrace": 5184,
+          "traceGroup": 0,
+          "traceId": "1"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+          "bugId": "E585DB727F9D7AC6F69F23A4A5114198",
+          "codeBegincol": 56,
+          "codeBeginline": 605,
+          "codeEndcol": 61,
+          "codeEndline": 605,
+          "codePart": "不可信的数据从safeSqlParse()方法第1个参数进入,然后从返回值返回",
+          "codeParttype": "safeSqlParse",
+          "fatherTraceid": "0",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/18",
+          "fileType": "java",
+          "kind": 0,
+          "levelOrder": 1,
+          "pkResbugtrace": 5185,
+          "traceGroup": 0,
+          "traceId": "2"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/utils/StringUtil.java",
+          "bugId": "E585DB727F9D7AC6F69F23A4A5114198",
+          "codeBegincol": 16,
+          "codeBeginline": 366,
+          "codeEndcol": 24,
+          "codeEndline": 366,
+          "codePart": "不可信的数据从replaceAll()方法this参数进入,然后从返回值返回",
+          "codeParttype": "replaceAll",
+          "fatherTraceid": "2",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/305",
+          "fileType": "java",
+          "kind": 0,
+          "levelOrder": 2,
+          "pkResbugtrace": 5186,
+          "traceGroup": 0,
+          "traceId": "3"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/utils/StringUtil.java",
+          "bugId": "E585DB727F9D7AC6F69F23A4A5114198",
+          "codeBegincol": 9,
+          "codeBeginline": 366,
+          "codeEndcol": 56,
+          "codeEndline": 366,
+          "codePart": "返回不可信的数据",
+          "codeParttype": "Return",
+          "fatherTraceid": "2",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/305",
+          "fileType": "java",
+          "kind": 0,
+          "levelOrder": 2,
+          "pkResbugtrace": 5187,
+          "traceGroup": 0,
+          "traceId": "4"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+          "bugId": "E585DB727F9D7AC6F69F23A4A5114198",
+          "codeBegincol": 32,
+          "codeBeginline": 605,
+          "codeEndcol": 62,
+          "codeEndline": 605,
+          "codePart": "不可信的数据从getListWithStock()方法第6个参数进入",
+          "codeParttype": "getListWithStock",
+          "fatherTraceid": "0",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/18",
+          "fileType": "java",
+          "kind": 0,
+          "levelOrder": 1,
+          "pkResbugtrace": 5188,
+          "traceGroup": 0,
+          "traceId": "3"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java",
+          "bugId": "E585DB727F9D7AC6F69F23A4A5114198",
+          "codeBegincol": 131,
+          "codeBeginline": 1282,
+          "codeEndcol": 136,
+          "codeEndline": 1282,
+          "codePart": "不可信的数据从getListWithStock()方法第6个参数进入",
+          "codeParttype": "getListWithStock",
+          "fatherTraceid": "0",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/229",
+          "fileType": "java",
+          "kind": 1,
+          "levelOrder": 1,
+          "pkResbugtrace": 5189,
+          "traceGroup": 0,
+          "traceId": "4"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml",
+          "bugId": "E585DB727F9D7AC6F69F23A4A5114198",
+          "codeBegincol": 0,
+          "codeBeginline": 646,
+          "codeEndcol": 0,
+          "codeEndline": 646,
+          "codePart": "column",
+          "codeParttype": "column",
+          "fatherTraceid": "4",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/342",
+          "fileType": "xml",
+          "kind": 0,
+          "levelOrder": 2,
+          "pkResbugtrace": 5190,
+          "traceGroup": 0,
+          "traceId": "5"
+        }
+      ],
+      "commitId": "f56b3774d6891f38572509ed6c12f284e89526e4",
+      "commitMsg": "给商品库存接口增加仓位货架的查询参数",
+      "commitTime": "2023/05/24 23:07:47",
+      "domainType": 0,
+      "dsp": "",
+      "email": "752718920@qq.com",
+      "enginId": "dataflow",
+      "fileEncoding": "UTF-8",
+      "fileType": "java",
+      "firstBatch": 1,
+      "gitBranchName": "master",
+      "high": 0,
+      "low": 0,
+      "md5": "77b3c1fbba78ae6fdc68c6cc0e981601",
+      "medium": 0,
+      "normal": 0,
+      "pkResbug": 659,
+      "pkTask": 68643,
+      "ruleCode": "02000010020016",
+      "ruleName": "SQL注入：MyBatis",
+      "ruleRefs": [
+        {
+          "language": 0,
+          "pkReference": 103154,
+          "referenceType": "CWE TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "CWE ID 89",
+          "referenceVersion": "2022",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103155,
+          "referenceType": "CWE TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "CWE ID 89",
+          "referenceVersion": "2021",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103156,
+          "referenceType": "CWE TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "CWE ID 89",
+          "referenceVersion": "2020",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103157,
+          "referenceType": "CWE TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "CWE ID 89",
+          "referenceVersion": "2019",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103158,
+          "referenceType": "CWE/SANS TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "Insecure Interaction - CWE ID 89",
+          "referenceVersion": "2011",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103159,
+          "referenceType": "CWE/SANS TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "Insecure Interaction - CWE ID 89",
+          "referenceVersion": "2010",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103160,
+          "referenceType": "CWE/SANS TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "Insecure Interaction - CWE ID 89",
+          "referenceVersion": "2009",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103161,
+          "referenceType": "CWE",
+          "referenceTypeId": "89",
+          "referenceValue": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+          "referenceVersion": "",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103162,
+          "referenceType": "CERT",
+          "referenceTypeId": "IDS00-J",
+          "referenceValue": "Prevent SQL injection",
+          "referenceVersion": "Java",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103163,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A3 Injection",
+          "referenceValue": "",
+          "referenceVersion": "2021",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103164,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1 Injection",
+          "referenceValue": "",
+          "referenceVersion": "2017",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103165,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1 Injection",
+          "referenceValue": "",
+          "referenceVersion": "2013",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103166,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1 Injection",
+          "referenceValue": "",
+          "referenceVersion": "2010",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103167,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A2 Injection Flaws",
+          "referenceValue": "",
+          "referenceVersion": "2007",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103168,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A6 Injection Flaws",
+          "referenceValue": "",
+          "referenceVersion": "2004",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103169,
+          "referenceType": "ISO/IEC TR 24772",
+          "referenceTypeId": "",
+          "referenceValue": "Application Vulnerabilities Injection [RST]",
+          "referenceVersion": "2013",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103170,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.6",
+          "referenceValue": "",
+          "referenceVersion": "1.1",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103171,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.2",
+          "referenceValue": "",
+          "referenceVersion": "1.2",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103172,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.2",
+          "referenceValue": "",
+          "referenceVersion": "1.2.1",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103173,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.1",
+          "referenceValue": "",
+          "referenceVersion": "2.0",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103174,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.1",
+          "referenceValue": "",
+          "referenceVersion": "3.0",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103175,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.1",
+          "referenceValue": "",
+          "referenceVersion": "3.1",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103176,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.1",
+          "referenceValue": "",
+          "referenceVersion": "3.2",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103177,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.1",
+          "referenceValue": "",
+          "referenceVersion": "3.2.1",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103178,
+          "referenceType": "GB/T 39412-2020",
+          "referenceTypeId": "6.安全功能缺陷审计",
+          "referenceValue": "6.1.数据清洗:6.1.1.输入验证:6.1.1.3.绕过数据净化和验证",
+          "referenceVersion": "",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103179,
+          "referenceType": "OWASP ASVS",
+          "referenceTypeId": "5.3.4",
+          "referenceValue": "",
+          "referenceVersion": "v4.0.3",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103180,
+          "referenceType": "OWASP ASVS",
+          "referenceTypeId": "5.3.5",
+          "referenceValue": "",
+          "referenceVersion": "v4.0.3",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103181,
+          "referenceType": "GB/T 34944-2017 Java",
+          "referenceTypeId": "6.2.3.数据处理",
+          "referenceValue": "6.2.3.4.SQL注入",
+          "referenceVersion": "",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 132105,
+          "referenceType": "CWE VIEW: Seven Pernicious Kingdoms",
+          "referenceTypeId": "",
+          "referenceValue": "Input Validation and Representation",
+          "referenceVersion": "1005",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 132106,
+          "referenceType": "CWE TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "CWE ID 89",
+          "referenceVersion": "2023",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 132107,
+          "referenceType": "OWASP API Security TOP 10",
+          "referenceTypeId": "API8 Injection",
+          "referenceValue": "",
+          "referenceVersion": "2019",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 132108,
+          "referenceType": "ISO/IEC 5055:2021",
+          "referenceTypeId": "6.7 Automated Source Code Security Measure Element Descriptions",
+          "referenceValue": "7.4.66 CWE-89 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+          "referenceVersion": "",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 132109,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.2.4",
+          "referenceValue": "",
+          "referenceVersion": "4.0",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147159,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A3",
+          "referenceValue": "Injection",
+          "referenceVersion": "2021",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147160,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1",
+          "referenceValue": "Injection",
+          "referenceVersion": "2017",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147161,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1",
+          "referenceValue": "Injection",
+          "referenceVersion": "2013",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147162,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1",
+          "referenceValue": "Injection",
+          "referenceVersion": "2010",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147163,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A2",
+          "referenceValue": "Injection Flaws",
+          "referenceVersion": "2007",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147164,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A6",
+          "referenceValue": "Injection Flaws",
+          "referenceVersion": "2004",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147165,
+          "referenceType": "OWASP API Security TOP 10",
+          "referenceTypeId": "API8",
+          "referenceValue": "Injection",
+          "referenceVersion": "2019",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147166,
+          "referenceType": "Web Application Security Consortium",
+          "referenceTypeId": "",
+          "referenceValue": "Information Leakage",
+          "referenceVersion": "1.00",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147167,
+          "referenceType": "Web Application Security Consortium",
+          "referenceTypeId": "",
+          "referenceValue": "SQL Injection",
+          "referenceVersion": "1.00",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147168,
+          "referenceType": "Web Application Security Consortium",
+          "referenceTypeId": "",
+          "referenceValue": "Information Leakage (WASC-13)",
+          "referenceVersion": "2.00",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147169,
+          "referenceType": "Web Application Security Consortium",
+          "referenceTypeId": "",
+          "referenceValue": "SQL Injection (WASC-19)",
+          "referenceVersion": "2.00",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        }
+      ],
+      "ruleType": "代码注入",
+      "ruleVO": {
+        "apiSec": true,
+        "apiSecOnly": false,
+        "backDesc": "",
+        "backShort": "",
+        "backSolution": "",
+        "checkType": 0,
+        "defaultRule": 1,
+        "domainType": 1,
+        "isCustom": 0,
+        "isUse": "Y",
+        "language": 0,
+        "level": 5,
+        "obsolete": false,
+        "pkRule": 1222,
+        "rawDomainType": 1,
+        "refs": [
+          {
+            "referenceType": "CWE TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "CWE ID 89",
+            "referenceVersion": "2022",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "CWE ID 89",
+            "referenceVersion": "2021",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "CWE ID 89",
+            "referenceVersion": "2020",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "CWE ID 89",
+            "referenceVersion": "2019",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE/SANS TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "Insecure Interaction - CWE ID 89",
+            "referenceVersion": "2011",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE/SANS TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "Insecure Interaction - CWE ID 89",
+            "referenceVersion": "2010",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE/SANS TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "Insecure Interaction - CWE ID 89",
+            "referenceVersion": "2009",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE",
+            "referenceTypeId": "89",
+            "referenceValue": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+            "referenceVersion": "",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CERT",
+            "referenceTypeId": "IDS00-J",
+            "referenceValue": "Prevent SQL injection",
+            "referenceVersion": "Java",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A3 Injection",
+            "referenceValue": "",
+            "referenceVersion": "2021",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1 Injection",
+            "referenceValue": "",
+            "referenceVersion": "2017",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1 Injection",
+            "referenceValue": "",
+            "referenceVersion": "2013",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1 Injection",
+            "referenceValue": "",
+            "referenceVersion": "2010",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A2 Injection Flaws",
+            "referenceValue": "",
+            "referenceVersion": "2007",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A6 Injection Flaws",
+            "referenceValue": "",
+            "referenceVersion": "2004",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "ISO/IEC TR 24772",
+            "referenceTypeId": "",
+            "referenceValue": "Application Vulnerabilities Injection [RST]",
+            "referenceVersion": "2013",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.6",
+            "referenceValue": "",
+            "referenceVersion": "1.1",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.2",
+            "referenceValue": "",
+            "referenceVersion": "1.2",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.2",
+            "referenceValue": "",
+            "referenceVersion": "1.2.1",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.1",
+            "referenceValue": "",
+            "referenceVersion": "2.0",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.1",
+            "referenceValue": "",
+            "referenceVersion": "3.0",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.1",
+            "referenceValue": "",
+            "referenceVersion": "3.1",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.1",
+            "referenceValue": "",
+            "referenceVersion": "3.2",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.1",
+            "referenceValue": "",
+            "referenceVersion": "3.2.1",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "GB/T 39412-2020",
+            "referenceTypeId": "6.安全功能缺陷审计",
+            "referenceValue": "6.1.数据清洗:6.1.1.输入验证:6.1.1.3.绕过数据净化和验证",
+            "referenceVersion": "",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP ASVS",
+            "referenceTypeId": "5.3.4",
+            "referenceValue": "",
+            "referenceVersion": "v4.0.3",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP ASVS",
+            "referenceTypeId": "5.3.5",
+            "referenceValue": "",
+            "referenceVersion": "v4.0.3",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "GB/T 34944-2017 Java",
+            "referenceTypeId": "6.2.3.数据处理",
+            "referenceValue": "6.2.3.4.SQL注入",
+            "referenceVersion": "",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE VIEW: Seven Pernicious Kingdoms",
+            "referenceTypeId": "",
+            "referenceValue": "Input Validation and Representation",
+            "referenceVersion": "1005",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "CWE ID 89",
+            "referenceVersion": "2023",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP API Security TOP 10",
+            "referenceTypeId": "API8 Injection",
+            "referenceValue": "",
+            "referenceVersion": "2019",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "ISO/IEC 5055:2021",
+            "referenceTypeId": "6.7 Automated Source Code Security Measure Element Descriptions",
+            "referenceValue": "7.4.66 CWE-89 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+            "referenceVersion": "",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.2.4",
+            "referenceValue": "",
+            "referenceVersion": "4.0",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A3",
+            "referenceValue": "Injection",
+            "referenceVersion": "2021",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1",
+            "referenceValue": "Injection",
+            "referenceVersion": "2017",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1",
+            "referenceValue": "Injection",
+            "referenceVersion": "2013",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1",
+            "referenceValue": "Injection",
+            "referenceVersion": "2010",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A2",
+            "referenceValue": "Injection Flaws",
+            "referenceVersion": "2007",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A6",
+            "referenceValue": "Injection Flaws",
+            "referenceVersion": "2004",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP API Security TOP 10",
+            "referenceTypeId": "API8",
+            "referenceValue": "Injection",
+            "referenceVersion": "2019",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "Web Application Security Consortium",
+            "referenceTypeId": "",
+            "referenceValue": "Information Leakage",
+            "referenceVersion": "1.00",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "Web Application Security Consortium",
+            "referenceTypeId": "",
+            "referenceValue": "SQL Injection",
+            "referenceVersion": "1.00",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "Web Application Security Consortium",
+            "referenceTypeId": "",
+            "referenceValue": "Information Leakage (WASC-13)",
+            "referenceVersion": "2.00",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "Web Application Security Consortium",
+            "referenceTypeId": "",
+            "referenceValue": "SQL Injection (WASC-19)",
+            "referenceVersion": "2.00",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          }
+        ],
+        "ruleCode": "02000010020016",
+        "ruleDesc": "SQL注入是一种数据库攻击手段。攻击者通过向应用程序提交恶意代码来改变原SQL语句的含义，进而执行任意SQL命令，达到入侵数据库乃至操作系统的目的。在Mybatis Mapper Xml中，`#`变量名称创建参数化查询SQL语句,不会导致SQL注入。而`$`变量名称直接使用SQL指令，会导致SQL注入攻击。\n\n**例如**：以下代码片段采用`$`变量名称动态地构造并执行了SQL查询。\n```xml\n\u003c!--select user information by name--\u003e\n\u003cselect id=\"queryByUserName\" resultMap=\"userResultMap\" parameterType=\"String\"\u003e\n    select * from db_user where user_name=${username}\n\u003c/select\u003e\n```\n用户调用以下命令时：\n```java\nString username = request.getParameter(\"name\");\nuser.queryByUserName(username);\n```\n如果攻击者能够替代`username`中的任意字符串，它们可以使用下面的关于`username`的字符串进行SQL注入。\n`validuser' OR '1'='1`\n当其注入到命令时，命令就会变成：\n`select * from db_user where user_name ='validuser' OR '1'='1'`",
+        "ruleName": "SQL注入：MyBatis",
+        "ruleType": "代码注入",
+        "shortDsp": "\u003cp th:if=\"${funcNameisEmpty}\" th:text=\"在+'`'+${fileName}+'`'+的+'`'+${funcName}+'`'+方法中的第+'`'+${line}+'`'+行会发生+${categoryName}+的风险。\" th:remove=\"tag\"\u003e\u003c/p\u003e\n\u003cp th:unless=\"${funcNameisEmpty}\" th:text=\"在+'`'+${fileName}+'`'+的第+'`'+${line}+'`'+行会发生+${categoryName}+的风险。\" th:remove=\"tag\"\u003e\u003c/p\u003e",
+        "solution": "造成SQL注入攻击的根本原因在于攻击者可以改变SQL查询的上下文，使程序员原本要作为数据解析的数值，被篡改为命令了。防止SQL注入的方法如下：\n1. 正确使用参数化API进行SQL查询。\n2. 如果构造SQL指令时需要动态加入约束条件，可以通过创建一份合法字符串列表，使其对应于可能要加入到SQL指令中的不同元素，来避免SQL注入攻击。\n\n**例如**：以下代码片段采用`#`变量名称，创建参数化查询SQL语句。\n```xml\n\u003c!--select user information by name--\u003e\n\u003cselect id=\"queryByUserName\" resultMap=\"userResultMap\" parameterType=\"String\"\u003e\n    select * from db_user where user_name=#{username}\n\u003c/select\u003e\n```",
+        "standardName": "Sky规范",
+        "standardType": 0,
+        "tag": "security",
+        "tool": "Sky",
+        "whiteList": "yes"
+      },
+      "sourcePoint": "7be7d94233a63bcf34676e93339a4406",
+      "standardName": "Sky规范",
+      "tkInfo": {
+        "bugIdList": [],
+        "description": "",
+        "isMybug": "\u0000",
+        "pkRuleList": [],
+        "ruleAndbugList": [],
+        "summary": "分类：Sky规范--代码注入--SQL注入：MyBatis--文件：jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java行1282"
+      },
+      "tools": "Sky",
+      "typeName": "SQL注入：MyBatis",
+      "typeName2": "代码注入",
+      "uri": "http://tb.devops.aliyun.com/codeup/cathay/safe/ceshi.git"
+    },
+    "severity": "high",
+    "sink": {
+      "file": "jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java",
+      "function": "getListWithStock",
+      "line": 1282,
+      "variable": ""
+    },
+    "source": {
+      "file": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+      "function": "",
+      "line": 583,
+      "variable": "来自于http请求的数据从getListWithStock()方法第9个参数进入"
+    },
+    "taint_path": [
+      {
+        "file": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+        "function": "",
+        "line": 583,
+        "message": "来自于http请求的数据从getListWithStock()方法第9个参数进入"
+      },
+      {
+        "file": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+        "function": "",
+        "line": 605,
+        "message": "不可信的数据从safeSqlParse()方法第1个参数进入,然后从返回值返回"
+      },
+      {
+        "file": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+        "function": "",
+        "line": 605,
+        "message": "不可信的数据从getListWithStock()方法第6个参数进入"
+      },
+      {
+        "file": "jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java",
+        "function": "",
+        "line": 1282,
+        "message": "不可信的数据从getListWithStock()方法第6个参数进入"
+      },
+      {
+        "file": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml",
+        "function": "",
+        "line": 646,
+        "message": "column"
+      }
+    ],
+    "taint_path_complete": true,
+    "vulnerability_type": "sql_injection"
+  },
+  {
+    "alert_id": "codesafe-6D64DB49C028D8588538C46EF6060ED7-jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java:1282",
+    "bughash": "8ea83e4fb5660a060fba1b2bca887068dfccd530b8305f51e0da252d2aa16469",
+    "cwe_id": "CWE-89",
+    "is_generated": false,
+    "raw_output": {
+      "adv": "",
+      "auditMemo": "",
+      "auditResult": 0,
+      "auditResultOld": 0,
+      "auditState": 0,
+      "authorName": "季圣华",
+      "bug": 0,
+      "bugAudits": [],
+      "bugBegincol": 139,
+      "bugBeginline": 1282,
+      "bugContexts": [],
+      "bugEndcol": 143,
+      "bugEndline": 1282,
+      "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java",
+      "bugFilemd5": "48b836af8cfa8d6cda2a574adc818f46",
+      "bugFunc": "getListWithStock",
+      "bugId": "6D64DB49C028D8588538C46EF6060ED7",
+      "bugLevel": 5,
+      "bugLocations": [],
+      "bugTraces": [
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+          "bugId": "6D64DB49C028D8588538C46EF6060ED7",
+          "codeBegincol": 76,
+          "codeBeginline": 584,
+          "codeEndcol": 80,
+          "codeEndline": 584,
+          "codePart": "来自于http请求的数据从getListWithStock()方法第10个参数进入",
+          "codeParttype": "getListWithStock",
+          "fatherTraceid": "0",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/18",
+          "fileType": "java",
+          "kind": 2,
+          "levelOrder": 1,
+          "pkResbugtrace": 5417,
+          "traceGroup": 0,
+          "traceId": "1"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+          "bugId": "6D64DB49C028D8588538C46EF6060ED7",
+          "codeBegincol": 89,
+          "codeBeginline": 605,
+          "codeEndcol": 93,
+          "codeEndline": 605,
+          "codePart": "不可信的数据从safeSqlParse()方法第1个参数进入,然后从返回值返回",
+          "codeParttype": "safeSqlParse",
+          "fatherTraceid": "0",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/18",
+          "fileType": "java",
+          "kind": 0,
+          "levelOrder": 1,
+          "pkResbugtrace": 5418,
+          "traceGroup": 0,
+          "traceId": "2"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/utils/StringUtil.java",
+          "bugId": "6D64DB49C028D8588538C46EF6060ED7",
+          "codeBegincol": 16,
+          "codeBeginline": 366,
+          "codeEndcol": 24,
+          "codeEndline": 366,
+          "codePart": "不可信的数据从replaceAll()方法this参数进入,然后从返回值返回",
+          "codeParttype": "replaceAll",
+          "fatherTraceid": "2",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/305",
+          "fileType": "java",
+          "kind": 0,
+          "levelOrder": 2,
+          "pkResbugtrace": 5419,
+          "traceGroup": 0,
+          "traceId": "3"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/utils/StringUtil.java",
+          "bugId": "6D64DB49C028D8588538C46EF6060ED7",
+          "codeBegincol": 9,
+          "codeBeginline": 366,
+          "codeEndcol": 56,
+          "codeEndline": 366,
+          "codePart": "返回不可信的数据",
+          "codeParttype": "Return",
+          "fatherTraceid": "2",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/305",
+          "fileType": "java",
+          "kind": 0,
+          "levelOrder": 2,
+          "pkResbugtrace": 5420,
+          "traceGroup": 0,
+          "traceId": "4"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+          "bugId": "6D64DB49C028D8588538C46EF6060ED7",
+          "codeBegincol": 65,
+          "codeBeginline": 605,
+          "codeEndcol": 94,
+          "codeEndline": 605,
+          "codePart": "不可信的数据从getListWithStock()方法第7个参数进入",
+          "codeParttype": "getListWithStock",
+          "fatherTraceid": "0",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/18",
+          "fileType": "java",
+          "kind": 0,
+          "levelOrder": 1,
+          "pkResbugtrace": 5421,
+          "traceGroup": 0,
+          "traceId": "3"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java",
+          "bugId": "6D64DB49C028D8588538C46EF6060ED7",
+          "codeBegincol": 139,
+          "codeBeginline": 1282,
+          "codeEndcol": 143,
+          "codeEndline": 1282,
+          "codePart": "不可信的数据从getListWithStock()方法第7个参数进入",
+          "codeParttype": "getListWithStock",
+          "fatherTraceid": "0",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/229",
+          "fileType": "java",
+          "kind": 1,
+          "levelOrder": 1,
+          "pkResbugtrace": 5422,
+          "traceGroup": 0,
+          "traceId": "4"
+        },
+        {
+          "bugFile": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml",
+          "bugId": "6D64DB49C028D8588538C46EF6060ED7",
+          "codeBegincol": 0,
+          "codeBeginline": 646,
+          "codeEndcol": 0,
+          "codeEndline": 646,
+          "codePart": "order",
+          "codeParttype": "order",
+          "fatherTraceid": "4",
+          "fileEncoding": "UTF-8",
+          "filePath": "0/342",
+          "fileType": "xml",
+          "kind": 0,
+          "levelOrder": 2,
+          "pkResbugtrace": 5423,
+          "traceGroup": 0,
+          "traceId": "5"
+        }
+      ],
+      "commitId": "f56b3774d6891f38572509ed6c12f284e89526e4",
+      "commitMsg": "给商品库存接口增加仓位货架的查询参数",
+      "commitTime": "2023/05/24 23:07:47",
+      "domainType": 0,
+      "dsp": "",
+      "email": "752718920@qq.com",
+      "enginId": "dataflow",
+      "fileEncoding": "UTF-8",
+      "fileType": "java",
+      "firstBatch": 1,
+      "gitBranchName": "master",
+      "high": 0,
+      "low": 0,
+      "md5": "0ae95c545eb3eeb46af1c1e1a622db95",
+      "medium": 0,
+      "normal": 0,
+      "pkResbug": 689,
+      "pkTask": 68643,
+      "ruleCode": "02000010020016",
+      "ruleName": "SQL注入：MyBatis",
+      "ruleRefs": [
+        {
+          "language": 0,
+          "pkReference": 103154,
+          "referenceType": "CWE TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "CWE ID 89",
+          "referenceVersion": "2022",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103155,
+          "referenceType": "CWE TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "CWE ID 89",
+          "referenceVersion": "2021",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103156,
+          "referenceType": "CWE TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "CWE ID 89",
+          "referenceVersion": "2020",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103157,
+          "referenceType": "CWE TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "CWE ID 89",
+          "referenceVersion": "2019",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103158,
+          "referenceType": "CWE/SANS TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "Insecure Interaction - CWE ID 89",
+          "referenceVersion": "2011",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103159,
+          "referenceType": "CWE/SANS TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "Insecure Interaction - CWE ID 89",
+          "referenceVersion": "2010",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103160,
+          "referenceType": "CWE/SANS TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "Insecure Interaction - CWE ID 89",
+          "referenceVersion": "2009",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103161,
+          "referenceType": "CWE",
+          "referenceTypeId": "89",
+          "referenceValue": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+          "referenceVersion": "",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103162,
+          "referenceType": "CERT",
+          "referenceTypeId": "IDS00-J",
+          "referenceValue": "Prevent SQL injection",
+          "referenceVersion": "Java",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103163,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A3 Injection",
+          "referenceValue": "",
+          "referenceVersion": "2021",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103164,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1 Injection",
+          "referenceValue": "",
+          "referenceVersion": "2017",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103165,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1 Injection",
+          "referenceValue": "",
+          "referenceVersion": "2013",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103166,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1 Injection",
+          "referenceValue": "",
+          "referenceVersion": "2010",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103167,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A2 Injection Flaws",
+          "referenceValue": "",
+          "referenceVersion": "2007",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103168,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A6 Injection Flaws",
+          "referenceValue": "",
+          "referenceVersion": "2004",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103169,
+          "referenceType": "ISO/IEC TR 24772",
+          "referenceTypeId": "",
+          "referenceValue": "Application Vulnerabilities Injection [RST]",
+          "referenceVersion": "2013",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103170,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.6",
+          "referenceValue": "",
+          "referenceVersion": "1.1",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103171,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.2",
+          "referenceValue": "",
+          "referenceVersion": "1.2",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103172,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.2",
+          "referenceValue": "",
+          "referenceVersion": "1.2.1",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103173,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.1",
+          "referenceValue": "",
+          "referenceVersion": "2.0",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103174,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.1",
+          "referenceValue": "",
+          "referenceVersion": "3.0",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103175,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.1",
+          "referenceValue": "",
+          "referenceVersion": "3.1",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103176,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.1",
+          "referenceValue": "",
+          "referenceVersion": "3.2",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103177,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.5.1",
+          "referenceValue": "",
+          "referenceVersion": "3.2.1",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103178,
+          "referenceType": "GB/T 39412-2020",
+          "referenceTypeId": "6.安全功能缺陷审计",
+          "referenceValue": "6.1.数据清洗:6.1.1.输入验证:6.1.1.3.绕过数据净化和验证",
+          "referenceVersion": "",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103179,
+          "referenceType": "OWASP ASVS",
+          "referenceTypeId": "5.3.4",
+          "referenceValue": "",
+          "referenceVersion": "v4.0.3",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103180,
+          "referenceType": "OWASP ASVS",
+          "referenceTypeId": "5.3.5",
+          "referenceValue": "",
+          "referenceVersion": "v4.0.3",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 103181,
+          "referenceType": "GB/T 34944-2017 Java",
+          "referenceTypeId": "6.2.3.数据处理",
+          "referenceValue": "6.2.3.4.SQL注入",
+          "referenceVersion": "",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 132105,
+          "referenceType": "CWE VIEW: Seven Pernicious Kingdoms",
+          "referenceTypeId": "",
+          "referenceValue": "Input Validation and Representation",
+          "referenceVersion": "1005",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 132106,
+          "referenceType": "CWE TOP 25",
+          "referenceTypeId": "",
+          "referenceValue": "CWE ID 89",
+          "referenceVersion": "2023",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 132107,
+          "referenceType": "OWASP API Security TOP 10",
+          "referenceTypeId": "API8 Injection",
+          "referenceValue": "",
+          "referenceVersion": "2019",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 132108,
+          "referenceType": "ISO/IEC 5055:2021",
+          "referenceTypeId": "6.7 Automated Source Code Security Measure Element Descriptions",
+          "referenceValue": "7.4.66 CWE-89 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+          "referenceVersion": "",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 132109,
+          "referenceType": "PCI DSS",
+          "referenceTypeId": "Requirement 6.2.4",
+          "referenceValue": "",
+          "referenceVersion": "4.0",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147159,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A3",
+          "referenceValue": "Injection",
+          "referenceVersion": "2021",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147160,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1",
+          "referenceValue": "Injection",
+          "referenceVersion": "2017",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147161,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1",
+          "referenceValue": "Injection",
+          "referenceVersion": "2013",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147162,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A1",
+          "referenceValue": "Injection",
+          "referenceVersion": "2010",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147163,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A2",
+          "referenceValue": "Injection Flaws",
+          "referenceVersion": "2007",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147164,
+          "referenceType": "OWASP TOP 10",
+          "referenceTypeId": "A6",
+          "referenceValue": "Injection Flaws",
+          "referenceVersion": "2004",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147165,
+          "referenceType": "OWASP API Security TOP 10",
+          "referenceTypeId": "API8",
+          "referenceValue": "Injection",
+          "referenceVersion": "2019",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147166,
+          "referenceType": "Web Application Security Consortium",
+          "referenceTypeId": "",
+          "referenceValue": "Information Leakage",
+          "referenceVersion": "1.00",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147167,
+          "referenceType": "Web Application Security Consortium",
+          "referenceTypeId": "",
+          "referenceValue": "SQL Injection",
+          "referenceVersion": "1.00",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147168,
+          "referenceType": "Web Application Security Consortium",
+          "referenceTypeId": "",
+          "referenceValue": "Information Leakage (WASC-13)",
+          "referenceVersion": "2.00",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        },
+        {
+          "language": 0,
+          "pkReference": 147169,
+          "referenceType": "Web Application Security Consortium",
+          "referenceTypeId": "",
+          "referenceValue": "SQL Injection (WASC-19)",
+          "referenceVersion": "2.00",
+          "ruleCode": "02000010020016",
+          "tool": "Sky"
+        }
+      ],
+      "ruleType": "代码注入",
+      "ruleVO": {
+        "apiSec": true,
+        "apiSecOnly": false,
+        "backDesc": "",
+        "backShort": "",
+        "backSolution": "",
+        "checkType": 0,
+        "defaultRule": 1,
+        "domainType": 1,
+        "isCustom": 0,
+        "isUse": "Y",
+        "language": 0,
+        "level": 5,
+        "obsolete": false,
+        "pkRule": 1222,
+        "rawDomainType": 1,
+        "refs": [
+          {
+            "referenceType": "CWE TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "CWE ID 89",
+            "referenceVersion": "2022",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "CWE ID 89",
+            "referenceVersion": "2021",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "CWE ID 89",
+            "referenceVersion": "2020",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "CWE ID 89",
+            "referenceVersion": "2019",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE/SANS TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "Insecure Interaction - CWE ID 89",
+            "referenceVersion": "2011",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE/SANS TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "Insecure Interaction - CWE ID 89",
+            "referenceVersion": "2010",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE/SANS TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "Insecure Interaction - CWE ID 89",
+            "referenceVersion": "2009",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE",
+            "referenceTypeId": "89",
+            "referenceValue": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+            "referenceVersion": "",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CERT",
+            "referenceTypeId": "IDS00-J",
+            "referenceValue": "Prevent SQL injection",
+            "referenceVersion": "Java",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A3 Injection",
+            "referenceValue": "",
+            "referenceVersion": "2021",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1 Injection",
+            "referenceValue": "",
+            "referenceVersion": "2017",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1 Injection",
+            "referenceValue": "",
+            "referenceVersion": "2013",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1 Injection",
+            "referenceValue": "",
+            "referenceVersion": "2010",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A2 Injection Flaws",
+            "referenceValue": "",
+            "referenceVersion": "2007",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A6 Injection Flaws",
+            "referenceValue": "",
+            "referenceVersion": "2004",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "ISO/IEC TR 24772",
+            "referenceTypeId": "",
+            "referenceValue": "Application Vulnerabilities Injection [RST]",
+            "referenceVersion": "2013",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.6",
+            "referenceValue": "",
+            "referenceVersion": "1.1",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.2",
+            "referenceValue": "",
+            "referenceVersion": "1.2",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.2",
+            "referenceValue": "",
+            "referenceVersion": "1.2.1",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.1",
+            "referenceValue": "",
+            "referenceVersion": "2.0",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.1",
+            "referenceValue": "",
+            "referenceVersion": "3.0",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.1",
+            "referenceValue": "",
+            "referenceVersion": "3.1",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.1",
+            "referenceValue": "",
+            "referenceVersion": "3.2",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.5.1",
+            "referenceValue": "",
+            "referenceVersion": "3.2.1",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "GB/T 39412-2020",
+            "referenceTypeId": "6.安全功能缺陷审计",
+            "referenceValue": "6.1.数据清洗:6.1.1.输入验证:6.1.1.3.绕过数据净化和验证",
+            "referenceVersion": "",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP ASVS",
+            "referenceTypeId": "5.3.4",
+            "referenceValue": "",
+            "referenceVersion": "v4.0.3",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP ASVS",
+            "referenceTypeId": "5.3.5",
+            "referenceValue": "",
+            "referenceVersion": "v4.0.3",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "GB/T 34944-2017 Java",
+            "referenceTypeId": "6.2.3.数据处理",
+            "referenceValue": "6.2.3.4.SQL注入",
+            "referenceVersion": "",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE VIEW: Seven Pernicious Kingdoms",
+            "referenceTypeId": "",
+            "referenceValue": "Input Validation and Representation",
+            "referenceVersion": "1005",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "CWE TOP 25",
+            "referenceTypeId": "",
+            "referenceValue": "CWE ID 89",
+            "referenceVersion": "2023",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP API Security TOP 10",
+            "referenceTypeId": "API8 Injection",
+            "referenceValue": "",
+            "referenceVersion": "2019",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "ISO/IEC 5055:2021",
+            "referenceTypeId": "6.7 Automated Source Code Security Measure Element Descriptions",
+            "referenceValue": "7.4.66 CWE-89 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+            "referenceVersion": "",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "PCI DSS",
+            "referenceTypeId": "Requirement 6.2.4",
+            "referenceValue": "",
+            "referenceVersion": "4.0",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A3",
+            "referenceValue": "Injection",
+            "referenceVersion": "2021",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1",
+            "referenceValue": "Injection",
+            "referenceVersion": "2017",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1",
+            "referenceValue": "Injection",
+            "referenceVersion": "2013",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A1",
+            "referenceValue": "Injection",
+            "referenceVersion": "2010",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A2",
+            "referenceValue": "Injection Flaws",
+            "referenceVersion": "2007",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP TOP 10",
+            "referenceTypeId": "A6",
+            "referenceValue": "Injection Flaws",
+            "referenceVersion": "2004",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "OWASP API Security TOP 10",
+            "referenceTypeId": "API8",
+            "referenceValue": "Injection",
+            "referenceVersion": "2019",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "Web Application Security Consortium",
+            "referenceTypeId": "",
+            "referenceValue": "Information Leakage",
+            "referenceVersion": "1.00",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "Web Application Security Consortium",
+            "referenceTypeId": "",
+            "referenceValue": "SQL Injection",
+            "referenceVersion": "1.00",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "Web Application Security Consortium",
+            "referenceTypeId": "",
+            "referenceValue": "Information Leakage (WASC-13)",
+            "referenceVersion": "2.00",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          },
+          {
+            "referenceType": "Web Application Security Consortium",
+            "referenceTypeId": "",
+            "referenceValue": "SQL Injection (WASC-19)",
+            "referenceVersion": "2.00",
+            "ruleCode": "02000010020016",
+            "tool": "Sky"
+          }
+        ],
+        "ruleCode": "02000010020016",
+        "ruleDesc": "SQL注入是一种数据库攻击手段。攻击者通过向应用程序提交恶意代码来改变原SQL语句的含义，进而执行任意SQL命令，达到入侵数据库乃至操作系统的目的。在Mybatis Mapper Xml中，`#`变量名称创建参数化查询SQL语句,不会导致SQL注入。而`$`变量名称直接使用SQL指令，会导致SQL注入攻击。\n\n**例如**：以下代码片段采用`$`变量名称动态地构造并执行了SQL查询。\n```xml\n\u003c!--select user information by name--\u003e\n\u003cselect id=\"queryByUserName\" resultMap=\"userResultMap\" parameterType=\"String\"\u003e\n    select * from db_user where user_name=${username}\n\u003c/select\u003e\n```\n用户调用以下命令时：\n```java\nString username = request.getParameter(\"name\");\nuser.queryByUserName(username);\n```\n如果攻击者能够替代`username`中的任意字符串，它们可以使用下面的关于`username`的字符串进行SQL注入。\n`validuser' OR '1'='1`\n当其注入到命令时，命令就会变成：\n`select * from db_user where user_name ='validuser' OR '1'='1'`",
+        "ruleName": "SQL注入：MyBatis",
+        "ruleType": "代码注入",
+        "shortDsp": "\u003cp th:if=\"${funcNameisEmpty}\" th:text=\"在+'`'+${fileName}+'`'+的+'`'+${funcName}+'`'+方法中的第+'`'+${line}+'`'+行会发生+${categoryName}+的风险。\" th:remove=\"tag\"\u003e\u003c/p\u003e\n\u003cp th:unless=\"${funcNameisEmpty}\" th:text=\"在+'`'+${fileName}+'`'+的第+'`'+${line}+'`'+行会发生+${categoryName}+的风险。\" th:remove=\"tag\"\u003e\u003c/p\u003e",
+        "solution": "造成SQL注入攻击的根本原因在于攻击者可以改变SQL查询的上下文，使程序员原本要作为数据解析的数值，被篡改为命令了。防止SQL注入的方法如下：\n1. 正确使用参数化API进行SQL查询。\n2. 如果构造SQL指令时需要动态加入约束条件，可以通过创建一份合法字符串列表，使其对应于可能要加入到SQL指令中的不同元素，来避免SQL注入攻击。\n\n**例如**：以下代码片段采用`#`变量名称，创建参数化查询SQL语句。\n```xml\n\u003c!--select user information by name--\u003e\n\u003cselect id=\"queryByUserName\" resultMap=\"userResultMap\" parameterType=\"String\"\u003e\n    select * from db_user where user_name=#{username}\n\u003c/select\u003e\n```",
+        "standardName": "Sky规范",
+        "standardType": 0,
+        "tag": "security",
+        "tool": "Sky",
+        "whiteList": "yes"
+      },
+      "sourcePoint": "b2e27ca418d3f832e1f6addd988aaedb",
+      "standardName": "Sky规范",
+      "tkInfo": {
+        "bugIdList": [],
+        "description": "",
+        "isMybug": "\u0000",
+        "pkRuleList": [],
+        "ruleAndbugList": [],
+        "summary": "分类：Sky规范--代码注入--SQL注入：MyBatis--文件：jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java行1282"
+      },
+      "tools": "Sky",
+      "typeName": "SQL注入：MyBatis",
+      "typeName2": "代码注入",
+      "uri": "http://tb.devops.aliyun.com/codeup/cathay/safe/ceshi.git"
+    },
+    "severity": "high",
+    "sink": {
+      "file": "jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java",
+      "function": "getListWithStock",
+      "line": 1282,
+      "variable": ""
+    },
+    "source": {
+      "file": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+      "function": "",
+      "line": 584,
+      "variable": "来自于http请求的数据从getListWithStock()方法第10个参数进入"
+    },
+    "taint_path": [
+      {
+        "file": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+        "function": "",
+        "line": 584,
+        "message": "来自于http请求的数据从getListWithStock()方法第10个参数进入"
+      },
+      {
+        "file": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+        "function": "",
+        "line": 605,
+        "message": "不可信的数据从safeSqlParse()方法第1个参数进入,然后从返回值返回"
+      },
+      {
+        "file": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java",
+        "function": "",
+        "line": 605,
+        "message": "不可信的数据从getListWithStock()方法第7个参数进入"
+      },
+      {
+        "file": "jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java",
+        "function": "",
+        "line": 1282,
+        "message": "不可信的数据从getListWithStock()方法第7个参数进入"
+      },
+      {
+        "file": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml",
+        "function": "",
+        "line": 646,
+        "message": "order"
+      }
+    ],
+    "taint_path_complete": true,
+    "vulnerability_type": "sql_injection"
+  }
+]

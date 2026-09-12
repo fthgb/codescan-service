@@ -1,0 +1,8 @@
+{
+  "app_name": "eclipse-gateway",
+  "callback_url": "http://127.0.0.1:8070/sec/v1/codecheck/appsec/push",
+  "dispatch_id": "",
+  "pk_task": "68690",
+  "run_id": "2026-09-11T105433_eclipse-gateway",
+  "source": "manual"
+}

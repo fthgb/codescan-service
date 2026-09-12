@@ -1,0 +1,1976 @@
+{
+  "repo_key": "eclipse-new",
+  "scanner_ver": "v2.5.1",
+  "components": [
+    {
+      "name": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-common/pom.xml"
+    },
+    {
+      "name": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-common/pom.xml"
+    },
+    {
+      "name": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-common/pom.xml"
+    },
+    {
+      "name": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-common/pom.xml"
+    },
+    {
+      "name": "org.apache.pdfbox:pdfbox",
+      "version": "2.0.20",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-common/pom.xml"
+    },
+    {
+      "name": "org.bouncycastle:bcprov-jdk16",
+      "version": "1.46",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-common/pom.xml"
+    },
+    {
+      "name": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-component/pom.xml"
+    },
+    {
+      "name": "net.sf.json-lib:json-lib",
+      "version": "2.4",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-component/pom.xml"
+    },
+    {
+      "name": "org.apache.poi:poi",
+      "version": "3.17",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-component/pom.xml"
+    },
+    {
+      "name": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-dal/pom.xml"
+    },
+    {
+      "name": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-dal/pom.xml"
+    },
+    {
+      "name": "mysql:mysql-connector-java",
+      "version": "5.1.40",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-dal/pom.xml"
+    },
+    {
+      "name": "org.hsqldb:hsqldb",
+      "version": "2.4.1",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-dal/pom.xml"
+    },
+    {
+      "name": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-domain/pom.xml"
+    },
+    {
+      "name": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-external/pom.xml"
+    },
+    {
+      "name": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-external/pom.xml"
+    },
+    {
+      "name": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-external/pom.xml"
+    },
+    {
+      "name": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-external/pom.xml"
+    },
+    {
+      "name": "com.squareup.okhttp3:okhttp",
+      "version": "3.4.1",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-external/pom.xml"
+    },
+    {
+      "name": "commons-io:commons-io",
+      "version": "2.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-external/pom.xml"
+    },
+    {
+      "name": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-external/pom.xml"
+    },
+    {
+      "name": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-external/pom.xml"
+    },
+    {
+      "name": "commons-lang:commons-lang",
+      "version": "2.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-facade/pom.xml"
+    },
+    {
+      "name": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-facade/pom.xml"
+    },
+    {
+      "name": "org.springframework:spring-web",
+      "version": "5.3.10",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-facade/pom.xml"
+    },
+    {
+      "name": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-infra/pom.xml"
+    },
+    {
+      "name": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-infra/pom.xml"
+    },
+    {
+      "name": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-infra/pom.xml"
+    },
+    {
+      "name": "commons-io:commons-io",
+      "version": "2.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-infra/pom.xml"
+    },
+    {
+      "name": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-infra/pom.xml"
+    },
+    {
+      "name": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-infra/pom.xml"
+    },
+    {
+      "name": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-infrastructure/pom.xml"
+    },
+    {
+      "name": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-service/pom.xml"
+    },
+    {
+      "name": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-service/pom.xml"
+    },
+    {
+      "name": "org.apache.poi:poi",
+      "version": "3.17",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-service/pom.xml"
+    },
+    {
+      "name": "org.apache.poi:poi-ooxml",
+      "version": "3.17",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-service/pom.xml"
+    },
+    {
+      "name": "org.bouncycastle:bcprov-jdk16",
+      "version": "1.46",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-service/pom.xml"
+    },
+    {
+      "name": "org.codehaus.xfire:xfire-core",
+      "version": "1.2.6",
+      "ecosystem": "Maven",
+      "license": "UNKNOWN",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-service/pom.xml"
+    },
+    {
+      "name": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-web/pom.xml"
+    },
+    {
+      "name": "io.springfox:springfox-swagger-ui",
+      "version": "2.9.2",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-web/pom.xml"
+    },
+    {
+      "name": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-web/pom.xml"
+    },
+    {
+      "name": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-web/pom.xml"
+    },
+    {
+      "name": "org.hsqldb:hsqldb",
+      "version": "2.4.1",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/eclipse-web/pom.xml"
+    },
+    {
+      "name": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/eclipse-latest/pom.xml"
+    }
+  ],
+  "vulns": [
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-47vx-fqr5-j2gw",
+      "cve": "CVE-2022-4565",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "HuTool vulnerable to Uncontrolled Resource Consumption"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7m7h-rgvp-3v4r",
+      "cve": "CVE-2023-51075",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "hutool-core discovered to contain an infinite loop in the StrSplitter.splitByRegex function"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7mcw-xmx3-7p8m",
+      "cve": "CVE-2023-33695",
+      "severity": "high",
+      "cvss_score": "7.1",
+      "summary": "Insecure Temporary File in HuTool"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7p8c-crfr-q93p",
+      "cve": "CVE-2023-42277",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "hutool Buffer Overflow vulnerability"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-p2qf-9vp6-3jjq",
+      "cve": "CVE-2023-3276",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "HuTool XML parsing module has blind XXE vulnerability"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-rr66-qh5m-w6mx",
+      "cve": "CVE-2023-42278",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "hutool Buffer Overflow vulnerability"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-rxgf-r843-g53h",
+      "cve": "CVE-2023-42276",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "hutool Buffer Overflow vulnerability"
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-5mg8-w23w-74h3",
+      "cve": "CVE-2020-8908",
+      "severity": "low",
+      "cvss_score": "3.3",
+      "summary": "Information Disclosure in Guava"
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7g45-4rm6-3mm3",
+      "cve": "CVE-2023-2976",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Guava vulnerable to insecure use of temporary directory"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-269g-pwp5-87pp",
+      "cve": "CVE-2020-15250",
+      "severity": "medium",
+      "cvss_score": "4.4",
+      "summary": "TemporaryFolder on unix-like systems does not limit access to created files"
+    },
+    {
+      "component": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-j288-q9x7-2f5v",
+      "cve": "CVE-2025-48924",
+      "severity": "medium",
+      "cvss_score": "6.5",
+      "summary": "Apache Commons Lang is vulnerable to Uncontrolled Recursion when processing long inputs"
+    },
+    {
+      "component": "org.apache.pdfbox:pdfbox",
+      "version": "2.0.20",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-2h3j-m7gr-25xj",
+      "cve": "CVE-2021-27807",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Excessive Iteration Denial of Service in Apache PDFBox"
+    },
+    {
+      "component": "org.apache.pdfbox:pdfbox",
+      "version": "2.0.20",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-6vqp-h455-42mr",
+      "cve": "CVE-2021-27906",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Uncontrolled Memory Allocation in Apache PDFBox"
+    },
+    {
+      "component": "org.apache.pdfbox:pdfbox",
+      "version": "2.0.20",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7grw-6pjh-jpc9",
+      "cve": "CVE-2021-31812",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Infinite Loop in Apache PDFBox"
+    },
+    {
+      "component": "org.apache.pdfbox:pdfbox",
+      "version": "2.0.20",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-fg3j-q579-v8x4",
+      "cve": "CVE-2021-31811",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Uncontrolled memory consumption"
+    },
+    {
+      "component": "org.bouncycastle:bcprov-jdk16",
+      "version": "1.46",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-6xx3-rg99-gc3p",
+      "cve": "CVE-2020-15522",
+      "severity": "medium",
+      "cvss_score": "5.1",
+      "summary": "Timing based private key exposure in Bouncy Castle"
+    },
+    {
+      "component": "org.bouncycastle:bcprov-jdk16",
+      "version": "1.46",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-72m5-fvvv-55m6",
+      "cve": "CVE-2020-26939",
+      "severity": "medium",
+      "cvss_score": "5.3",
+      "summary": "Observable Differences in Behavior to Error Inputs in Bouncy Castle"
+    },
+    {
+      "component": "org.bouncycastle:bcprov-jdk16",
+      "version": "1.46",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-wjxj-5m7g-mg7q",
+      "cve": "CVE-2023-33202",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Bouncy Castle Denial of Service (DoS)"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-269g-pwp5-87pp",
+      "cve": "CVE-2020-15250",
+      "severity": "medium",
+      "cvss_score": "4.4",
+      "summary": "TemporaryFolder on unix-like systems does not limit access to created files"
+    },
+    {
+      "component": "net.sf.json-lib:json-lib",
+      "version": "2.4",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-wwcp-26wc-3fxm",
+      "cve": "CVE-2024-47855",
+      "severity": "medium",
+      "cvss_score": "6.9",
+      "summary": "JSON-lib mishandles an unbalanced comment string"
+    },
+    {
+      "component": "org.apache.poi:poi",
+      "version": "3.17",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-9jwc-q6j3-8g9g",
+      "cve": "CVE-2019-12415",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Improper Restriction of XML External Entity Reference in Apache POI "
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-5mg8-w23w-74h3",
+      "cve": "CVE-2020-8908",
+      "severity": "low",
+      "cvss_score": "3.3",
+      "summary": "Information Disclosure in Guava"
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7g45-4rm6-3mm3",
+      "cve": "CVE-2023-2976",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Guava vulnerable to insecure use of temporary directory"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-269g-pwp5-87pp",
+      "cve": "CVE-2020-15250",
+      "severity": "medium",
+      "cvss_score": "4.4",
+      "summary": "TemporaryFolder on unix-like systems does not limit access to created files"
+    },
+    {
+      "component": "mysql:mysql-connector-java",
+      "version": "5.1.40",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-2xxh-f8r3-hvvr",
+      "cve": "CVE-2017-3523",
+      "severity": "high",
+      "cvss_score": "8.5",
+      "summary": "Improper Access Control in MySQL Connectors Java"
+    },
+    {
+      "component": "mysql:mysql-connector-java",
+      "version": "5.1.40",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-4vrv-ch96-6h42",
+      "cve": "CVE-2018-3258",
+      "severity": "high",
+      "cvss_score": "8.8",
+      "summary": "Improper Privilege Management in MySQL Connectors Java"
+    },
+    {
+      "component": "mysql:mysql-connector-java",
+      "version": "5.1.40",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-cjcf-wm2p-59h5",
+      "cve": "CVE-2017-3589",
+      "severity": "low",
+      "cvss_score": "3.3",
+      "summary": "Exposure of Sensitive Information to an Unauthorized Actor in Oracle MySQL Connectors Java"
+    },
+    {
+      "component": "mysql:mysql-connector-java",
+      "version": "5.1.40",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-g76j-4cxx-23h9",
+      "cve": "CVE-2022-21363",
+      "severity": "medium",
+      "cvss_score": "6.6",
+      "summary": "Improper Handling of Insufficient Permissions or Privileges in MySQL Connectors Java"
+    },
+    {
+      "component": "mysql:mysql-connector-java",
+      "version": "5.1.40",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-jcq3-cprp-m333",
+      "cve": "CVE-2019-2692",
+      "severity": "medium",
+      "cvss_score": "6.3",
+      "summary": "Privilege escalation in mysql-connector-jav"
+    },
+    {
+      "component": "mysql:mysql-connector-java",
+      "version": "5.1.40",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-m6vm-37g8-gqvh",
+      "cve": "CVE-2023-22102",
+      "severity": "high",
+      "cvss_score": "8.9",
+      "summary": "MySQL Connectors takeover vulnerability"
+    },
+    {
+      "component": "mysql:mysql-connector-java",
+      "version": "5.1.40",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-pwh7-92h3-mqr6",
+      "cve": "CVE-2017-3586",
+      "severity": "medium",
+      "cvss_score": "6.4",
+      "summary": "Exposure of Sensitive Information to an Unauthorized Actor in Oracle MySQL Connectors Java"
+    },
+    {
+      "component": "org.hsqldb:hsqldb",
+      "version": "2.4.1",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-77xx-rxvh-q682",
+      "cve": "CVE-2022-41853",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "HyperSQL DataBase vulnerable to remote code execution when processing untrusted input"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-269g-pwp5-87pp",
+      "cve": "CVE-2020-15250",
+      "severity": "medium",
+      "cvss_score": "4.4",
+      "summary": "TemporaryFolder on unix-like systems does not limit access to created files"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-crf3-v9rr-v7hj",
+      "cve": "CVE-2026-16723",
+      "severity": "high",
+      "cvss_score": "9.0",
+      "summary": "fastjson has a remote code execution (RCE) vulnerability"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-288c-cq4h-88gq",
+      "cve": "CVE-2020-25649",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "XML External Entity (XXE) Injection in Jackson Databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-4gq5-ch57-c2mg",
+      "cve": "CVE-2018-14719",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Arbitrary Code Execution in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-4w82-r329-3q67",
+      "cve": "CVE-2020-8840",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Deserialization of Untrusted Data in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-57j2-w4cx-62h2",
+      "cve": "CVE-2020-36518",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Deeply nested json in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-5949-rw7g-wx7w",
+      "cve": "CVE-2021-20190",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Deserialization of untrusted data in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-5r5r-6hpj-8gg9",
+      "cve": "CVE-2020-35728",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Serialization gadget exploit in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-5ww9-j83m-q7qx",
+      "cve": "CVE-2019-12086",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Information exposure in FasterXML jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-645p-88qh-w398",
+      "cve": "CVE-2018-14718",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Arbitrary Code Execution in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-6fpp-rgj9-8rwc",
+      "cve": "CVE-2019-14379",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Deserialization of untrusted data in FasterXML jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-85cw-hj65-qqv9",
+      "cve": "CVE-2019-16335",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Polymorphic Typing issue in FasterXML jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-89qr-369f-5m5x",
+      "cve": "CVE-2020-36182",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-8c4j-34r4-xr8g",
+      "cve": "CVE-2020-36180",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-8w26-6f25-cm9x",
+      "cve": "CVE-2020-36185",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-9gph-22xh-8x98",
+      "cve": "CVE-2020-36179",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-9m6f-7xcq-8vf8",
+      "cve": "CVE-2020-36183",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-c8hm-7hpq-7jhg",
+      "cve": "CVE-2018-19362",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "com.fasterxml.jackson.core:jackson-databind vulnerable to Deserialization of Untrusted Data"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-cf6r-3wgc-h863",
+      "cve": "CVE-2019-14892",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Polymorphic deserialization of malicious object in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-cggj-fvv3-cqwv",
+      "cve": "CVE-2018-7489",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "FasterXML jackson-databind allows unauthenticated remote code execution "
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-cjjf-94ff-43w7",
+      "cve": "CVE-2018-12022",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "jackson-databind Deserialization of Untrusted Data vulnerability"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-cmfg-87vq-g5g4",
+      "cve": "CVE-2019-12814",
+      "severity": "medium",
+      "cvss_score": "5.9",
+      "summary": "Deserialization of untrusted data in FasterXML jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-cvm9-fjm9-3572",
+      "cve": "CVE-2020-36181",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-f3j5-rmmp-3fc5",
+      "cve": "CVE-2019-17267",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Improper Input Validation in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-f9xh-2qgp-cq57",
+      "cve": "CVE-2020-36188",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-fmmc-742q-jg75",
+      "cve": "CVE-2019-16943",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "jackson-databind polymorphic typing issue"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-fqwf-pjwf-7vqv",
+      "cve": "CVE-2020-10673",
+      "severity": "high",
+      "cvss_score": "8.8",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-gjmw-vf9h-g25v",
+      "cve": "CVE-2019-17531",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "jackson-databind polymorphic typing issue"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-gwp4-hfv6-p7hw",
+      "cve": "CVE-2019-14439",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Deserialization of untrusted data in FasterXML jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-gww7-p5w4-wrfv",
+      "cve": "CVE-2019-20330",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Deserialization of Untrusted Data in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-h3cw-g4mq-c5x2",
+      "cve": "CVE-2020-24616",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Code Injection in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-h592-38cm-4ggp",
+      "cve": "CVE-2017-15095",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "jackson-databind vulnerable to deserialization flaw leading to unauthenticated remote code execution"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-h822-r4r5-v8jg",
+      "cve": "CVE-2019-14540",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Polymorphic Typing issue in FasterXML jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-hgj6-7826-r7m5",
+      "cve": "CVE-2026-54514",
+      "severity": "medium",
+      "cvss_score": "5.3",
+      "summary": "jackson-databind: InetSocketAddress deserialization triggers eager DNS resolution (SSRF)"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-jjjh-jjxp-wpff",
+      "cve": "CVE-2022-42003",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Uncontrolled Resource Consumption in Jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-m6x4-97wx-4q27",
+      "cve": "CVE-2020-36184",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-mph4-vhrx-mv67",
+      "cve": "CVE-2019-12384",
+      "severity": "medium",
+      "cvss_score": "5.9",
+      "summary": "Deserialization of Untrusted Data in FasterXML jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-mx7p-6679-8g3q",
+      "cve": "CVE-2019-16942",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Polymorphic Typing in FasterXML jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-p43x-xfjf-5jhr",
+      "cve": "CVE-2020-9548",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-q93h-jc49-78gg",
+      "cve": "CVE-2020-9547",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "jackson-databind mishandles the interaction between serialization gadgets and typing"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-qjw2-hr98-qgfh",
+      "cve": "CVE-2020-24750",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-qr7j-h6gg-jmgc",
+      "cve": "CVE-2018-11307",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Deserialization of Untrusted Data in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-qxxx-2pp7-5hmx",
+      "cve": "CVE-2017-7525",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "jackson-databind is vulnerable to a deserialization flaw"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-r3gr-cxrf-hg25",
+      "cve": "CVE-2020-35491",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Serialization gadgets exploit in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-r695-7vr9-jgc2",
+      "cve": "CVE-2020-36187",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-rfx6-vp9g-rh7v",
+      "cve": "CVE-2017-17485",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "jackson-databind vulnerable to remote code execution due to incorrect deserialization and blocklist bypass"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-rgv9-q543-rqg4",
+      "cve": "CVE-2022-42004",
+      "severity": "high",
+      "cvss_score": "8.2",
+      "summary": "Uncontrolled Resource Consumption in FasterXML jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-rpr3-cw39-3pxh",
+      "cve": "CVE-2020-10650",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "jackson-databind vulnerable to unsafe deserialization"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-v585-23hc-c647",
+      "cve": "CVE-2020-36186",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-vfqx-33qm-g869",
+      "cve": "CVE-2020-36189",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Unsafe Deserialization in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-w3f4-3q6j-rh82",
+      "cve": "CVE-2018-5968",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Deserialization of Untrusted Data in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-wh8g-3j2c-rqj5",
+      "cve": "CVE-2020-35490",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Serialization gadgets exploit in jackson-databind"
+    },
+    {
+      "component": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-h4x4-5qp2-wp46",
+      "cve": "CVE-2018-1000873",
+      "severity": "medium",
+      "cvss_score": "6.5",
+      "summary": "Moderate severity vulnerability that affects com.fasterxml.jackson.datatype:jackson-datatype-jsr353"
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-5mg8-w23w-74h3",
+      "cve": "CVE-2020-8908",
+      "severity": "low",
+      "cvss_score": "3.3",
+      "summary": "Information Disclosure in Guava"
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7g45-4rm6-3mm3",
+      "cve": "CVE-2023-2976",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Guava vulnerable to insecure use of temporary directory"
+    },
+    {
+      "component": "com.squareup.okhttp3:okhttp",
+      "version": "3.4.1",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-3cqm-mf7h-prrj",
+      "cve": "CVE-2021-0341",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Square OkHttp can accept the wrong certificate"
+    },
+    {
+      "component": "commons-io:commons-io",
+      "version": "2.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-78wr-2p64-hpwj",
+      "cve": "CVE-2024-47554",
+      "severity": "high",
+      "cvss_score": "8.7",
+      "summary": "Apache Commons IO: Possible denial of service attack on untrusted input to XmlStreamReader"
+    },
+    {
+      "component": "commons-io:commons-io",
+      "version": "2.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-gwrp-pvrq-jmwv",
+      "cve": "CVE-2021-29425",
+      "severity": "medium",
+      "cvss_score": "4.8",
+      "summary": "Path Traversal and Improper Input Validation in Apache Commons IO"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-269g-pwp5-87pp",
+      "cve": "CVE-2020-15250",
+      "severity": "medium",
+      "cvss_score": "4.4",
+      "summary": "TemporaryFolder on unix-like systems does not limit access to created files"
+    },
+    {
+      "component": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-j288-q9x7-2f5v",
+      "cve": "CVE-2025-48924",
+      "severity": "medium",
+      "cvss_score": "6.5",
+      "summary": "Apache Commons Lang is vulnerable to Uncontrolled Recursion when processing long inputs"
+    },
+    {
+      "component": "commons-lang:commons-lang",
+      "version": "2.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-j288-q9x7-2f5v",
+      "cve": "CVE-2025-48924",
+      "severity": "medium",
+      "cvss_score": "6.5",
+      "summary": "Apache Commons Lang is vulnerable to Uncontrolled Recursion when processing long inputs"
+    },
+    {
+      "component": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7v6m-28jr-rg84",
+      "cve": "CVE-2025-35036",
+      "severity": "high",
+      "cvss_score": "7.3",
+      "summary": "Hibernate Validator may interpolate user-supplied input in a constraint violation message with Expression Language"
+    },
+    {
+      "component": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-m8p2-495h-ccmh",
+      "cve": "CVE-2019-10219",
+      "severity": "medium",
+      "cvss_score": "6.5",
+      "summary": "The SafeHtml annotation in Hibernate-Validator does not properly guard against XSS attacks"
+    },
+    {
+      "component": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-rmrm-75hp-phr2",
+      "cve": "CVE-2020-10693",
+      "severity": "medium",
+      "cvss_score": "5.3",
+      "summary": "Improper Input Validation in Hibernate Validator"
+    },
+    {
+      "component": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-x83m-pf6f-pf9g",
+      "cve": "CVE-2023-1932",
+      "severity": "medium",
+      "cvss_score": "6.1",
+      "summary": "hibernate-validator Cross-site Scripting vulnerability"
+    },
+    {
+      "component": "org.springframework:spring-web",
+      "version": "5.3.10",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-2rmj-mq67-h97g",
+      "cve": "CVE-2024-38809",
+      "severity": "medium",
+      "cvss_score": "5.3",
+      "summary": "Spring Framework DoS via conditional HTTP request"
+    },
+    {
+      "component": "org.springframework:spring-web",
+      "version": "5.3.10",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-2wrp-6fg6-hmc5",
+      "cve": "CVE-2024-22262",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Spring Framework URL Parsing with Host Validation"
+    },
+    {
+      "component": "org.springframework:spring-web",
+      "version": "5.3.10",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-4gc7-5j7h-4qph",
+      "cve": "CVE-2024-38820",
+      "severity": "medium",
+      "cvss_score": "5.3",
+      "summary": "Spring Framework DataBinder Case Sensitive Match Exception"
+    },
+    {
+      "component": "org.springframework:spring-web",
+      "version": "5.3.10",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-4wrc-f8pq-fpqp",
+      "cve": "CVE-2016-1000027",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Pivotal Spring Framework contains unsafe Java deserialization methods"
+    },
+    {
+      "component": "org.springframework:spring-web",
+      "version": "5.3.10",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-ccgv-vj62-xf9h",
+      "cve": "CVE-2024-22243",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Spring Web vulnerable to Open Redirect or Server Side Request Forgery"
+    },
+    {
+      "component": "org.springframework:spring-web",
+      "version": "5.3.10",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-hgjh-9rj2-g67j",
+      "cve": "CVE-2024-22259",
+      "severity": "high",
+      "cvss_score": "8.1",
+      "summary": "Spring Framework URL Parsing with Host Validation Vulnerability"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-47vx-fqr5-j2gw",
+      "cve": "CVE-2022-4565",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "HuTool vulnerable to Uncontrolled Resource Consumption"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7m7h-rgvp-3v4r",
+      "cve": "CVE-2023-51075",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "hutool-core discovered to contain an infinite loop in the StrSplitter.splitByRegex function"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7mcw-xmx3-7p8m",
+      "cve": "CVE-2023-33695",
+      "severity": "high",
+      "cvss_score": "7.1",
+      "summary": "Insecure Temporary File in HuTool"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7p8c-crfr-q93p",
+      "cve": "CVE-2023-42277",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "hutool Buffer Overflow vulnerability"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-p2qf-9vp6-3jjq",
+      "cve": "CVE-2023-3276",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "HuTool XML parsing module has blind XXE vulnerability"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-rr66-qh5m-w6mx",
+      "cve": "CVE-2023-42278",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "hutool Buffer Overflow vulnerability"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-rxgf-r843-g53h",
+      "cve": "CVE-2023-42276",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "hutool Buffer Overflow vulnerability"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-crf3-v9rr-v7hj",
+      "cve": "CVE-2026-16723",
+      "severity": "high",
+      "cvss_score": "9.0",
+      "summary": "fastjson has a remote code execution (RCE) vulnerability"
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-5mg8-w23w-74h3",
+      "cve": "CVE-2020-8908",
+      "severity": "low",
+      "cvss_score": "3.3",
+      "summary": "Information Disclosure in Guava"
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7g45-4rm6-3mm3",
+      "cve": "CVE-2023-2976",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Guava vulnerable to insecure use of temporary directory"
+    },
+    {
+      "component": "commons-io:commons-io",
+      "version": "2.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-78wr-2p64-hpwj",
+      "cve": "CVE-2024-47554",
+      "severity": "high",
+      "cvss_score": "8.7",
+      "summary": "Apache Commons IO: Possible denial of service attack on untrusted input to XmlStreamReader"
+    },
+    {
+      "component": "commons-io:commons-io",
+      "version": "2.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-gwrp-pvrq-jmwv",
+      "cve": "CVE-2021-29425",
+      "severity": "medium",
+      "cvss_score": "4.8",
+      "summary": "Path Traversal and Improper Input Validation in Apache Commons IO"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-269g-pwp5-87pp",
+      "cve": "CVE-2020-15250",
+      "severity": "medium",
+      "cvss_score": "4.4",
+      "summary": "TemporaryFolder on unix-like systems does not limit access to created files"
+    },
+    {
+      "component": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-j288-q9x7-2f5v",
+      "cve": "CVE-2025-48924",
+      "severity": "medium",
+      "cvss_score": "6.5",
+      "summary": "Apache Commons Lang is vulnerable to Uncontrolled Recursion when processing long inputs"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-269g-pwp5-87pp",
+      "cve": "CVE-2020-15250",
+      "severity": "medium",
+      "cvss_score": "4.4",
+      "summary": "TemporaryFolder on unix-like systems does not limit access to created files"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-269g-pwp5-87pp",
+      "cve": "CVE-2020-15250",
+      "severity": "medium",
+      "cvss_score": "4.4",
+      "summary": "TemporaryFolder on unix-like systems does not limit access to created files"
+    },
+    {
+      "component": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-j288-q9x7-2f5v",
+      "cve": "CVE-2025-48924",
+      "severity": "medium",
+      "cvss_score": "6.5",
+      "summary": "Apache Commons Lang is vulnerable to Uncontrolled Recursion when processing long inputs"
+    },
+    {
+      "component": "org.apache.poi:poi",
+      "version": "3.17",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-9jwc-q6j3-8g9g",
+      "cve": "CVE-2019-12415",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Improper Restriction of XML External Entity Reference in Apache POI "
+    },
+    {
+      "component": "org.apache.poi:poi-ooxml",
+      "version": "3.17",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-gmg8-593g-7mv3",
+      "cve": "CVE-2025-31672",
+      "severity": "medium",
+      "cvss_score": "6.9",
+      "summary": "Apache POI OOXML Vulnerable to Improper Input Validation in OOXML File Parsing"
+    },
+    {
+      "component": "org.bouncycastle:bcprov-jdk16",
+      "version": "1.46",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-6xx3-rg99-gc3p",
+      "cve": "CVE-2020-15522",
+      "severity": "medium",
+      "cvss_score": "5.1",
+      "summary": "Timing based private key exposure in Bouncy Castle"
+    },
+    {
+      "component": "org.bouncycastle:bcprov-jdk16",
+      "version": "1.46",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-72m5-fvvv-55m6",
+      "cve": "CVE-2020-26939",
+      "severity": "medium",
+      "cvss_score": "5.3",
+      "summary": "Observable Differences in Behavior to Error Inputs in Bouncy Castle"
+    },
+    {
+      "component": "org.bouncycastle:bcprov-jdk16",
+      "version": "1.46",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-wjxj-5m7g-mg7q",
+      "cve": "CVE-2023-33202",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Bouncy Castle Denial of Service (DoS)"
+    },
+    {
+      "component": "org.codehaus.xfire:xfire-core",
+      "version": "1.2.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-5jc8-8xhv-g8qm",
+      "cve": "CVE-2012-5817",
+      "severity": "high",
+      "cvss_score": "7.4",
+      "summary": "Improper Input Validation in XFire"
+    },
+    {
+      "component": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-h4x4-5qp2-wp46",
+      "cve": "CVE-2018-1000873",
+      "severity": "medium",
+      "cvss_score": "6.5",
+      "summary": "Moderate severity vulnerability that affects com.fasterxml.jackson.datatype:jackson-datatype-jsr353"
+    },
+    {
+      "component": "io.springfox:springfox-swagger-ui",
+      "version": "2.9.2",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-c427-hjc3-wrfw",
+      "cve": "CVE-2019-17495",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Cross-site scripting in Swagger-UI"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-269g-pwp5-87pp",
+      "cve": "CVE-2020-15250",
+      "severity": "medium",
+      "cvss_score": "4.4",
+      "summary": "TemporaryFolder on unix-like systems does not limit access to created files"
+    },
+    {
+      "component": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7v6m-28jr-rg84",
+      "cve": "CVE-2025-35036",
+      "severity": "high",
+      "cvss_score": "7.3",
+      "summary": "Hibernate Validator may interpolate user-supplied input in a constraint violation message with Expression Language"
+    },
+    {
+      "component": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-m8p2-495h-ccmh",
+      "cve": "CVE-2019-10219",
+      "severity": "medium",
+      "cvss_score": "6.5",
+      "summary": "The SafeHtml annotation in Hibernate-Validator does not properly guard against XSS attacks"
+    },
+    {
+      "component": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-rmrm-75hp-phr2",
+      "cve": "CVE-2020-10693",
+      "severity": "medium",
+      "cvss_score": "5.3",
+      "summary": "Improper Input Validation in Hibernate Validator"
+    },
+    {
+      "component": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-x83m-pf6f-pf9g",
+      "cve": "CVE-2023-1932",
+      "severity": "medium",
+      "cvss_score": "6.1",
+      "summary": "hibernate-validator Cross-site Scripting vulnerability"
+    },
+    {
+      "component": "org.hsqldb:hsqldb",
+      "version": "2.4.1",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-77xx-rxvh-q682",
+      "cve": "CVE-2022-41853",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "HyperSQL DataBase vulnerable to remote code execution when processing untrusted input"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-269g-pwp5-87pp",
+      "cve": "CVE-2020-15250",
+      "severity": "medium",
+      "cvss_score": "4.4",
+      "summary": "TemporaryFolder on unix-like systems does not limit access to created files"
+    }
+  ],
+  "licenses": [
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.apache.pdfbox:pdfbox",
+      "version": "2.0.20",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.bouncycastle:bcprov-jdk16",
+      "version": "1.46",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "net.sf.json-lib:json-lib",
+      "version": "2.4",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.apache.poi:poi",
+      "version": "3.17",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "mysql:mysql-connector-java",
+      "version": "5.1.40",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "org.hsqldb:hsqldb",
+      "version": "2.4.1",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "com.squareup.okhttp3:okhttp",
+      "version": "3.4.1",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "commons-io:commons-io",
+      "version": "2.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "commons-lang:commons-lang",
+      "version": "2.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.springframework:spring-web",
+      "version": "5.3.10",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "cn.hutool:hutool-core",
+      "version": "4.3.0",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "com.google.guava:guava",
+      "version": "25.0-jre",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "commons-io:commons-io",
+      "version": "2.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "org.apache.commons:commons-lang3",
+      "version": "3.4",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.apache.poi:poi",
+      "version": "3.17",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.apache.poi:poi-ooxml",
+      "version": "3.17",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.bouncycastle:bcprov-jdk16",
+      "version": "1.46",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "org.codehaus.xfire:xfire-core",
+      "version": "1.2.6",
+      "ecosystem": "Maven",
+      "license": "UNKNOWN"
+    },
+    {
+      "component": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310",
+      "version": "2.6.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "io.springfox:springfox-swagger-ui",
+      "version": "2.9.2",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "org.hibernate.validator:hibernate-validator",
+      "version": "6.0.2.Final",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.hsqldb:hsqldb",
+      "version": "2.4.1",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "junit:junit",
+      "version": "4.12",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    }
+  ]
+}

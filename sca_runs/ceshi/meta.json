@@ -1,0 +1,16 @@
+{
+  "scan_id": "ceshi",
+  "repo_key": "ceshi",
+  "status": "done",
+  "scanner_version": "v2.5.1",
+  "policy_version": 1,
+  "started_at": "2026-09-11T03:35:47Z",
+  "finished_at": "2026-09-11T03:36:44Z",
+  "duration_seconds": 57.0974821,
+  "findings_count": 222,
+  "findings_by_severity": {
+    "critical": 41,
+    "high": 120,
+    "medium": 61
+  }
+}

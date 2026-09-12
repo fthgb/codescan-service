@@ -1,0 +1,8 @@
+{
+  "app_name": "recon-core",
+  "callback_url": "http://127.0.0.1:8070/sec/v1/codecheck/appsec/push",
+  "dispatch_id": "",
+  "pk_task": "68692",
+  "run_id": "2026-09-11T103254_recon-core",
+  "source": "manual"
+}

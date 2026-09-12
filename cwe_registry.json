@@ -1,0 +1,804 @@
+[
+  {
+    "cwe_id": "CWE-434",
+    "vulnerability_type": "arbitrary_file_upload",
+    "long_desc": "任意文件上传是手段、不是目的 —— 它的影响由「文件落在哪里」和「之后如何被解释」决定。按第一性原理判断， 不要看「有没有扩展名检查」：决定性变量是 (A) 经过全部校验后，攻击者能否控制所存文件的 类型/内容/文件名？ 以及 (B) 文件之后的 执行/渲染 上下文 —— (b1) 存到 Web 可访问/可执行脚本的路径下 -> webshell RCE； (b2) 被内联返回且浏览器可渲染 -> 存储型 XSS；(b3) 文件名带路径分隔符 -> 路径穿越写/覆盖。 某个检查只有在污点值确实流经它、再到达该上下文时才算数。仅有扩展名白名单并不能使上传安全 （它不约束存储位置、返回的 Content-Type，也不约束文件名路径）。\n",
+    "taint_model": {
+      "sources": [
+        "MultipartFile.getOriginalFilename",
+        "MultipartFile.getBytes/getInputStream",
+        "MultipartFile.getContentType",
+        "@RequestPart file",
+        "Part.getSubmittedFileName"
+      ],
+      "sinks": [
+        "transferTo(new File(dir, name))",
+        "Files.copy/write to a served/static dir",
+        "FileOutputStream under webroot",
+        "path built from getOriginalFilename"
+      ],
+      "sanitizers": [
+        "server-generated random filename (UUID) discarding client name",
+        "extension allowlist of NON-executable types",
+        "content sniff / magic-byte type check",
+        "store OUTSIDE webroot AND outside any script-executable path",
+        "serve only with Content-Disposition: attachment + X-Content-Type-Options: nosniff + non-renderable Content-Type"
+      ]
+    },
+    "filter_hints": "# 决定性变量：(A) 经校验后攻击者对所存 类型/内容/文件名 的控制；(B) 之后的执行/渲染上下文\n# （b1 webshell / b2 存储型 XSS / b3 穿越写）。每条都是检查项 —— 为决定性事实引用 file:line，否则 uncertain。\n# 不要对「有扩展名检查」做模式匹配。\n- 仅有扩展名/内容类型检查本身不能判 false_positive：要核实它是「非可执行类型的白名单」且不可绕过\n  （双扩展名 a.jsp.png、空字节、大小写、文件名里的 ../、MIME 伪造）。若是黑名单，或原始值能绕过该检查，\n  则 (A) 仍攻击者可控 -> 非 false_positive。\n- (b1) RCE 检查 —— 若存储路径位于 Web 可访问/可执行脚本目录下，且攻击者能落地可执行类型（jsp/jspx/php/…），\n  判 true_positive（webshell）。若你能引用存储位于任何可执行/可访问路径之外（固定非 Web 目录），则排除 b1；\n  若切片中看不到存储目录 -> uncertain，而非 false_positive。\n- (b2) 存储型 XSS 检查（上传->XSS 灰色地带，PROMPT_GUIDELINE P6）—— 若文件内容攻击者可控，且之后能被作为\n  可渲染标记返回给受害者浏览器（html/htm/svg/xml，或任何浏览器可能嗅探为 HTML 的类型），即便服务端禁止脚本执行，\n  它仍是存储型 XSS。仅当返回响应可证为 attachment + nosniff + 攻击者无法影响的非 HTML Content-Type 时才当作安全。\n  若上传限制了 php/jsp 但仍允许 html/svg -> 在 reasoning 中点名存储型 XSS 并返回 true_positive/uncertain；\n  不要返回把它埋掉的裸 false_positive。\n- (b3) 穿越写检查 —— 若 getOriginalFilename 流入路径且分隔符未被剥离（没有 FilenameUtils.getName / UUID 改名），\n  攻击者可在预期目录之外写/覆盖文件（相邻的 path_traversal）。已剥离为纯文件名或换成服务端生成名 -> 排除 b3。\n- 仅当你能引用 b1+b2+b3 全部被排除（非可执行白名单且成立 + 存储在 webroot/可执行路径之外 + 文件名已中和 +\n  返回响应不可渲染）时，才判 false_positive。若任一分支的决定性事实在切片中不可见 -> uncertain，绝不自信判 false_positive。\n- 头像/资料图上传，配「成立的非可执行白名单 + 非 webroot 存储 + 服务端生成文件名」，是常见的真 false_positive ——\n  但你必须从切片中引用这三点，而不是假设它们成立。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [],
+    "signals": [
+      {
+        "lang": "java",
+        "pattern": "Files\\.(write|copy|newOutputStream)|FileOutputStream|\\.transferTo\\("
+      }
+    ],
+    "adjacency": [
+      "xss",
+      "path_traversal",
+      "ssrf"
+    ],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-94",
+    "vulnerability_type": "code_injection",
+    "long_desc": "代码注入：不可信输入到达一个动态求值 sink（脚本引擎、表达式语言、模板体、JNDI 查找）， 从而能执行任意代码或表达式（例如 SpEL/OGNL/Log4Shell 一类）。\n",
+    "taint_model": {
+      "sources": [
+        "HttpServletRequest.getParameter",
+        "@RequestParam(String)",
+        "request body"
+      ],
+      "sinks": [
+        "ScriptEngine.eval",
+        "Groovy eval",
+        "SpEL/OGNL/JEXL evaluation",
+        "template engine with user-supplied template",
+        "JNDI lookup with user name"
+      ],
+      "sanitizers": [
+        "never evaluate user input",
+        "expression allowlist",
+        "sandboxed engine with no reflection"
+      ]
+    },
+    "filter_hints": "- 被求值的表达式/模板是固定/常量，用户输入只提供绑定变量 -> false_positive\n- 表达式来源是仅管理员可改的配置，而非匿名用户输入 -> false_positive\n- 高危：绝不自动消除。用户输入到达 eval / SpEL / OGNL / 模板体 -> true_positive\n- 用户可控的 JNDI 查找名 -> true_positive（Log4Shell 一类）\n- 若无法确认表达式是常量，降低 confidence。",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [
+      "CWE-494"
+    ],
+    "signals": [],
+    "adjacency": [
+      "command_injection"
+    ],
+    "adjacent_check": "代码/表达式注入 —— 若污点值进入某个求值器（SpEL/OGNL/脚本/模板引擎），攻击者可能执行代码。"
+  },
+  {
+    "cwe_id": "CWE-78",
+    "vulnerability_type": "command_injection",
+    "long_desc": "命令注入：把不可信输入传给 OS shell，从而能执行任意命令。在 Java 中，风险点是 Runtime.exec(String) 或 ProcessBuilder 以拼接的用户输入调起 shell（bash -c / sh -c）。\n",
+    "taint_model": {
+      "sources": [
+        "HttpServletRequest.getParameter",
+        "@RequestParam(String)",
+        "@PathVariable(String)",
+        "request body"
+      ],
+      "sinks": [
+        "Runtime.getRuntime().exec(String)",
+        "ProcessBuilder with bash -c / sh -c",
+        "new ProcessBuilder(shellString)"
+      ],
+      "sanitizers": [
+        "ProcessBuilder array-form with fixed binary + args (no shell)",
+        "Runtime.exec(String[])",
+        "command allowlist"
+      ]
+    },
+    "filter_hints": "- ProcessBuilder(\"cmd\", arg) 数组形式、固定可执行文件、用户输入仅作参数（不是整个 shell 串） -> false_positive\n- Runtime.exec(String[]) 数组形式、无 shell 解释 -> false_positive\n- 输入被限制为固定枚举/命令白名单 -> false_positive\n- 高危：绝不自动消除。bash -c / sh -c 拼接用户输入 -> true_positive\n- 若无法确认不存在 shell 解释，降低 confidence，而不要武断判 false_positive。",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [],
+    "signals": [
+      {
+        "lang": "java",
+        "pattern": "Runtime\\.getRuntime\\(\\)\\.exec|new\\s+ProcessBuilder"
+      }
+    ],
+    "adjacency": [
+      "code_injection"
+    ],
+    "adjacent_check": "命令注入 —— 若污点值进入 shell/进程执行，攻击者可能运行 OS 命令。"
+  },
+  {
+    "cwe_id": "CWE-209",
+    "vulnerability_type": "error_message_exposure",
+    "long_desc": "把敏感的错误/异常细节（堆栈、e.getMessage()）返回给可达用户，会泄露内部路径、SQL 或配置。 决定性变量是：是否把原始（RAW）细节（而非通用字符串）返回给了一个够得到它的用户。 可达性（认证级别）调的是严重度；它本身并不能使其变成 false_positive —— 已认证用户、低权限用户、内部人攻击者都仍然算数。\n",
+    "taint_model": {
+      "sources": [
+        "caught Exception e",
+        "e.getMessage()",
+        "stack trace",
+        "SQLException detail"
+      ],
+      "sinks": [
+        "HTTP response body containing e.getMessage()",
+        "printStackTrace to response",
+        "returning raw exception detail to client"
+      ],
+      "sanitizers": [
+        "return a generic/fixed error string",
+        "log detail server-side only",
+        "@ControllerAdvice global handler returning sanitized response"
+      ]
+    },
+    "filter_hints": "# 决定性变量：是否把原始（RAW）异常/堆栈细节（而非通用字符串）返回给了可达用户？\n# 认证级别调整严重度，它不是一个 false-positive 开关。\n- e.getMessage()/堆栈被记录在服务端（logger.error），但客户端收到的是通用固定的错误码/消息 -> false_positive（原始细节从未离开服务器）。\n- 写入响应的是固定业务字符串，而非原始异常/堆栈 -> false_positive。\n- 原始堆栈或 e.getMessage() 被写进 HTTP 响应 -> true_positive。若它仅在特权认证之后可达，保持 true_positive 但降低严重度；不要仅凭认证就翻成 false_positive（越权/低权/内部人威胁模型仍适用）。\n- 不要把「该端点仅管理员可访问」当作净化器。它是可达性/严重度因素，绝不是安全的证明。\n- 这一类别很少有污点 codeFlow；从 catch 块和响应写入来推理。若你无法判断响应携带的是原始细节还是通用字符串，返回 uncertain，而不要两边武断下结论。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [],
+    "cwe_aliases": [],
+    "signals": [],
+    "adjacency": [],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-113",
+    "vulnerability_type": "http_response_splitting",
+    "long_desc": "HTTP 响应头拆分：攻击者可控值未中和就进入响应头（Set-Cookie、Location、自定义 header）。决定性变量是 (A) 进入 header 的值是否攻击者可控？ (B) 其中的 CR/LF（\\r\\n、%0d%0a）是否未被剥离/拒绝 —— 注入换行即可 伪造新 header 或注入响应体（进而存储型 XSS / 缓存投毒）。按行为判断，不看 API 名：现代 Servlet 容器 （Tomcat 等）默认会拒绝 setHeader 值中的 CR/LF，这种情况下框架本身就是有效净化 —— 但必须能确认运行容器/版本， 否则证据不足。注意 sendRedirect 的 Location 同样是 header sink。\n",
+    "taint_model": {
+      "sources": [
+        "@RequestParam/@PathVariable(String)",
+        "HttpServletRequest.getParameter/getHeader",
+        "request.getRequestURL/getQueryString"
+      ],
+      "sinks": [
+        "response.setHeader/addHeader(name, userValue)",
+        "response.addCookie(new Cookie(.., userValue))",
+        "response.sendRedirect(userValue) 的 Location",
+        "response.setStatus + 自定义 header"
+      ],
+      "sanitizers": [
+        "写入前剥离/拒绝 \\r\\n",
+        "容器默认的 header 注入防护（Tomcat 拒绝 header 值中的控制字符）",
+        "值来自固定枚举/非用户输入",
+        "用框架的类型化 API（如 ResponseEntity）且值经校验"
+      ]
+    },
+    "filter_hints": "# 决定性变量：(A) 进 header 的值攻击者可控？ (B) CR/LF 是否未被中和？从切片取证（cite file:line）。\n# 检查项不是判决；缺证据 -> uncertain。\n- 写入 header 前显式剥离/拒绝了 \\r\\n（或换行/控制字符）-> false_positive。反向：未处理换行、或只对别的字符做过滤 -> 不是 false_positive。\n- header 值来自固定枚举/常量/服务端生成（切片可确认不可控）-> false_positive。反向：来自 @RequestParam/getHeader 且原样进 header -> true_positive。\n- 仅凭「现代容器默认拦截 CR/LF」判 false_positive，必须能从上下文确认运行容器/框架版本会拦；不可见 -> uncertain，不要自信判 FP。\n- 看不到对换行的处理、也无法确认来源可控性 -> uncertain + 低置信。\n- P6 邻接：响应拆分常可进一步造成响应体注入 -> 存储型/反射型 XSS、缓存投毒、或开放重定向（Location 可控）。若声明类型不成立但这些成立，不要裸 FP，点名真实类别。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [],
+    "signals": [],
+    "adjacency": [
+      "xss",
+      "open_redirect"
+    ],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-614",
+    "vulnerability_type": "insecure_cookie",
+    "long_desc": "不安全 Cookie：敏感 cookie（会话/认证 token）未设置 Secure 标志，可能经明文 HTTP 传输被窃听。这是 配置型发现（非污点流）。决定性变量是 (A) 该 cookie 是否承载敏感凭据（session id / auth token / CSRF token）？ 以及 (B) 是否缺少 Secure 标志（且站点确有 HTTP 暴露面，HTTPS-only/HSTS 会显著降低风险）。按第一性原理： 给「记住语言偏好」这类非敏感 cookie 不设 Secure 危害很低；判定要看 cookie 的用途而非仅看 setSecure 调用是否存在。 相关但不同：HttpOnly 缺失关乎 XSS 窃取 cookie（CWE-1004），可在 reasoning 顺带点出。\n",
+    "taint_model": {
+      "sources": [
+        "new Cookie(name, value) 中的敏感 value",
+        "session/auth/CSRF token 写入 cookie"
+      ],
+      "sinks": [
+        "response.addCookie(cookie) 且 cookie.setSecure 未调用或为 false",
+        "Set-Cookie 头缺少 Secure 属性"
+      ],
+      "sanitizers": [
+        "cookie.setSecure(true)",
+        "全局 server.servlet.session.cookie.secure=true 配置",
+        "站点 HTTPS-only + HSTS（降低但不完全消除）",
+        "cookie 承载非敏感数据"
+      ]
+    },
+    "filter_hints": "# 决定性变量：(A) cookie 是否承载敏感凭据？ (B) 是否缺 Secure 标志？从切片/配置取证（cite file:line）。\n# 检查项不是判决；这是配置型发现，缺上下文 -> uncertain。\n- 切片中能看到 cookie.setSecure(true)，或存在全局 secure-cookie 配置 -> false_positive。反向：显式 setSecure(false) 或根本没设且 cookie 敏感 -> true_positive（通常 MEDIUM）。\n- cookie 承载的是非敏感数据（语言/主题/UI 偏好，你能从名字/值来源确认）-> false_positive 或 LOW。反向：名字/用途指向 session/token/auth -> 不要因为「只是个 cookie」降级。\n- 仅凭「站点是 HTTPS」判 false_positive 时，需能确认 HTTPS-only + HSTS；不可见 -> uncertain，不自信判 FP。\n- 看不到 setSecure 调用，也无法确认是否有全局配置兜底、或 cookie 是否敏感 -> uncertain + 低置信。\n- P6 邻接：若同一 cookie 也缺 HttpOnly 且站点有 XSS 面，可点出 cookie 被脚本窃取（CWE-1004）；不要把这类真问题埋成裸 FP。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [],
+    "cwe_aliases": [],
+    "signals": [],
+    "adjacency": [],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-502",
+    "vulnerability_type": "insecure_deserialization",
+    "long_desc": "不安全反序列化：把不可信字节变成对象，可经 gadget 链造成 RCE。危险性要求能实例化任意类型。 决定性变量：目标类型是否固定，且任意类型实例化是否被禁用？对 FastJSON 而言即全局 autoType 关闭； 这是一个全局/依赖版本的设置（旧版本默认开启 autoType），通常在单个方法的切片里看不到 —— 所以「绑定到某个具体类」本身并不能证明安全。\n",
+    "taint_model": {
+      "sources": [
+        "@RequestBody",
+        "HttpServletRequest.getParameter",
+        "request body bytes",
+        "cookies"
+      ],
+      "sinks": [
+        "ObjectInputStream.readObject",
+        "FastJSON JSON.parse/parseObject with autoType",
+        "XMLDecoder.readObject",
+        "Yaml.load",
+        "native readObject"
+      ],
+      "sanitizers": [
+        "typed parse to fixed DTO class",
+        "FastJSON autoType disabled + class allowlist",
+        "Jackson default-typing off",
+        "JSON.parseObject(str, Class)"
+      ]
+    },
+    "filter_hints": "# 决定性变量：(A) 目标类型是否固定？(B) 任意类型实例化是否被禁用？\n# 对 FastJSON 而言 (B) = 全局 autoType 关闭，而它在方法切片里很少可见。\n# 每条都要从切片中引用证据；若 (B) 不可见 -> uncertain，而非 FP。\n- Jackson ObjectMapper.readValue(data, FixedClass.class) 且看不到 enableDefaultTyping/activateDefaultTyping -> false_positive（默认类型化默认关闭，且本地可证）。\n- 对不可信字节在裸 ObjectInputStream 上调用 readObject()，或对不可信输入调用 XMLDecoder.readObject / Yaml.load -> true_positive。\n- FastJSON JSONObject.parseObject(json, ConcreteClass.class)：绑定具体类型挡住了「平凡」情形，但安全还要求全局 autoType 关闭。若切片里看不到 FastJSON 版本或全局 autoType/ParserConfig 设置，你无法证明安全 -> uncertain（不要判 false_positive）。仅当切片显示 autoType 已禁用或有安全的 ParserConfig/白名单时，才判 false_positive。\n- FastJSON 启用了 autoType（无目标类型的 JSON.parseObject、JSONReader.Feature.SupportAutoType、ParserConfig.setAutoTypeSupport(true)，或已知有漏洞的版本） -> true_positive。\n- 高危类别：绝不自动消除。在 false_positive 与 uncertain 之间犹豫时，选 uncertain。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [],
+    "signals": [
+      {
+        "lang": "java",
+        "pattern": "ObjectInputStream|\\.readObject\\(|new\\s+XStream\\("
+      }
+    ],
+    "adjacency": [
+      "code_injection"
+    ],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-90",
+    "vulnerability_type": "ldap_injection",
+    "long_desc": "LDAP 注入：不可信输入未经转义就被拼接进 LDAP 搜索过滤器，让攻击者得以改变过滤逻辑， 绕过认证或枚举目录数据。\n",
+    "taint_model": {
+      "sources": [
+        "HttpServletRequest.getParameter",
+        "@RequestParam(String)"
+      ],
+      "sinks": [
+        "DirContext.search(filter)",
+        "LDAP filter string concatenation"
+      ],
+      "sanitizers": [
+        "escape LDAP special chars (encodeForLDAP)",
+        "parameterized/constant filter",
+        "input allowlist"
+      ]
+    },
+    "filter_hints": "- 构建过滤器前已转义 LDAP 特殊字符（如 encodeForLDAP / Filter.encodeValue） -> false_positive\n- 过滤器是常量，用户输入通过安全 API 作为绑定值 -> false_positive\n- 用户输入被直接拼接进 LDAP 过滤器字符串 -> true_positive\n- 当上下文中看不到过滤器的构造方式时，降低 confidence。",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [],
+    "signals": [],
+    "adjacency": [],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-117",
+    "vulnerability_type": "log_injection",
+    "long_desc": "日志注入：攻击者可控内容未经中和就写入日志。按第一性原理，决定性变量是 (A) 写入日志的值是否攻击者可控？ 以及 (B) 该值里的「换行/控制字符」（CR/LF \\r\\n、回车）是否未被剥离/转义 —— 有换行才能伪造日志行（log forging）。 危害分级：纯文本日志里的伪造行通常 LOW；若日志被某个会「解释」它的下游消费（HTML 日志查看器 -> XSS、 把日志当命令/反序列化的处理器、写入可被 include 的文件），则按那条邻接漏洞升级（P6）。 注意：把对象 toString/JSON 写进日志，只要值是攻击者可控字符串，同样可注入换行。\n",
+    "taint_model": {
+      "sources": [
+        "@RequestParam/@PathVariable(String)",
+        "HttpServletRequest.getParameter/getHeader/getCookies",
+        "request.getRequestURI",
+        "用户可控的对象字段经 toString/JSON 落日志"
+      ],
+      "sinks": [
+        "logger.info/warn/error/debug(message)",
+        "log4j/slf4j/logback 记录调用",
+        "System.out/err.println 写入日志文件"
+      ],
+      "sanitizers": [
+        "写入前剥离/替换 \\r 与 \\n（如 replace(\"[\\r\\n]\",\"_\")）",
+        "对日志值做白名单/编码",
+        "结构化日志且值作为单独参数交给框架转义",
+        "值来自固定枚举/非用户输入"
+      ]
+    },
+    "filter_hints": "# 决定性变量：(A) 落日志的值攻击者可控？ (B) 其中的 CR/LF 是否未被中和？两者都要从切片取证（cite file:line）。\n# 每条都是检查项，不是判决；缺证据 -> uncertain。\n- 写入前对该值剥离/替换了 \\r 和 \\n（或换行类字符）-> false_positive。反向：只替换了别的字符、或只 trim 首尾空白、未处理换行 -> 仍可注入 -> 不是 false_positive。\n- 落日志的值来自固定枚举/常量/非用户输入（你能在切片里确认其来源不可控）-> false_positive。反向：来源是 @RequestParam/getHeader 等且未中和 -> true_positive（纯文本日志通常 LOW）。\n- 使用参数化/结构化日志 API 且攻击者值作为独立参数交给框架处理（未拼接进 message 模板）-> 通常 false_positive；但若框架仍把它平铺进单行文本且不转义换行，则按 (B) 重新核实。\n- 看不到对换行的处理、也无法确认来源是否可控 -> uncertain + 低置信，绝不自信判 FP/TP。\n- P6 邻接：若伪造的日志会被某个会「解释」它的下游消费（HTML 日志面板 -> 存储型 XSS；日志被当作命令/配置/反序列化输入），不要返回把真漏洞埋掉的裸 FP —— 判 true_positive/uncertain 并点名真实类别。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [],
+    "cwe_aliases": [],
+    "signals": [],
+    "adjacency": [
+      "xss"
+    ],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-601",
+    "vulnerability_type": "open_redirect",
+    "long_desc": "开放重定向：用户输入控制了重定向目标，可通过把受害者弹到攻击者 URL 来钓鱼。 通常影响小于注入类；除非泄露 token，严重度一般为 LOW/MEDIUM。\n",
+    "taint_model": {
+      "sources": [
+        "@RequestParam url/returnUrl/next",
+        "HttpServletRequest.getParameter"
+      ],
+      "sinks": [
+        "response.sendRedirect(userUrl)",
+        "RedirectView",
+        "\"redirect:\" + userUrl",
+        "Location header"
+      ],
+      "sanitizers": [
+        "allowlist of redirect targets",
+        "force relative-path-only",
+        "same-origin check"
+      ]
+    },
+    "filter_hints": "- 重定向目标经白名单校验 / 强制相对路径 / 同源检查 -> false_positive\n- 重定向到固定/常量 URL，用户输入只在已知选项中选择 -> false_positive\n- sendRedirect 中是完全用户可控的绝对 URL -> true_positive（通常 LOW/MEDIUM 严重度）\n- 除非重定向会在 URL 中泄露会话 token 或 auth code，否则严重度按低计。",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [],
+    "signals": [
+      {
+        "lang": "java",
+        "pattern": "new\\s+URL\\(|openConnection\\(|HttpClient|RestTemplate|sendRedirect\\("
+      }
+    ],
+    "adjacency": [
+      "xss",
+      "ssrf"
+    ],
+    "adjacent_check": "开放重定向 —— 若污点值在没有白名单的情况下设置了重定向目标（Location / sendRedirect），攻击者就控制了跳转目的地。"
+  },
+  {
+    "cwe_id": "CWE-22",
+    "vulnerability_type": "path_traversal",
+    "long_desc": "路径穿越：用户输入未经校验就用于构造文件路径，让攻击者借助 \"..\" 触达预期目录之外的文件。 在 Java 中，风险点是 new File(base, userInput) / Files.* 带未净化的路径片段。\n",
+    "taint_model": {
+      "sources": [
+        "HttpServletRequest.getParameter",
+        "@RequestParam(String)",
+        "@PathVariable(String)",
+        "MultipartFile.getOriginalFilename"
+      ],
+      "sinks": [
+        "new File(path)",
+        "Files.read/write",
+        "FileInputStream",
+        "FileOutputStream",
+        "path string concatenation"
+      ],
+      "sanitizers": [
+        "FilenameUtils.getName",
+        "reject '..' and '/' before use",
+        "canonical path startsWith(baseDir)",
+        "extension allowlist",
+        "fixed enum/whitelist path segment"
+      ]
+    },
+    "filter_hints": "- 使用前已校验、拒绝任何 \"../\" 或 \"/\" -> false_positive（jshERP bizPath 模式）\n- 文件名经 FilenameUtils.getName / 自定义 getFileName 剥离了路径分隔符 -> false_positive\n- 路径片段来自固定枚举/白名单（如 bill/financial/material），而非自由用户输入 -> false_positive\n- 规范化/解析后的路径校验了 startsWith(baseDir) -> false_positive\n- 只有文件名（无目录）攻击者可控，且分隔符已被剥离 -> false_positive\n- 写入前强制扩展名白名单：能收窄但不单独破坏穿越；要判断目录部分。\n- 当完整的路径构造上下文不清楚时，降低 confidence，而不要武断下结论。\n",
+    "calibrated": true,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [
+      "CWE-23"
+    ],
+    "signals": [
+      {
+        "lang": "java",
+        "pattern": "Files\\.(write|copy|newOutputStream)|FileOutputStream|\\.transferTo\\("
+      },
+      {
+        "lang": "java",
+        "pattern": "Files\\.read|FileInputStream|new\\s+FileReader|Paths\\.get\\("
+      }
+    ],
+    "adjacency": [
+      "xss"
+    ],
+    "adjacent_check": "路径穿越 —— 若污点值进入文件系统路径且 '..'/分隔符未被中和，攻击者可读写目标目录之外的文件。"
+  },
+  {
+    "cwe_id": "CWE-426",
+    "vulnerability_type": "relative_path_command",
+    "long_desc": "相对路径命令执行：用进程执行 API（Runtime.exec / ProcessBuilder）启动外部程序时，给出的是「相对/不完整路径」 （如 \"cmd\"、\"./script\" 而非绝对路径），最终执行哪个二进制取决于运行时 PATH 环境变量。决定性变量是 (A) 被执行的程序路径是否非绝对（受 PATH 解析影响）？ (B) 攻击者能否影响 PATH 或在 PATH 较前目录放置同名可执行文件 （取决于部署环境/工作目录可写性/本地 vs 远程威胁模型）。按第一性原理：这本质是「可信路径」问题，不是参数注入； 即便命令参数全部可控，只要程序路径是绝对且固定，这条「relative-path」发现就不成立（但可能转为命令注入邻接，见 P6）。\n",
+    "taint_model": {
+      "sources": [
+        "传给 exec 的相对/裸程序名（'cmd'、'sh'、'./tool'）",
+        "由可控配置/属性拼出的程序路径"
+      ],
+      "sinks": [
+        "Runtime.getRuntime().exec(cmd)",
+        "new ProcessBuilder(cmd).start()",
+        "ProcessBuilder 命令列表的第 0 个元素"
+      ],
+      "sanitizers": [
+        "使用绝对路径（'/usr/bin/xxx'）",
+        "从受信任的固定配置解析出绝对路径",
+        "显式设置 ProcessBuilder 的可信工作目录/环境",
+        "程序名来自固定常量且部署环境 PATH 不可被攻击者影响"
+      ]
+    },
+    "filter_hints": "# 决定性变量：(A) 程序路径是否非绝对？ (B) 攻击者能否影响 PATH 解析？从切片/部署上下文取证（cite file:line）。\n# 检查项不是判决；缺部署上下文 -> uncertain。\n- 被执行的程序是绝对路径常量（如 \"/usr/bin/git\"）-> 这条 relative-path 发现 false_positive。反向：裸名/相对路径（\"git\"、\"./x\"）-> 按 (B) 评估，默认 true_positive 但严重度取决于 PATH 可控性。\n- 程序名来自固定常量、且无证据表明部署环境 PATH 或工作目录可被攻击者写 -> 可降级；但「PATH 是否可控」往往在切片外 -> 多半 uncertain，不要仅因路径是常量就自信 FP。\n- 这是「可信路径」问题：即使命令参数可控，只要程序路径绝对固定，relative-path 不成立。\n- 看不到程序路径是绝对还是相对、或无法判断 PATH 可控性 -> uncertain + 低置信。\n- P6 邻接：若不仅路径相对、连命令字符串/参数也由用户拼接（shell 解释），那是更严重的命令注入（command_injection）—— 不要返回裸 FP，点名真实类别并升级。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [],
+    "signals": [],
+    "adjacency": [
+      "command_injection"
+    ],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-532",
+    "vulnerability_type": "sensitive_log",
+    "long_desc": "敏感信息写入日志：把机密数据（密码、密钥/token、会话 id、信用卡/身份证等 PII）写进日志，日志随后可能被 运维/低权限人员、聚合系统或泄露的日志文件读到。这是数据暴露型发现（非传统污点 sink）。决定性变量是 (A) 被记录的值是否确为机密/PII？ 以及 (B) 它是否以明文落日志（未脱敏/掩码/哈希）。按第一性原理：判定要看 「值的语义」，不是看 logger 调用本身 —— 记录一个订单号不是问题，记录其 password 字段才是。 注意：记录整个对象（toString/JSON 整个 DTO/请求）很容易把其中的机密字段一并带出。\n",
+    "taint_model": {
+      "sources": [
+        "password/secret/token/apiKey/credential 字段",
+        "Authorization 头 / cookie 值",
+        "PII：身份证/银行卡/手机号等",
+        "整个请求体或含机密字段的 DTO"
+      ],
+      "sinks": [
+        "logger.info/debug/error(含机密的 message)",
+        "打印整个对象/请求（toString/JSON）到日志",
+        "异常日志带出机密上下文"
+      ],
+      "sanitizers": [
+        "记录前掩码/脱敏（如只留后四位）",
+        "哈希/摘要代替明文",
+        "只记录非敏感标识（用户名/ID 而非密码）",
+        "DTO 的 toString 显式屏蔽机密字段"
+      ]
+    },
+    "filter_hints": "# 决定性变量：(A) 值是否确为机密/PII？ (B) 是否明文落日志（未脱敏）？从切片取证（cite file:line）。\n# 检查项不是判决；敏感性不确定 -> uncertain。\n- 记录的是非敏感标识（订单号、用户名、请求路径，你能从字段名/来源确认非机密）-> false_positive。反向：字段名/来源指向 password/token/secret/PII -> true_positive。\n- 记录前对机密做了掩码/哈希/脱敏 -> false_positive。反向：明文直接进 message、或记录整个含机密字段的对象/请求 -> 不是 false_positive。\n- 警惕记录整个对象/请求体（toString/JSON）：即使 message 看起来无害，若对象含机密字段则仍暴露 -> 按 (A) 核实字段。\n- 看不清被记录值的语义（无法判断是否机密）或是否脱敏 -> uncertain + 低置信，绝不自信判 FP。\n- 严重度按暴露数据敏感度与日志可达性定：凭据/会话 token 通常 HIGH；一般 PII MEDIUM。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [],
+    "cwe_aliases": [],
+    "signals": [],
+    "adjacency": [],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-89",
+    "vulnerability_type": "sql_injection",
+    "long_desc": "SQL 注入：攻击者通过未净化的输入改变查询语义。在 Java/MyBatis 中，${} 字符串拼接是主要风险； #{} 参数化是安全的。\n",
+    "taint_model": {
+      "sources": [
+        "HttpServletRequest.getParameter",
+        "@RequestParam(String)",
+        "@PathVariable(String)"
+      ],
+      "sinks": [
+        "Statement.executeQuery(String)",
+        "MyBatis ${}",
+        "JdbcTemplate.query(concat)"
+      ],
+      "sanitizers": [
+        "PreparedStatement.setString",
+        "MyBatis #{}",
+        "JPA Criteria API"
+      ]
+    },
+    "filter_hints": "- 检查 #{} 是否绑定到参数化执行器（MyBatis 绑定 / PreparedStatement / setString）。MyBatis mapper 上下文（.xml 文件，或 body 含 <select>/<insert>/<update>/<delete>/<foreach>/<if>/<bind>/<where>/<set> 等 MyBatis 标签）内的 #{} = 框架 PreparedStatement 绑定（org.apache.ibatis 生成 PreparedStatement，执行器在 org.apache.ibatis 非切片可见但契约保证参数化），值不入 SQL 文本 -> parameterized（safe，守卫有效）；mapper 上下文外的 #{} 须切片内见 prepared 执行器（prepareStatement/setString）才判 parameterized，否则 unknown。不得仅凭 #{} 语法下 safe，须先确认 mapper 上下文或可见 prepared 执行器。\n- 检查 ${} 是否经 MyBatis 字符串替换或原生 Statement.execute/createNativeQuery 拼接。切片内可见原生拼接 -> 可绕过；执行器不可见 -> not_verifiable，不得仅凭 ${} 语法下 unsafe。\n- PreparedStatement/setString 参数化绑定 -> 守卫有效。\n- @PathVariable/@RequestParam 强类型（Long/Integer 等）-> Spring 强制转型阻断注入，守卫有效。\n- 上述均为检查项，不是判决；决定性变量（执行器）在切片不可见时：mapper 上下文内 #{} 依框架契约判 parameterized（契约保证参数化，非 not_verifiable）；mapper 上下文外的 #{} 无可见 prepared 执行器、或 ${} 无可见原生拼接执行器 -> unknown（判 uncertain，不得在证据缺失时自信判决）。\n- 当完整的 SQL 执行上下文不清楚时，降低 confidence 而不要武断下结论。\n",
+    "calibrated": true,
+    "conclusion_template": [
+      "sanitizer_pattern",
+      "sink_form",
+      "controllability",
+      "entry_validation"
+    ],
+    "required_decisive_facts": [
+      "sink_param_style",
+      "forward_reachable"
+    ],
+    "cwe_aliases": [
+      "CWE-566"
+    ],
+    "signals": [
+      {
+        "lang": "java",
+        "pattern": "\\$\\{\\w+\\}|createNativeQuery\\(|createQuery\\(|createStatement\\(|executeQuery\\(|executeUpdate\\("
+      }
+    ],
+    "adjacency": [],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-918",
+    "vulnerability_type": "ssrf",
+    "long_desc": "SSRF：让服务器向任意主机发起请求，从而触达内网服务或云元数据（169.254.169.254）。 危险性要求攻击者控制请求的 HOST/scheme，而不只是 path。\n",
+    "taint_model": {
+      "sources": [
+        "@RequestParam url/host",
+        "HttpServletRequest.getParameter",
+        "request body url"
+      ],
+      "sinks": [
+        "new URL(userUrl).openConnection()",
+        "HttpClient.send(userUrl)",
+        "RestTemplate.getForObject(userUrl)",
+        "URLConnection"
+      ],
+      "sanitizers": [
+        "fixed host, user data only in path",
+        "allowlist of hosts/schemes",
+        "block internal IP ranges + 169.254.169.254"
+      ]
+    },
+    "filter_hints": "- HOST 固定/常量，用户输入只填 URL 的 path 或 query -> false_positive（Semgrep 的正确模式）\n- 目标 URL 经主机/scheme 白名单校验 -> false_positive\n- 请求前已拦截内网 IP 段与云元数据（169.254.169.254） -> false_positive\n- 高危：绝不自动消除。HOST/scheme 完全用户可控 -> true_positive\n- 跟随重定向且重定向主机用户可控 -> true_positive（即便首跳已校验）。",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [],
+    "signals": [
+      {
+        "lang": "java",
+        "pattern": "new\\s+URL\\(|openConnection\\(|HttpClient|RestTemplate|sendRedirect\\("
+      }
+    ],
+    "adjacency": [
+      "path_traversal"
+    ],
+    "adjacent_check": "SSRF —— 若污点值变成服务器去请求的 URL/主机，攻击者可能触达内网服务（或用 file:// 做本地文件读）。"
+  },
+  {
+    "cwe_id": "CWE-552",
+    "vulnerability_type": "unvalidated_url_forward",
+    "long_desc": "未校验的 URL 转发（服务端 forward）：用户可控路径进入 RequestDispatcher.forward / getRequestDispatcher， 服务端在内部把请求转发到该路径。与开放重定向（客户端 302）不同 —— 这是服务端内部转发，可触达本应受保护的 内部资源（绕过 URL 层鉴权、读取 WEB-INF 下受保护的 JSP/资源）。决定性变量是 (A) 转发目标路径是否攻击者可控？ 以及 (B) 是否缺少白名单/前缀限定，使其能指向预期之外的内部资源（尤其 ../ 或 /WEB-INF/）。 按第一性原理：危害来自「服务端代你访问内部资源」+「鉴权常在转发前的 URL 层做」，不是看 forward API 本身。\n",
+    "taint_model": {
+      "sources": [
+        "@RequestParam/@PathVariable url/page/path",
+        "HttpServletRequest.getParameter",
+        "request 中可控的目标路径片段"
+      ],
+      "sinks": [
+        "request.getRequestDispatcher(userPath).forward(req,resp)",
+        "ServletContext.getRequestDispatcher(userPath)",
+        "返回内部 forward 视图名时拼接用户输入"
+      ],
+      "sanitizers": [
+        "目标路径白名单/固定枚举",
+        "强制前缀且拒绝 ../（规范化后校验仍在允许目录内）",
+        "路径来自固定常量/非用户输入",
+        "转发后资源自身有独立鉴权"
+      ]
+    },
+    "filter_hints": "# 决定性变量：(A) forward 目标攻击者可控？ (B) 是否缺白名单/前缀限定（可指向内部资源/../WEB-INF）？取证 cite file:line。\n# 检查项不是判决；缺证据 -> uncertain。\n- 转发目标来自固定枚举/白名单/常量（切片可确认不可控）-> false_positive。反向：目标来自 @RequestParam 且原样进 forward -> true_positive。\n- 对目标做了前缀限定且规范化后校验仍在允许目录内、拒绝 ../ -> false_positive。反向：仅简单拼接、或 ../ 未被中和（可达 /WEB-INF 等）-> 不是 false_positive。\n- 区分开放重定向：这是服务端内部 forward（可绕鉴权读内部资源），不要按客户端重定向的低危一概降级。\n- 看不到目标来源或校验逻辑 -> uncertain + 低置信，绝不自信判 FP。\n- P6 邻接：若可控路径进入文件系统读取而非 servlet 转发，应考虑路径穿越 / 任意文件读；点名真实类别，勿裸 FP。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [],
+    "signals": [],
+    "adjacency": [
+      "path_traversal"
+    ],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-327",
+    "vulnerability_type": "weak_crypto",
+    "long_desc": "使用了已被攻破或有风险的加密算法（MD5、SHA1、DES、ECB 模式、用 java.util.Random 生成 token），或密码哈希计算量不足（CWE-916：用未加盐/未拉伸的快速哈希如裸 SHA-256 存密码，应改 bcrypt/scrypt/Argon2），或弱哈希（CWE-328）。弱点在 sink 自身——选用的密码学原语不匹配其保护对象（sink-inherent），不依赖输入是否受控。严重度取决于该算法保护的是什么：密码/签名/token 属严重；校验和/缓存键则不然。\n",
+    "taint_model": {
+      "sources": [],
+      "sinks": [
+        "MessageDigest.getInstance(MD5/SHA1)",
+        "Cipher.getInstance(DES/.../ECB)",
+        "new Random() for security tokens"
+      ],
+      "sanitizers": [
+        "SHA-256+",
+        "AES-GCM",
+        "bcrypt/scrypt/Argon2 for passwords",
+        "SecureRandom for tokens"
+      ]
+    },
+    "filter_hints": "- 弱哈希用于非安全目的（缓存键、ETag、校验和），不涉及密码/签名 -> false_positive 或低严重度\n- MD5/SHA1 仅用于被强制要求的遗留互操作 -> 降低严重度，并注明风险\n- 弱算法用于保护密码、token 或签名 -> true_positive\n- 这通常是配置型发现、没有污点 codeFlow；按被保护的数据判断，而不是按数据流。",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [],
+    "cwe_aliases": [
+      "CWE-328",
+      "CWE-916"
+    ],
+    "signals": [],
+    "adjacency": [],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-79",
+    "vulnerability_type": "xss",
+    "long_desc": "XSS 发生在攻击者可控的内容到达「受害者浏览器会把它当作标记/脚本来解释」的上下文时。按第一性原理判断， 不要看 sink API 名：(1) 内容是否攻击者可控？(2) 是否被完整回显/返回？(3) 浏览器是否会把它渲染为 HTML/JS？ 渲染与否由 Content-Type、X-Content-Type-Options: nosniff、Content-Disposition（inline vs attachment） 和文件扩展名/字符集决定 —— 而不是由 sink 是 getWriter 还是 getOutputStream 决定。\n",
+    "taint_model": {
+      "sources": [
+        "HttpServletRequest.getParameter",
+        "@RequestParam(String)",
+        "extractPathFromPattern(request)",
+        "uploaded file content served back"
+      ],
+      "sinks": [
+        "response.getWriter().write/print(html)",
+        "response.getOutputStream() streaming attacker-controlled file bytes",
+        "Model attribute rendered in JSP/Thymeleaf",
+        "element.innerHTML"
+      ],
+      "sanitizers": [
+        "OWASP Encode.forHtml",
+        "auto-escaping template (Thymeleaf th:text / JSP c:out)",
+        "response forced to attachment + nosniff + non-HTML Content-Type"
+      ]
+    },
+    "filter_hints": "# XSS 的决定性变量：(A) 被返回/回显的内容是否攻击者可控？\n# (B) 它是否被作为标记渲染（Content-Type/nosniff/disposition/扩展名）？两者都必须从切片中确立。\n# 每条都是检查项；引用 file:line，否则返回 uncertain。\n- getOutputStream / 文件流式 sink 本身并不能排除 XSS（不要对 API 名做模式匹配）。但只有 (A) 与 (B) 都成立时才是 XSS。\n- (A) 内容可控 —— 你必须追踪它：只有当攻击者能控制文件「内容」（例如一个攻击者可达的上传 sink 写入该文件、随后又被返回）时，流式字节才与 XSS 相关。若文件是硬编码/常量，或你在切片中找不到攻击者可达的写入，则内容可控性未证实 -> 非 true_positive。无其它证据时 -> uncertain（仅当读取目标可证为固定/常量时才 false_positive）。\n- (B) 渲染 —— 仅当以下全部成立时，才把文件流式当作安全（false_positive）：Content-Disposition: attachment 且 X-Content-Type-Options: nosniff 且攻击者无法影响的非 HTML Content-Type。任一缺失或未知 -> 不是 false_positive。\n- 仅当你能同时引用 (A) 内容攻击者可控 与 (B) 可渲染响应 时，才判 true_positive。若能引用 (B) 可渲染但无法证明 (A)，或反之 -> uncertain，而非自信判定。\n- 值经自动转义模板引擎渲染（Thymeleaf th:text、JSP <c:out>）且无 raw/未转义输出 -> false_positive。\n- @RestController 返回被 API 客户端（Jackson）消费的 JSON 对象、Content-Type application/json -> false_positive。\n- replace(\"..\",\"\") 是路径穿越的缓解，不是 XSS 编码；绝不要把它当作 XSS 净化器。注意它也可能是可绕过的穿越防护（如 \"....//\") -> 考虑相邻的路径穿越 / 任意文件读。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [],
+    "cwe_aliases": [],
+    "signals": [],
+    "adjacency": [
+      "open_redirect"
+    ],
+    "adjacent_check": "存储型/反射型 XSS —— 若攻击者可控的内容随后被作为可渲染标记返回或回显给受害者浏览器（由 Content-Type / nosniff / Content-Disposition / 扩展名决定），即便声明的 sink 看着安全，它仍是 XSS。"
+  },
+  {
+    "cwe_id": "CWE-611",
+    "vulnerability_type": "xxe",
+    "long_desc": "XXE（XML 外部实体注入）：XML 解析器在启用外部实体解析的情况下处理不可信 XML， 从而能造成文件读取、SSRF 或 DoS。安全与否取决于解析器/工厂是否对 DTD/实体做了加固。\n",
+    "taint_model": {
+      "sources": [
+        "uploaded XML",
+        "request body XML",
+        "HttpServletRequest.getParameter"
+      ],
+      "sinks": [
+        "DocumentBuilder.parse",
+        "SAXParser.parse",
+        "XMLReader.parse",
+        "Unmarshaller.unmarshal",
+        "Transformer on untrusted XML"
+      ],
+      "sanitizers": [
+        "disallow-doctype-decl=true",
+        "external-general-entities=false",
+        "XMLConstants.FEATURE_SECURE_PROCESSING",
+        "setExpandEntityReferences(false)"
+      ]
+    },
+    "filter_hints": "- 解析器配置了 disallow-doctype-decl=true 或 external-general-entities=false 或 FEATURE_SECURE_PROCESSING -> false_positive\n- XML 来自可信/内部来源，而非用户输入 -> false_positive\n- 使用了预先加固、拒绝 DTD 的工厂 -> false_positive\n- 对喂入用户 XML 的解析器没有任何实体解析加固 -> true_positive\n- 若上下文中看不到工厂配置，降低 confidence。",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [],
+    "signals": [],
+    "adjacency": [
+      "ssrf"
+    ],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-338",
+    "vulnerability_type": "insecure_randomness",
+    "long_desc": "弱随机数：用非密码学安全的 PRNG（ThreadLocalRandom、java.util.Random、Math.random）生成安全敏感值（会话 token、审批号、重置链接、CSRF token、订单/流水号）。弱点在 sink 自身——这类 PRNG 输出可预测，不依赖输入是否受控（sink-inherent）：攻击者无需控制输入，能观察/推测序列即可预测下一个值。这与 SQLi/XSS 等 taint-flow 不同：后者弱点取决于受控输入能否到 sink，前者 sink 自身就是弱点。决定性变量：(A) 生成安全敏感值的 PRNG 是否密码学安全？(B) 该值是否用于安全敏感用途（鉴权/防重放/不可猜测性）？SecureRandom / 密钥的 KeyGenerator 是安全的；ThreadLocalRandom/Random/Math.random 不是。\n",
+    "taint_model": {
+      "sources": [
+        "（sink-inherent：弱点在 sink 自身，无外部 taint source）"
+      ],
+      "sinks": [
+        "ThreadLocalRandom.current().nextInt/nextLong",
+        "new Random().nextInt/nextLong",
+        "Math.random()",
+        "new Random(predictable seed)"
+      ],
+      "sanitizers": [
+        "java.security.SecureRandom（密码学安全）",
+        "KeyGenerator/KeyPairGenerator（密钥派生）",
+        "SecureRandom 驱动的 UUIDv4 用于不可猜测标识"
+      ]
+    },
+    "filter_hints": "# 决定性变量：(A) PRNG 是否密码学安全？(B) 生成值是否安全敏感用途？\n# sink-inherent：弱点在 sink 自身，无需追 taint source→sink 传播；判 TP 不靠「受控输入能否到 sink」的 reachability。\n# 每条从切片/工具引用 file:line；PRNG 类型可见即定 (A)，用途可见即定 (B)。\n- SecureRandom.nextInt/nextBytes 或 KeyGenerator 生成密钥 -> 安全，排除弱随机。\n- ThreadLocalRandom.current().nextInt(N) / new Random() / Math.random() 生成会话 token、审批号、重置 token、CSRF token、订单/流水号 -> true_positive（sink 自身即弱 + 安全敏感用途）。\n- 上述弱 PRNG 用于纯展示/分页/缓存 key 等非安全用途 -> 非 TP（(B) 不成立，out_of_scope/FP）；用途不可见 -> uncertain。\n- 弱随机生成的是数据库自增主键/内部自增 id 等本就不要求不可猜测的值 -> 非 TP（(B) 不成立）。\n- 弱随机值若同时是查询键（如可预测的 approval_no 被用来查/提交他人记录），点名其还构成越权/IDOR 链（CWE-639），在 reasoning 并列评估；但弱随机本身独立成立，不得因「另见 IDOR」就略过。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [
+      "CWE-330"
+    ],
+    "signals": [
+      {
+        "lang": "java",
+        "pattern": "ThreadLocalRandom|new\\s+Random\\(|Math\\.random\\("
+      }
+    ],
+    "adjacency": [],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-798",
+    "vulnerability_type": "hardcoded_credentials",
+    "long_desc": "硬编码凭证：把密码、密钥、token、API key 等敏感凭证直接写死在源码里（字符串字面量、常量字段），而非从安全配置/密钥库/环境注入。弱点在 sink 自身——凭证在源码里即泄露（sink-inherent）：攻击者无需控制输入，能读源码/反编译/日志即可获得凭证。这与 SQLi 等 taint-flow 不同：后者弱点取决于受控输入能否到 sink，前者 sink 自身就是弱点。决定性变量：(A) 写死的是否是真实可用凭证（非占位/示例/mock/空串）？(B) 该凭证是否用于生产鉴权/加密/外部服务调用（安全敏感用途）？从安全配置（Vault/KMS/环境变量/SecretsManager）注入的是安全的；源码字面量硬编码不是。\n",
+    "taint_model": {
+      "sources": [
+        "（sink-inherent：弱点在 sink 自身，无外部 taint source）"
+      ],
+      "sinks": [
+        "private static final String 字段 = 字面量凭证（password/secret/key/token）",
+        "new SecretKeySpec(字面量.getBytes(), ...)",
+        "PasswordAuthentication(用户, 字面量)",
+        "props.put(password, 字面量) / DriverManager.getConnection(url, 用户, 字面量)"
+      ],
+      "sanitizers": [
+        "从环境变量/配置中心/Vault/KMS/SecretsManager 读取（非源码字面量）",
+        "占位符/示例/mock 值（非真实凭证：YOUR_API_KEY/REPLACE_ME/星号串/test/placeholder/空串/明显假值）"
+      ]
+    },
+    "filter_hints": "# 决定性变量：(A) 写死的是否真实可用凭证（非占位/示例/mock/空）？(B) 是否安全敏感用途（生产鉴权/加密/外部调用）？\n# sink-inherent：弱点在 sink 自身，无需追 taint source→sink 传播；判 TP 不靠「受控输入能否到 sink」的 reachability。\n# 每条从切片/工具引用 file:line；凭证是源码字面量即定 (A)（排除占位/示例/mock/空），用途可见即定 (B)。\n- 源码字面量密码/密钥/token/API key 用于生产 DB 连接、外部 API 鉴权、加密密钥、JWT 签名密钥 -> true_positive（sink 自身即弱 + 安全敏感用途）。\n- 值是占位符/示例/mock（YOUR_API_KEY/REPLACE_ME/星号串/test/placeholder/空串/明显假值如 123456）-> 非 TP（(A) 不成立，FP/out_of_scope）。\n- 在 @Test / test 包 / 明显测试代码里的 mock 凭证 -> 非 TP（非生产路径）。\n- 硬编码的是非凭证字符串（普通配置项、业务常量、SQL 片段、正则）-> 非 TP（非凭证，out_of_scope）。\n- 凭证从环境变量/Vault/配置中心/SecretsManager 读（非字面量）-> 安全，排除硬编码。\n- 值像真实凭证但用途不可见（看不出是否生产鉴权）-> uncertain（(B) 不定），不自动 FP。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [
+      "forward_reachable"
+    ],
+    "cwe_aliases": [
+      "CWE-259",
+      "CWE-321"
+    ],
+    "signals": [],
+    "adjacency": [],
+    "adjacent_check": ""
+  },
+  {
+    "cwe_id": "CWE-915",
+    "vulnerability_type": "mass_assignment",
+    "long_desc": "CWE-915 批量赋值(对象属性的不当修改):框架把攻击者可控的请求字段自动绑定到后端对象/实体的属性上,且无白名单或专用 DTO 隔离——攻击者借此覆写本不应暴露的敏感/特权字段(角色 role、isAdmin、权限标识、归属 ownerId、余额、状态标记),造成鉴权或状态越权。危害是「字段绑定即越权」,不是污点数据流:不取决于输入是否「流」到 sink,而取决于绑定面是否含未隔离的敏感字段。决定性变量:(A) 请求是否把攻击者可控的键绑定到对象字段(Spring @ModelAttribute/@RequestBody 把请求参数/JSON 键映射到对象 setter)?(B) 是否有白名单(@InitBinder setAllowedFields)、@JsonIgnoreProperties、或专用 DTO(只含非敏感字段)把敏感字段隔离出绑定面?(C) 被覆写的字段能否改变鉴权/归属/状态/金额?判 TP 不靠「受控输入到 sink 的 reachability」,靠「绑定面含敏感字段且无隔离」。这与 SQLi 等 taint-flow 不同:后者弱点取决于受控输入能否到 sink,前者绑定本身即越权。 另:915 的 sink 须是对权限字段的实际写(setter 覆写 / UPDATE / INSERT);若数据流终点是只读 SELECT/查询(攻击者可控字段仅作 WHERE 过滤,无字段被覆写),则非 915(顶多 CWE-200 信息泄露/566 IDOR)——sink 读写性是 915 硬否决,判读写先于判白名单/隔离。\n",
+    "taint_model": {
+      "sources": [
+        "请求参数 / JSON body 键(攻击者可控:@ModelAttribute / @RequestBody 自动绑定)"
+      ],
+      "sinks": [
+        "对象 setter / 字段赋值(domain entity 的 role/isAdmin/ownerId/balance/status 等敏感字段被绑定覆写)"
+      ],
+      "sanitizers": [
+        "白名单(@InitBinder setAllowedFields / setDisallowedFields)",
+        "@JsonIgnoreProperties / @JsonIgnore 隔离敏感字段",
+        "专用 DTO(只含非敏感字段)而非直接绑 domain entity"
+      ]
+    },
+    "filter_hints": "# 决定性变量:(A) 请求键绑定到对象字段? (B) 敏感字段是否被白名单/@JsonIgnoreProperties/专用 DTO 隔离? (C) 被覆写字段能否改鉴权/归属/状态/金额? (D) sink 是否写权限字段(只读 SELECT/查询 -> 非 915)?\n# 绑定型发现:通常无 taint codeFlow;按「绑定面是否含未隔离敏感字段」判,不按数据流/reachability 判。\n# 每条从切片/工具引用 file:line。\n- sink 读写性是 915 硬否决,前置于白名单/隔离:915 要攻击者绑定字段被**写**入权限字段(role/isAdmin/ownerId/balance/status/审批状态/部门)。若 sink 是只读 SELECT/查询(参数化查询,WHERE 过滤项含攻击者可控字段,但无 UPDATE/INSERT/DELETE 写权限字段)-> false_positive(非 915;只读查询的攻击者可控过滤项顶多 CWE-200 信息泄露/566 IDOR,不是 mass-assignment 越权写)。切片 sink_evidence 的 SQL/param_style 已含此事实——先判 sink 读写,再判白名单/隔离。\n- 无白名单 + 绑定面含敏感特权字段(role/isAdmin/ownerId/balance/status),攻击者可控请求键能覆写 + sink 是写 -> true_positive(绑定即越权)。\n- 存在白名单(setAllowedFields) / @JsonIgnoreProperties / 专用 DTO 只暴露非敏感字段 -> false_positive(敏感字段已隔离,绑不到)。\n- 绑定的字段全是非敏感(展示名/备注/偏好),无角色/权限/归属/金额字段 -> false_positive 或低严重度。\n- 仅按 id 查询(查询用,非覆写敏感字段)-> 非 915(out_of_scope,疑似 566 IDOR)。\n- 看不出是否有白名单/隔离(切片未含 controller/binder) -> uncertain((B) 不定),不自动 TP。\n",
+    "calibrated": false,
+    "conclusion_template": [],
+    "required_decisive_facts": [],
+    "cwe_aliases": [],
+    "signals": [],
+    "adjacency": [],
+    "adjacent_check": ""
+  }
+]

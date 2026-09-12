@@ -1,0 +1,10 @@
+{
+  "scan_id": "eclipse-gateway",
+  "repo_key": "eclipse-gateway",
+  "status": "done",
+  "scanner_version": "v2.5.1",
+  "policy_version": 1,
+  "started_at": "2026-09-11T10:54:34Z",
+  "finished_at": "2026-09-11T10:55:32Z",
+  "duration_seconds": 58.3870738
+}

@@ -1,0 +1,510 @@
+{
+  "repo_key": "recon-core",
+  "scanner_ver": "v2.5.1",
+  "components": [
+    {
+      "name": "cn.hutool:hutool-extra",
+      "version": "5.0.6",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+    },
+    {
+      "name": "cn.hutool:hutool-http",
+      "version": "5.1.1",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+    },
+    {
+      "name": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+    },
+    {
+      "name": "com.squareup.okhttp3:okhttp",
+      "version": "3.10.0",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+    },
+    {
+      "name": "commons-net:commons-net",
+      "version": "3.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+    },
+    {
+      "name": "dom4j:dom4j",
+      "version": "1.6.1",
+      "ecosystem": "Maven",
+      "license": "UNKNOWN",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+    },
+    {
+      "name": "log4j:log4j",
+      "version": "1.2.16",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+    },
+    {
+      "name": "org.apache.commons:commons-compress",
+      "version": "1.19",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+    },
+    {
+      "name": "org.bouncycastle:bcpg-jdk18on",
+      "version": "1.78.1",
+      "ecosystem": "Maven",
+      "license": "non-standard AND Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+    },
+    {
+      "name": "org.bouncycastle:bcprov-jdk18on",
+      "version": "1.78.1",
+      "ecosystem": "Maven",
+      "license": "non-standard",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-component/pom.xml"
+    },
+    {
+      "name": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-facade/pom.xml"
+    },
+    {
+      "name": "org.apache.commons:commons-lang3",
+      "version": "3.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-facade/pom.xml"
+    },
+    {
+      "name": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-service/pom.xml"
+    },
+    {
+      "name": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-web/pom.xml"
+    },
+    {
+      "name": "io.springfox:springfox-swagger-ui",
+      "version": "2.8.0",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-web/pom.xml"
+    },
+    {
+      "name": "org.apache.httpcomponents:httpclient",
+      "version": "4.5.5",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0",
+      "direct_or_transitive": "direct",
+      "source_file": "C:/Users/tanglianglong/Desktop/codescan_repos/codescan-service1/codescan_repos/recon-core-latest/recon-core-web/pom.xml"
+    }
+  ],
+  "vulns": [
+    {
+      "component": "cn.hutool:hutool-extra",
+      "version": "5.0.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-gcfh-36x4-mgj6",
+      "cve": "CVE-2025-56769",
+      "severity": "high",
+      "cvss_score": "8.9",
+      "summary": "Hutool allows remote code execution (RCE) via the QLExpressEngine class"
+    },
+    {
+      "component": "cn.hutool:hutool-http",
+      "version": "5.1.1",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-p7w9-8mxw-p3g7",
+      "cve": "CVE-2022-22885",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Improper Certificate Validation in Hutool"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-crf3-v9rr-v7hj",
+      "cve": "CVE-2026-16723",
+      "severity": "high",
+      "cvss_score": "9.0",
+      "summary": "fastjson has a remote code execution (RCE) vulnerability"
+    },
+    {
+      "component": "com.squareup.okhttp3:okhttp",
+      "version": "3.10.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-3cqm-mf7h-prrj",
+      "cve": "CVE-2021-0341",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Square OkHttp can accept the wrong certificate"
+    },
+    {
+      "component": "commons-net:commons-net",
+      "version": "3.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-cgp8-4m63-fhh5",
+      "cve": "CVE-2021-37533",
+      "severity": "medium",
+      "cvss_score": "6.5",
+      "summary": "Apache Commons Net vulnerable to information leakage via malicious server"
+    },
+    {
+      "component": "dom4j:dom4j",
+      "version": "1.6.1",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-6pcc-3rfx-4gpm",
+      "cve": "CVE-2018-1000632",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Dom4j contains a XML Injection vulnerability"
+    },
+    {
+      "component": "dom4j:dom4j",
+      "version": "1.6.1",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-hwj3-m3p6-hj38",
+      "cve": "CVE-2020-10683",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "dom4j allows External Entities by default which might enable XXE attacks"
+    },
+    {
+      "component": "log4j:log4j",
+      "version": "1.2.16",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-2qrg-x229-3v8q",
+      "cve": "CVE-2019-17571",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Deserialization of Untrusted Data in Log4j"
+    },
+    {
+      "component": "log4j:log4j",
+      "version": "1.2.16",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-65fg-84f6-3jq3",
+      "cve": "CVE-2022-23305",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "SQL Injection in Log4j 1.2.x"
+    },
+    {
+      "component": "log4j:log4j",
+      "version": "1.2.16",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-f7vh-qwp3-x37m",
+      "cve": "CVE-2022-23307",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Deserialization of Untrusted Data in Apache Log4j"
+    },
+    {
+      "component": "log4j:log4j",
+      "version": "1.2.16",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-fp5r-v3w9-4333",
+      "cve": "CVE-2021-4104",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "JMSAppender in Log4j 1.2 is vulnerable to deserialization of untrusted data"
+    },
+    {
+      "component": "log4j:log4j",
+      "version": "1.2.16",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-vp98-w2p3-mv35",
+      "cve": "CVE-2023-26464",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Apache Log4j 1.x (EOL) allows Denial of Service (DoS)"
+    },
+    {
+      "component": "log4j:log4j",
+      "version": "1.2.16",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-w9p3-5cr8-m3jj",
+      "cve": "CVE-2022-23302",
+      "severity": "high",
+      "cvss_score": "8.8",
+      "summary": "Deserialization of Untrusted Data in Log4j 1.x"
+    },
+    {
+      "component": "org.apache.commons:commons-compress",
+      "version": "1.19",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-4g9r-vxhx-9pgx",
+      "cve": "CVE-2024-25710",
+      "severity": "medium",
+      "cvss_score": "5.9",
+      "summary": "Apache Commons Compress: Denial of service caused by an infinite loop for a corrupted DUMP file"
+    },
+    {
+      "component": "org.apache.commons:commons-compress",
+      "version": "1.19",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7hfm-57qf-j43q",
+      "cve": "CVE-2021-35515",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Excessive Iteration in Compress"
+    },
+    {
+      "component": "org.apache.commons:commons-compress",
+      "version": "1.19",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-crv7-7245-f45f",
+      "cve": "CVE-2021-35516",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Improper Handling of Length Parameter Inconsistency in Compress"
+    },
+    {
+      "component": "org.apache.commons:commons-compress",
+      "version": "1.19",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-mc84-pj99-q6hh",
+      "cve": "CVE-2021-36090",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Improper Handling of Length Parameter Inconsistency in Compress"
+    },
+    {
+      "component": "org.apache.commons:commons-compress",
+      "version": "1.19",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-xqfj-vm6h-2x34",
+      "cve": "CVE-2021-35517",
+      "severity": "high",
+      "cvss_score": "7.5",
+      "summary": "Improper Handling of Length Parameter Inconsistency in Compress"
+    },
+    {
+      "component": "org.bouncycastle:bcpg-jdk18on",
+      "version": "1.78.1",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-cj8j-37rh-8475",
+      "cve": "CVE-2026-3505",
+      "severity": "high",
+      "cvss_score": "8.7",
+      "summary": "Bouncy Castle Uncontrolled Resource Consumption vulnerability"
+    },
+    {
+      "component": "org.bouncycastle:bcprov-jdk18on",
+      "version": "1.78.1",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-574f-3g2m-x479",
+      "cve": "CVE-2025-14813",
+      "severity": "critical",
+      "cvss_score": "9.3",
+      "summary": "Bouncy Castle for Java GOST 28147 CTR mode reuses keystream after 255 blocks"
+    },
+    {
+      "component": "org.bouncycastle:bcprov-jdk18on",
+      "version": "1.78.1",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-c3fc-8qff-9hwx",
+      "cve": "CVE-2026-0636",
+      "severity": "medium",
+      "cvss_score": "5.5",
+      "summary": "Bouncy Castle has an LDAP injection"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-crf3-v9rr-v7hj",
+      "cve": "CVE-2026-16723",
+      "severity": "high",
+      "cvss_score": "9.0",
+      "summary": "fastjson has a remote code execution (RCE) vulnerability"
+    },
+    {
+      "component": "org.apache.commons:commons-lang3",
+      "version": "3.6",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-j288-q9x7-2f5v",
+      "cve": "CVE-2025-48924",
+      "severity": "medium",
+      "cvss_score": "6.5",
+      "summary": "Apache Commons Lang is vulnerable to Uncontrolled Recursion when processing long inputs"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-crf3-v9rr-v7hj",
+      "cve": "CVE-2026-16723",
+      "severity": "high",
+      "cvss_score": "9.0",
+      "summary": "fastjson has a remote code execution (RCE) vulnerability"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-crf3-v9rr-v7hj",
+      "cve": "CVE-2026-16723",
+      "severity": "high",
+      "cvss_score": "9.0",
+      "summary": "fastjson has a remote code execution (RCE) vulnerability"
+    },
+    {
+      "component": "io.springfox:springfox-swagger-ui",
+      "version": "2.8.0",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-c427-hjc3-wrfw",
+      "cve": "CVE-2019-17495",
+      "severity": "critical",
+      "cvss_score": "9.8",
+      "summary": "Cross-site scripting in Swagger-UI"
+    },
+    {
+      "component": "org.apache.httpcomponents:httpclient",
+      "version": "4.5.5",
+      "ecosystem": "Maven",
+      "osv_id": "GHSA-7r82-7xv7-xcpj",
+      "cve": "CVE-2020-13956",
+      "severity": "medium",
+      "cvss_score": "5.3",
+      "summary": "Cross-site scripting in Apache HttpClient"
+    }
+  ],
+  "licenses": [
+    {
+      "component": "cn.hutool:hutool-extra",
+      "version": "5.0.6",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "cn.hutool:hutool-http",
+      "version": "5.1.1",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "com.squareup.okhttp3:okhttp",
+      "version": "3.10.0",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "commons-net:commons-net",
+      "version": "3.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "dom4j:dom4j",
+      "version": "1.6.1",
+      "ecosystem": "Maven",
+      "license": "UNKNOWN"
+    },
+    {
+      "component": "log4j:log4j",
+      "version": "1.2.16",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.apache.commons:commons-compress",
+      "version": "1.19",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.bouncycastle:bcpg-jdk18on",
+      "version": "1.78.1",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "org.bouncycastle:bcpg-jdk18on",
+      "version": "1.78.1",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.bouncycastle:bcprov-jdk18on",
+      "version": "1.78.1",
+      "ecosystem": "Maven",
+      "license": "non-standard"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.apache.commons:commons-lang3",
+      "version": "3.6",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "com.alibaba:fastjson",
+      "version": "1.2.83",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "io.springfox:springfox-swagger-ui",
+      "version": "2.8.0",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    },
+    {
+      "component": "org.apache.httpcomponents:httpclient",
+      "version": "4.5.5",
+      "ecosystem": "Maven",
+      "license": "Apache-2.0"
+    }
+  ]
+}

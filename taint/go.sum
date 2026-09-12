@@ -1,0 +1,4 @@
+github.com/odvcencio/gotreesitter v0.48.1 h1:Pjd2GAf4I5G9K9t+DFDLvwXVsvRatqLox1p29nfTwF4=
+github.com/odvcencio/gotreesitter v0.48.1/go.mod h1:hBVkghd0paaYAVwd2087vfwdeU984bQbMo9LvpE0moo=
+golang.org/x/text v0.40.0 h1:Ub2Z6/xjgF1WrYQz2nuITOEegKFtiIy+rieRJ5lHZKs=
+golang.org/x/text v0.40.0/go.mod h1:hpnzDAfGV753zIKo+wk3u1bVKCGPbrnF7+7LBF/UHVY=

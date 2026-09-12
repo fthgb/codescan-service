@@ -1,0 +1,901 @@
+{
+  "summary": {
+    "ai_false_positives": 0,
+    "ai_processed": 2,
+    "ai_true_positives": 2,
+    "ai_uncertain": 0,
+    "blind_alerts": 0,
+    "bughash_cache_hits": 0,
+    "buried_count": 1,
+    "buried_types": [
+      "sql_injection"
+    ],
+    "dispositions": {
+      "true_positive": 2
+    },
+    "fp_patterns": {},
+    "funnel": {
+      "ai_judged": 2,
+      "auto_suppressed": 0,
+      "bughash_inherited": 0,
+      "control_flow_pruned": 0,
+      "hard_excluded": 0,
+      "sast_in": 2
+    },
+    "hard_excluded": 0,
+    "human_review_needed": 0,
+    "inc21_agreed_fp": 0,
+    "inc21_overridden_by_llm": 0,
+    "inc21_total": 0,
+    "probe_downgrades": 0,
+    "severity_counts": {
+      "critical": 1,
+      "high": 1
+    },
+    "type_mismatch_types": [],
+    "type_mismatches": 0
+  },
+  "details": [
+    {
+      "alert_id": "codesafe-6D64DB49C028D8588538C46EF6060ED7-jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java:1282",
+      "bughash": "8ea83e4fb5660a060fba1b2bca887068dfccd530b8305f51e0da252d2aa16469",
+      "verdict": "true_positive",
+      "disposition": "true_positive",
+      "vulnerability_type": "sql_injection",
+      "cwe_id": "CWE-89",
+      "actual_vulnerability_type": null,
+      "actual_vulnerability_types": null,
+      "type_mismatch_types": null,
+      "buried_types": [
+        "sql_injection"
+      ],
+      "confidence": 9,
+      "exploit_path": {
+        "entry_point": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:573",
+        "data_flow": [
+          "攻击者通过 GET /material/getListWithStock 请求参数 column、order 传入任意字符串，二者均为 String 类型、完全可控。 [跳0]",
+          "getListWithStock 中 column/order 经 StringUtil.safeSqlParse 净化后，与 depotList/idList 等一起传入 materialService.getListWithStock。 [跳0]",
+          "safeSqlParse(StringUtil.java:365) 仅用黑名单 regex 删除 ' # % ; -- 及两侧带空格的关键词（如 select /union ），未删除无空格关键词(select()、if、sleep)与括号，净化可被绕过。 [跳9]",
+          "materialService.getListWithStock → materialMapperEx.getListWithStock，将 column/order 原样经 ${column} ${order} 拼入 SQL。 [跳1]",
+          "Mapper XML 中 order by ${column} ${order} 为字符串替换（concat），值直接进 SQL 文本，造成 SQL 注入。 [跳7]"
+        ],
+        "sink_reached": true,
+        "attacker_control_at_sink": "full",
+        "path_broken_at": null,
+        "taint_source": {
+          "code": "@RequestParam(value = \"column\", required = false) String column 与 @RequestParam(value = \"order\", required = false) String order",
+          "location": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:583"
+        },
+        "sink_evidence": {
+          "method_key": "MaterialMapperEx.getListWithStock",
+          "param_style": "mixed",
+          "sink_code": "order by ${column} ${order}",
+          "sink_location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:43",
+          "source_tool": "reachable_sinks"
+        }
+      },
+      "reasoning": "声明 sink `order by ${column} ${order}` 是 MyBatis ${} 文本替换，本身即 CWE-89 弱点。safeSqlParse 仅删带空格关键词，攻击者用 select( 无空格写法可原样绕过，使 `order by id ,(select(if(1=1,sleep(5),0)))` 成为合法可延时注入的 SQL，从而盲注拖库。position/materialParam/depotList/idList 均走 #{} 参数化，唯 column/order 未受控。",
+      "sanitization_found": "StringUtil.safeSqlParse (StringUtil.java:365) 使用黑名单 regex(StringUtil.java:24-29) 删除 ' # % ; -- 及两侧带空格的关键词；该黑名单不含 if/sleep/from/where 等，且不删无空格关键词(select()、union()、括号)，对 ORDER BY 注入完全可绕过，不构成有效净化。",
+      "suggested_fix": "[MaterialController.java:33] StringUtil.safeSqlParse(column), StringUtil.safeSqlParse(order), (currentPage-1)*pageSize, pageSize); → getSafeSortColumn(column), getSafeSortOrder(order), (currentPage-1)*pageSize, pageSize);\n说明：新增 getSafeSortColumn/getSafeSortOrder，column 仅允许白名单列名（如 id/name/createTime）、order 仅允许 ASC/DESC，否则返回默认；使进入 ${column} ${order} 的值恒为安全常量，杜绝注入。",
+      "severity": "critical",
+      "severity_rationale": "具体事实：面向公网的 GET /material/getListWithStock 接口，column/order 经可被无空格关键词绕过的黑名单后，直接以 ${column} ${order} 拼入 SQL，攻击者用 sleep 载荷即可盲注读取整库（含凭据）。升级/降级触发条件：若该接口经核实仅限管理员角色访问，则降级为 high；若该接口实际未对外暴露（仅内网），则降级为 out_of_scope。",
+      "model_used": "hy3",
+      "control_flow_mutex": false,
+      "exploit_payload": "column=id\u0026order=,(select(if(1=1,sleep(5),0)))",
+      "attack_request": "GET /material/getListWithStock?currentPage=column%3Did%26order%3D%2C%28select%28if%281%3D1%2Csleep%285%29%2C0%29%29%29 HTTP/1.1\nHost: target",
+      "decisive_check": null,
+      "decisive_checks": null,
+      "verification": {
+        "action": "bypass_confirmed_tp_kept",
+        "by": "getListWithStock",
+        "guards": [
+          {
+            "code": "@RequestParam(\"currentPage\") Integer currentPage",
+            "kind": "strong_type_param",
+            "location": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:575",
+            "reason": "无可核实 taint 证据（sinkVars 与 hop taint_variable 均空），不能假设强类型参数 currentPage 守了本案注入流，保留原判",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "@RequestParam(\"pageSize\") Integer pageSize",
+            "kind": "strong_type_param",
+            "location": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:576",
+            "reason": "无可核实 taint 证据（sinkVars 与 hop taint_variable 均空），不能假设强类型参数 pageSize 守了本案注入流，保留原判",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "@RequestParam(value = \"categoryId\", required = false) Long categoryId",
+            "kind": "strong_type_param",
+            "location": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:578",
+            "reason": "无可核实 taint 证据（sinkVars 与 hop taint_variable 均空），不能假设强类型参数 categoryId 守了本案注入流，保留原判",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "@RequestParam(\"zeroStock\") Integer zeroStock",
+            "kind": "strong_type_param",
+            "location": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:581",
+            "reason": "无可核实 taint 证据（sinkVars 与 hop taint_variable 均空），不能假设强类型参数 zeroStock 守了本案注入流，保留原判",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:627",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindPosition}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:632",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:636",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:636",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:636",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:636",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:636",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{offset}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:650",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{rows}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:650",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:666",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "${column}",
+            "kind": "mybatis_concat",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:647",
+            "reason": "MyBatis mapper XML 上下文里 ${} 按定义为字符串替换（raw concat），值拼入 SQL 文本，守卫可绕过",
+            "source": "",
+            "status": "guard_bypassable",
+            "witness": "' OR '1'='1"
+          },
+          {
+            "code": "${order}",
+            "kind": "mybatis_concat",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:647",
+            "reason": "MyBatis mapper XML 上下文里 ${} 按定义为字符串替换（raw concat），值拼入 SQL 文本，守卫可绕过",
+            "source": "",
+            "status": "guard_bypassable",
+            "witness": "' OR '1'='1"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:15",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:21",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindPosition}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:26",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:30",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:30",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:30",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:30",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:12",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:18",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindPosition}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:23",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:16",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:22",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindPosition}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:31",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:31",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:31",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:31",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:31",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{offset}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:45",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{rows}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:45",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "${column}",
+            "kind": "mybatis_concat",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:42",
+            "reason": "MyBatis mapper XML 上下文里 ${} 按定义为字符串替换（raw concat），值拼入 SQL 文本，守卫可绕过",
+            "source": "getListWithStock",
+            "status": "guard_bypassable",
+            "witness": "' OR '1'='1"
+          },
+          {
+            "code": "${order}",
+            "kind": "mybatis_concat",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:42",
+            "reason": "MyBatis mapper XML 上下文里 ${} 按定义为字符串替换（raw concat），值拼入 SQL 文本，守卫可绕过",
+            "source": "getListWithStock",
+            "status": "guard_bypassable",
+            "witness": "' OR '1'='1"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:7",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getInitialStockWithMaterial",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "replaceAll(\"(?i)\" + regex, \"\")",
+            "kind": "string_replace",
+            "location": "jshERP-boot/src/main/java/com/jsh/erp/utils/StringUtil.java:366",
+            "reason": "regex/string_replace 守卫模拟仅对 path_traversal 校准；本案 sql_injection 的黑名单绕过需 inc12 动态验证，探针不武断模拟（防穿越语料误判 SQL 守卫）",
+            "source": "safeSqlParse",
+            "status": "not_verifiable"
+          }
+        ],
+        "kind": "reconcat_bypass",
+        "method": "probe",
+        "original_verdict": "true_positive",
+        "reason": "净化后变量 initialStockList 又与原始污点 depotList 在下游表达式中共用/拼接，守卫仅作用于 initialStockList、未覆盖到达 sink 的值（铁律 RC-A 反漏报：原判 TP 成立，探针不得推翻）",
+        "sanitizer": "getInitialStockWithMaterial(depotList)",
+        "status": "guard_bypassable",
+        "witness": "../../etc/passwd"
+      },
+      "dev_summary": "任意已登录用户访问 /material/getListWithStock 时，可在 column 或 order 参数里注入 SQL（例如让数据库延时 5 秒来证明），从而读取整库数据（含其他用户和管理员密码）。safeSqlParse 的黑名单拦不住去掉空格的 SQL 关键词。",
+      "design_note": "在 ORDER BY 里用请求参数动态排序是正常需求，问题是没有对 column/order 做白名单校验——只靠 StringUtil.safeSqlParse 这个黑名单删词（且只删带空格的关键词），攻击者用 select( 这种无空格写法就能绕过，让任意 SQL 拼进 order by ${column} ${order}。",
+      "fail_reason": null,
+      "missing_info": null
+    },
+    {
+      "alert_id": "codesafe-E585DB727F9D7AC6F69F23A4A5114198-jshERP-boot/src/main/java/com/jsh/erp/service/material/MaterialService.java:1282",
+      "bughash": "2f2b371c97be6bdae9300fe3d8b19b9f49f35ebdf29e9fa675a3a86076909e5b",
+      "verdict": "true_positive",
+      "disposition": "true_positive",
+      "vulnerability_type": "sql_injection",
+      "cwe_id": "CWE-89",
+      "actual_vulnerability_type": "sql_injection",
+      "actual_vulnerability_types": [
+        "sql_injection"
+      ],
+      "type_mismatch_types": null,
+      "buried_types": null,
+      "confidence": 9,
+      "exploit_path": {
+        "entry_point": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:573",
+        "data_flow": [
+          "攻击者通过 GET /material/getListWithStock 的 column、order 请求参数注入任意字符串，二者为 @RequestParam String 类型，完全可控 [跳0]",
+          "控制器第33行调用 StringUtil.safeSqlParse(column)、StringUtil.safeSqlParse(order) 处理后传入 materialService.getListWithStock；safeSqlParse 用 regex 黑名单（StringUtil.java:24-27，仅移除 select/and/or/';--#% 等有限关键字与字符）做 replaceAll，攻击串 IF(SLEEP(5),id,id) 中不含任何黑名单词，括号与逗号也不在黑名单内，可原样穿透 [跳0][跳9]",
+          "materialService.getListWithStock 第8行将 column、order 原样转发给 materialMapperEx.getListWithStock(..., column, order, ...) [跳1]",
+          "mapper 在 \u003cif test=\"column != 'createTime'\"\u003e 分支中以 `order by ${column} ${order}` 拼接，未使用 #{} 参数化，攻击者注入的 SQL 片段直接进入查询文本 [跳7][跳2]"
+        ],
+        "sink_reached": true,
+        "attacker_control_at_sink": "full",
+        "path_broken_at": null,
+        "taint_source": {
+          "code": "@RequestParam(value = \"column\", required = false) String column 与 @RequestParam(value = \"order\", required = false) String order",
+          "location": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:11-12"
+        },
+        "sink_evidence": {
+          "method_key": "MaterialMapperEx.getListWithStock",
+          "param_style": "concat",
+          "sink_code": "        \u003cif test=\"column == 'createTime'\"\u003e\n            order by m.id desc\n        \u003c/if\u003e\n        \u003cif test=\"column != 'createTime'\"\u003e\n            order by ${column} ${order}\n        \u003c/if\u003e",
+          "sink_location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml (getListWithStock select 内 order by 拼接行)",
+          "source_tool": "reachable_sinks"
+        }
+      },
+      "reasoning": "控制器把 column/order 两个 @RequestParam 字符串经 StringUtil.safeSqlParse 处理后传入 materialMapperEx.getListWithStock，最终在 MaterialMapperEx.xml 的 `order by ${column} ${order}` 处未参数化拼接（跳7/跳2）。safeSqlParse 的黑名单（StringUtil.java:24-27）仅移除有限的 SQL 关键字和 `';--#%` 等字符，不含 `IF(`、`SLEEP(`、`(`、`)`、`,` 等，攻击者可用 `IF(SLEEP(5),id,id)` 原样穿透实现基于时间的盲注。净化器可被绕过，SQL 注入漏洞成立。",
+      "sanitization_found": "StringUtil.safeSqlParse（跳9）用黑名单 regex 移除有限 SQL 关键字后 replaceAll，可被绕过：黑名单不含 IF(、SLEEP(、(、)、, 等，注入串可原样通过，未真正净化。",
+      "suggested_fix": "[MaterialMapperEx.xml 中 `order by ${column} ${order}` 所在行] `order by ${column} ${order}` → \n```\n\u003cchoose\u003e\n  \u003cwhen test=\"column == 'createTime'\"\u003eorder by m.id desc\u003c/when\u003e\n  \u003cwhen test=\"column == 'name' and order == 'desc'\"\u003eorder by m.name desc\u003c/when\u003e\n  \u003cwhen test=\"column == 'name'\"\u003eorder by m.name asc\u003c/when\u003e\n  \u003cwhen test=\"column == 'model' and order == 'desc'\"\u003eorder by m.model desc\u003c/when\u003e\n  \u003cwhen test=\"column == 'model'\"\u003eorder by m.model asc\u003c/when\u003e\n  \u003cotherwise\u003eorder by m.id asc\u003c/otherwise\u003e\n\u003c/choose\u003e\n```\n说明：用 MyBatis `\u003cchoose\u003e` 把可控入参只用于等值比较（test== 是字符串比较、不进入 SQL 文本），列名与排序方向全部写成字面量，彻底消除 `${}` 拼接。",
+      "severity": "high",
+      "severity_rationale": "public_internet 暴露的 GET /material/getListWithStock 接口中，攻击者完全控制 column、order 两参数并经 safeSqlParse 后无损进入 `order by ${column} ${order}`（MaterialMapperEx.xml 跳7/跳2），可在 ORDER BY 子句注入 IF(SLEEP(5),...) 等表达式实现基于时间的盲注、逐字节偷取全库数据。若该接口实际无需登录即可访问（全局鉴权未覆盖此端点），应升级为 critical；若数据库账户仅只读且禁用了 SLEEP/BENCHMARK 等时间函数，降级为 medium。",
+      "model_used": "hy3",
+      "control_flow_mutex": false,
+      "exploit_payload": "column=id\u0026order=,IF(SLEEP(5),id,id)",
+      "attack_request": "GET /material/getListWithStock?currentPage=column%3Did%26order%3D%2CIF%28SLEEP%285%29%2Cid%2Cid%29 HTTP/1.1\nHost: target",
+      "decisive_check": null,
+      "decisive_checks": null,
+      "verification": {
+        "action": "bypass_confirmed_tp_kept",
+        "by": "getListWithStock",
+        "guards": [
+          {
+            "code": "@RequestParam(\"currentPage\") Integer currentPage",
+            "kind": "strong_type_param",
+            "location": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:575",
+            "reason": "无可核实 taint 证据（sinkVars 与 hop taint_variable 均空），不能假设强类型参数 currentPage 守了本案注入流，保留原判",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "@RequestParam(\"pageSize\") Integer pageSize",
+            "kind": "strong_type_param",
+            "location": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:576",
+            "reason": "无可核实 taint 证据（sinkVars 与 hop taint_variable 均空），不能假设强类型参数 pageSize 守了本案注入流，保留原判",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "@RequestParam(value = \"categoryId\", required = false) Long categoryId",
+            "kind": "strong_type_param",
+            "location": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:578",
+            "reason": "无可核实 taint 证据（sinkVars 与 hop taint_variable 均空），不能假设强类型参数 categoryId 守了本案注入流，保留原判",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "@RequestParam(\"zeroStock\") Integer zeroStock",
+            "kind": "strong_type_param",
+            "location": "jshERP-boot/src/main/java/com/jsh/erp/controller/MaterialController.java:581",
+            "reason": "无可核实 taint 证据（sinkVars 与 hop taint_variable 均空），不能假设强类型参数 zeroStock 守了本案注入流，保留原判",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:627",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindPosition}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:632",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:636",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:636",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:636",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:636",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:636",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{offset}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:650",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{rows}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:650",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:666",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "${column}",
+            "kind": "mybatis_concat",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:647",
+            "reason": "MyBatis mapper XML 上下文里 ${} 按定义为字符串替换（raw concat），值拼入 SQL 文本，守卫可绕过",
+            "source": "",
+            "status": "guard_bypassable",
+            "witness": "' OR '1'='1"
+          },
+          {
+            "code": "${order}",
+            "kind": "mybatis_concat",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:647",
+            "reason": "MyBatis mapper XML 上下文里 ${} 按定义为字符串替换（raw concat），值拼入 SQL 文本，守卫可绕过",
+            "source": "",
+            "status": "guard_bypassable",
+            "witness": "' OR '1'='1"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:15",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:21",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindPosition}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:26",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:30",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:30",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:30",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:30",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getTotalStockAndPrice",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:12",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:18",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindPosition}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:23",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStockCount",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:16",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:22",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindPosition}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:27",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:31",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:31",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:31",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:31",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{bindParam}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:31",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{offset}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:45",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "#{rows}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:45",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getListWithStock",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "${column}",
+            "kind": "mybatis_concat",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:42",
+            "reason": "MyBatis mapper XML 上下文里 ${} 按定义为字符串替换（raw concat），值拼入 SQL 文本，守卫可绕过",
+            "source": "getListWithStock",
+            "status": "guard_bypassable",
+            "witness": "' OR '1'='1"
+          },
+          {
+            "code": "${order}",
+            "kind": "mybatis_concat",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:42",
+            "reason": "MyBatis mapper XML 上下文里 ${} 按定义为字符串替换（raw concat），值拼入 SQL 文本，守卫可绕过",
+            "source": "getListWithStock",
+            "status": "guard_bypassable",
+            "witness": "' OR '1'='1"
+          },
+          {
+            "code": "#{item}",
+            "kind": "mybatis_param",
+            "location": "jshERP-boot/src/main/resources/mapper_xml/MaterialMapperEx.xml:7",
+            "reason": "LLM 未引用 SQLi 漏洞 sink（无 ${} allows decisive），#{} 疑为 lookup/辅助参数非本案 sink 路径，无法确认守护本案 harm，保留原判不武断 safe",
+            "source": "getInitialStockWithMaterial",
+            "status": "not_verifiable"
+          },
+          {
+            "code": "replaceAll(\"(?i)\" + regex, \"\")",
+            "kind": "string_replace",
+            "location": "jshERP-boot/src/main/java/com/jsh/erp/utils/StringUtil.java:366",
+            "reason": "regex/string_replace 守卫模拟仅对 path_traversal 校准；本案 sql_injection 的黑名单绕过需 inc12 动态验证，探针不武断模拟（防穿越语料误判 SQL 守卫）",
+            "source": "safeSqlParse",
+            "status": "not_verifiable"
+          }
+        ],
+        "kind": "reconcat_bypass",
+        "method": "probe",
+        "original_verdict": "true_positive",
+        "reason": "净化后变量 initialStockList 又与原始污点 depotList 在下游表达式中共用/拼接，守卫仅作用于 initialStockList、未覆盖到达 sink 的值（铁律 RC-A 反漏报：原判 TP 成立，探针不得推翻）",
+        "sanitizer": "getInitialStockWithMaterial(depotList)",
+        "status": "guard_bypassable",
+        "witness": "../../etc/passwd"
+      },
+      "dev_summary": "任意访问者（或登录用户）可以通过 /material/getListWithStock 接口的 column 和 order 参数，往数据库排序语句里注入自己写的 SQL 片段（SQL 注入），从而拖延响应、逐步偷取数据库里的任意数据。",
+      "design_note": "用 StringUtil.safeSqlParse 对排序字段做过滤的思路本身没问题，问题是它只按黑名单删掉少数几个关键字（如 select、and、or），而 IF(、SLEEP( 这类函数和括号不在黑名单里，攻击者仍能注入完整的排序表达式。",
+      "fail_reason": null,
+      "missing_info": null
+    }
+  ]
+}
